@@ -1,0 +1,12 @@
+<header class="page-title">
+  <h1>{{ custom_page.headline }}</h1>
+  <h2 class="u-type--300">{{ custom_page.subheadline }}</h2>
+</header>
+
+<div class="custom-content wysi_html">
+  {{ custom_page.content }}
+</div>
+
+<div class="custom-image">
+  <img src="{{ custom_page.image_url }}">
+</div>
