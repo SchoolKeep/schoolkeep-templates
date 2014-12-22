@@ -1,0 +1,35 @@
+<section class="home">
+  <header class="hero">
+
+    {{ if homepage.headline | homepage.subheadline }}
+      <div class="title-group headline-group">
+        {{ if homepage.headline }}
+          <h1>{{ homepage.headline }}</h1>
+        {{ end }}
+
+        {{ if homepage.subheadline }}
+          <h2>{{ homepage.subheadline }}</h2>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <div class="image-wrapper">
+      <img src="{{ homepage.artwork_url }}" />
+    </div>
+  </header>
+
+  <section class="featured">
+    <div class="title-group">
+      <h1>{{ homepage.featured_courses_headline }}</h1>
+      <h2>{{ homepage.featured_courses_subheadline }}</h2>
+    </div>
+
+    {{ if homepage.published_featured_courses }}
+      <ul class="courses">
+        {{ homepage.published_featured_courses.each 'course' }}
+          {{ partial 'course' }}
+        {{ end }}
+      </ul>
+    {{ end }}
+  </section>
+</section>

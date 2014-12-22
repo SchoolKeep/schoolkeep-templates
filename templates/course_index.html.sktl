@@ -1,0 +1,10 @@
+<header class="page-title">
+  <h1>{{ course_catalog.headline }}</h1>
+  <h2 class="u-type--300">{{ course_catalog.subheadline }}</h2>
+</header>
+
+<ul class="courses">
+  {{ courses.each 'course' }}
+    {{ partial 'course' }}
+  {{ end }}
+</ul>

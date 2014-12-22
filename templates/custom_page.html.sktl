@@ -3,7 +3,7 @@
   <h2 class="u-type--300">{{ custom_page.subheadline }}</h2>
 </header>
 
-<div class="custom-content wysi_html">
+<div class="custom-content wysiwyg">
   {{ custom_page.content }}
 </div>
 

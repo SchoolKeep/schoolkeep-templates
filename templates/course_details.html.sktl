@@ -1,0 +1,126 @@
+<section class="course">
+  <header>
+    {{ if course.promo_video_embed }}
+      {{ course.promo_video_embed }}
+    {{ else }}
+      <div class="course-image">
+        <img src="{{ course.featured_image_url }}">
+      </div>
+    {{ end }}
+
+    <div class="inner">
+      <h2>{{ course.name }}</h2>
+      <p>{{ course.short_description }}</p>
+    </div>
+  </header>
+
+  <div class="course-content">
+    <aside>
+      {{ if course.partnership_names }}
+        <div class="byline">
+          <span>{{ pluralize(course.partnerships.count, t('.instructor.one'), t('.instructor.many')) }}</span>
+          <h2 class="u-text--right">{{ course.partnership_names }}</h2>
+        </div>
+      {{ end }}
+
+      {{ unless course.placeholder? }}
+        <div class="start-course">
+          {{ if current_school.subscriptions_enabled? & !(current_student.subscribed?) }}
+            <a href="{{ routes.new_subscription_path }}" class="subscribe-button with-price">
+              <span class="price">
+                {{ current_school.formatted_subscription_price }}
+              </span>
+              {{ t('.subscribe') }}
+            </a>
+          {{ end }}
+
+          {{ if current_student.enrolled_in?(course) }}
+            <a href="{{ course.next_action(current_student).href }}" class="action">{{ course.next_action(current_student).text }}</a>
+          {{ elsif current_student.subscribed? }}
+            <form method="post" action="{{ course.enrollment_path }}" class="action button_to">
+              <div><input value="{{ t('.start') }}" type="submit"/></div>
+            </form>
+          {{ else }}
+            <a href="{{ course.new_order_path }}" class="enroll-button with-price">
+              <span class="price">{{ course.formatted_price }}</span>
+              {{ t('.buy_course') }}
+            </a>
+          {{ end }}
+
+        </div>
+      {{ end }}
+
+      {{ unless current_school.disable_social_share? }}
+        {{ course.social_links }}
+      {{ end }}
+    </aside>
+
+    <div class="tabs">
+      <nav>
+        <a href="#tab-1" class="active">{{ t('.tabs.about') }}</a>
+        <a href="#tab-2">{{ t('.tabs.syllabus') }}</a>
+      </nav>
+
+      <div class="tab-content">
+        <section class="tab" id="tab-1">
+          <article >
+            <h1>{{ t('.tabs.about') }}</h1>
+            <div class="wysiwyg">{{ course.full_description }}</div>
+          </article>
+
+          {{ if course.partnerships }}
+            <h1>{{ pluralize(course.partnerships.count, t('.partnership_bio_title.one'), t('.partnership_bio_title.many')) }}</h1>
+            {{ course.partnerships.each 'partnership' }}
+              <article class="partnership-info">
+                <div class="partnership-bio-header">
+                  {{ if partnership.image_url }}
+                    <img
+                      src="{{ partnership.image_url }}"
+                      alt="{{ partnership.name }}"
+                      title="{{ partnership.name }}"
+                      class="partnership-image">
+                  {{ end }}
+                  <div class="partnership-titles">
+                    {{ if partnership.name }}
+                    <h2 class="partnership-name">
+                      {{ partnership.name }}
+                    </h2>
+                    {{ end }}
+                    {{ if partnership.title }}
+                    <h3 class="partnership-title">
+                      {{ partnership.title }}
+                    </h3>
+                    {{ end }}
+                  </div>
+                </div>
+                <div class="partnership-bio wysiwyg">
+                  {{ partnership.bio }}
+                </div>
+              </article>
+            {{ end }}
+          {{ end }}
+        </section>
+
+        <section class="tab" id="tab-2">
+          <h1>{{ t('.tabs.syllabus') }}</h1>
+          <section class="syllabus-sections">
+            <ol class="sections">
+              {{ course.published_sections.each 'section' }}
+                <li>
+                  <h2>{{ section.name }}</h2>
+                  <ol class="collapsable-container">
+                    {{ section.activities.each 'activity' }}
+                      <li class="file {{ activity.list_class }}">
+                        {{ activity.title }}
+                      </li>
+                    {{ end }}
+                  </ol>
+                </li>
+              {{ end }}
+            </ol>
+          </section>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>

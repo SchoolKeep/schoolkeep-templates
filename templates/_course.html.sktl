@@ -1,0 +1,35 @@
+<li class="course-link-pane">
+  {{ if course.ribbon }}
+    <span class="ribbon">
+      <span class="ribbon__item">
+        <span class="ribbon__text">
+          {{ course.ribbon }}
+        </span>
+      </span>
+    </span>
+  {{ end }}
+  <div class="crop">
+    <a href="{{ course.details_path }}"><img src="{{ course.list_image_url }}"></a>
+  </div>
+  <div>
+    <hgroup>
+      <h2><a href="{{ course.details_path }}">{{ course.name }}</a></h2>
+      <h3 class="instructor-name">{{ course.partnership_names }}</h3>
+    </hgroup>
+    <div class="course-details">
+      {{ if current_student.enrolled_in?(course) }}
+        {{ if course.progress_text(current_student) }}
+          <p>{{ course.progress_text(current_student) }}</p>
+        {{ end }}
+        <a href="{{ course.next_action(current_student).href }}" class="action">{{ course.next_action(current_student).text }}</a>
+      {{ elsif current_student.subscribed? }}
+        <form method="post" action="{{ course.enrollment_path }}" class="action button_to">
+          <div><input value="{{ t('.quick_start') }}" type="submit"/></div>
+        </form>
+      {{ else }}
+        <p>{{ course.formatted_price }}</p>
+        <a href="{{course.details_path}}" class="action">{{ t('.view_course') }}</a>
+      {{ end }}
+    </div>
+  </div>
+</li>
