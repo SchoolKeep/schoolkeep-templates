@@ -3,23 +3,37 @@
 Use this to edit the templates of the marketing pages for your school.
 
 ###Disclaimer
-Once you've edited your templates, we will not be able to support the look and feel of your website.  If you need to reset, we've provided the commands to do so. Additionally, we won't support automatic updates with additional features that SchoolKeep makes to the base templates.  You will need to merge the changes into your templates directory.
+Once you've edited your templates, we will not be able to support the look and
+feel of your website.  If you need to reset, we've provided the commands to do
+so. Additionally, we won't support automatic updates with additional features
+that SchoolKeep makes to the base templates.  You will need to merge the
+changes into your templates directory.
 
 
 ### Templates overview
 
-This section will provide you with information on the editable templates and the variables available to you in each template.  All your data will be pulled from data that you have entered into SchoolKeep, but this will allow you to test with sample data.  
+This section will provide you with information on the editable templates and 
+the variables available to you in each template.  All your data will be pulled
+from data that you have entered into SchoolKeep, but this will allow you to
+test with sample data.
 
-You can edit the existing templates, but there is no way to add additional templates.  Currently there is 1 template for each page (ie: 1 homepage template, 1 course details page template, 1 custom page template).  
+You can edit the existing templates, but there is no way to add additional
+templates.  Currently there is 1 template for each page
+(ie: 1 homepage template, 1 course details page template, 1 custom page template).
 
 ### Scribble
 
 We use Scribble as our templating language.  See more here: https://github.com/SchoolKeep/scribble
 
-Scribble provides variables so that your data can be pulled from what you've entered into SchoolKeep.  `{{ variable_name }}` will pull the corresponding data from what you had entered into SchoolKeep.  See below for details on the variables available within each template.
+Scribble provides variables so that your data can be pulled from what you've
+entered into SchoolKeep.  `{{ variable_name }}` will pull the corresponding
+data from what you had entered into SchoolKeep.  See below for details on the
+variables available within each template.
 
 #### Course details
-The course details page displays information about your course to prospective students. All courses will use the same Course Details template, populated with the data for the current course.
+The course details page displays information about your course to prospective
+students. All courses will use the same Course Details template, populated
+with the data for the current course.
 
 *Variables*
 
@@ -31,7 +45,8 @@ The course details page displays information about your course to prospective st
 
 #### Course catalog
 
-The course catalog page displays tiles with information about each course that you have published in your school.
+The course catalog page displays tiles with information about each course that
+you have published in your school.
 
 *Variables*
 
@@ -45,7 +60,9 @@ Uses an iterator for the course tiles
 
 #### Custom page
 
-The custom page template supports any pages made within the Pages section of SchoolKeep. All custom pages will use the same Custom Page template, populated with the data for the current custom page.
+The custom page template supports any pages made within the Pages section of
+SchoolKeep. All custom pages will use the same Custom Page template, populated
+with the data for the current custom page.
 
 *Variables*
 
