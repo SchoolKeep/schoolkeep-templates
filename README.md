@@ -2,6 +2,20 @@
 
 Use this to edit the templates of the marketing pages for your school.
 
+## Installation
+
+1. gem install bundler
+2. `cd sk-design`
+3. `bundle install`
+
+## Usage
+
+`bundle exec sk server` to run the local development server. Open browser to http://localhost:4000
+
+`bundle exec sk fixtures` creates `config/fixtures.yml` that allows you to change local development example data
+
+`bundle exec sk upload` to upload all template files
+
 ###Disclaimer
 Once you've edited your templates, we will not be able to support the look and
 feel of your website.  If you need to reset, we've provided the commands to do
