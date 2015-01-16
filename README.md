@@ -4,17 +4,53 @@ Use this to edit the templates of the marketing pages for your school.
 
 ## Installation
 
-1. gem install bundler
-2. `cd sk-design`
-3. `bundle install`
+### OSX
+
+If you know how to use git, clone this repository.
+
+If not install https://mac.github.com/ and clone this repository by clicking
+[here](github-mac://openRepo/https://github.com/SchoolKeep/schoolkeep-templates) or using the `Clone in Desktop` on the right.
+To open up the terminal in the `schoolkeep-templates` folder press Command+T or clicking the menu item `Repository -> Open in Terminal`.
+
+In the terminal and in the `schoolkeep-templates` directory:
+
+1. Install command line tools to compile ruby gems
+
+    `xcode-select --install`
+
+2. Install bundler to manage packages
+
+    `sudo gem install bundler`
+
+3. Install the gems required by `schoolkeep-templates`
+
+    `bundle install`
 
 ## Usage
 
-`bundle exec sk server` to run the local development server. Open browser to http://localhost:4000
+You can execute these commands in the `schoolkeep-templates` folder.
 
-`bundle exec sk fixtures` creates `config/fixtures.yml` that allows you to change local development example data
+To run the local development server and preview from http://localhost:4000:
+```sh
+bundle exec sk server
+```
 
-`bundle exec sk upload` to upload all template files
+To modify local development example data:
+```sh
+bundle exec sk fixtures
+```
+and modify `config/fixtures.yml`. No changes to the fixtures file will ever effect your school.
+
+To upload all templates and deploy local template changes to our server:
+```sh
+SK_API_KEY=your-api-key bundle exec sk upload --all
+```
+
+To reset all all changes and use SchoolKeep's default templates:
+```sh
+SK_API_KEY=your-api-key bundle exec sk reset --all
+```
+
 
 ###Disclaimer
 Once you've edited your templates, we will not be able to support the look and
