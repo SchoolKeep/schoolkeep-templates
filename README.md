@@ -26,20 +26,23 @@ In the terminal and in the `schoolkeep-templates` directory:
 
     `bundle install`
 
+## Edit Templates
+
+All templates are in the templates folder. You can edit the files using any text editor.
+If you don't know how to edit the files you can download the Atom editor https://atom.io/
+then inside the github app you can press Command+Shift+A or clicking the menu item `Repository -> Open in Atom`
+
 ## Usage
 
 You can execute these commands in the `schoolkeep-templates` folder.
 
-To run the local development server and preview from http://localhost:4000:
+To run the local development server:
 ```sh
 bundle exec sk server
 ```
-
-To modify local development example data:
-```sh
-bundle exec sk fixtures
-```
-and modify `config/fixtures.yml`. No changes to the fixtures file will ever effect your school.
+You can access your local server and view all changes you make to the templates
+by opening and browser and going to http://localhost:4000.
+If you want to learn about changing the default local example data read the `FIXTURES.md` file.
 
 To upload all templates and deploy local template changes to our server:
 ```sh
@@ -50,7 +53,6 @@ To reset all all changes and use SchoolKeep's default templates:
 ```sh
 SK_API_KEY=your-api-key bundle exec sk reset --all
 ```
-
 
 ###Disclaimer
 Once you've edited your templates, we will not be able to support the look and
@@ -79,82 +81,3 @@ Scribble provides variables so that your data can be pulled from what you've
 entered into SchoolKeep.  `{{ variable_name }}` will pull the corresponding
 data from what you had entered into SchoolKeep.  See below for details on the
 variables available within each template.
-
-#### Course details
-The course details page displays information about your course to prospective
-students. All courses will use the same Course Details template, populated
-with the data for the current course.
-
-*Variables*
-
-*States*
-
-1. New student
-2. Student has already purchased course but has not started
-3. Student has already purchased course and has started
-
-#### Course catalog
-
-The course catalog page displays tiles with information about each course that
-you have published in your school.
-
-*Variables*
-
-Uses an iterator for the course tiles
-
-*States*
-
-1. New student
-2. Student has already purchased course but has not started
-3. Student has already purchased course and has started
-
-#### Custom page
-
-The custom page template supports any pages made within the Pages section of
-SchoolKeep. All custom pages will use the same Custom Page template, populated
-with the data for the current custom page.
-
-*Variables*
-
-#### Homepage
-
-*Variables*
-
-### Partials
-
-These partials can be used on the other pages.  Here's how you include a partial on a page `partial`
-
-#### Header
-
-The header encompasses the top navigation bar.  This includes the logged in / logged out state of the student, your logo, and navigation. 
-
-*Variables*
-
-*States*
-
-1. Anonymous student
-2. Logged in student
-
-#### Footer
-
-This partial encompasses the footer of your website.  You can insert any script tags here for tracking, chat systems, etc.
-
-*Variables*
-
-#### Course tile
-
-*Variables*
-
-*States*
-
-1. New student
-2. Student has already purchased course but has not started
-3. Student has already purchased course and has started
-
-### Editing CSS
-We provide you with a single additive stylesheet to customize your school branding. This file is located at `sk-design/templates/styles.css.sktl` .  You can add or edit any styles within this stylesheet.  Additionally you have access to the color scheme variables that you've set within SchoolKeep.  `{{ color_scheme.background_color }}`.
-
-### Fixtures & Variables
-All your data will be pulled from information that you've entered into SchoolKeep, but this will allow you to test with sample data.  This sample data will not be uploaded to SchoolKeep and is only for testing purposes within the local development environment
-
-`bundle exec sk fixture`
