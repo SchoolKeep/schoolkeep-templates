@@ -79,5 +79,4 @@ We use Scribble as our templating language.  See more here: https://github.com/S
 
 Scribble provides variables so that your data can be pulled from what you've
 entered into SchoolKeep.  `{{ variable_name }}` will pull the corresponding
-data from what you had entered into SchoolKeep.  See below for details on the
-variables available within each template.
+data from what you had entered into SchoolKeep.
