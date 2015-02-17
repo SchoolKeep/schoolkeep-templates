@@ -1,0 +1,6 @@
+<link rel="stylesheet" media="all" href="{{ routes.schoolkeep_styles_url }}">
+<link rel="stylesheet" media="all" href="{{ routes.color_scheme_path }}">
+
+{{ if current_school.has_custom_styles? }}
+  <link rel="stylesheet" media="all" href="{{ routes.custom_styles_path }}">
+{{ end }}
