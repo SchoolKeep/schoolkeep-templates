@@ -9,8 +9,8 @@
         {{ end }}
       </a>
     </h1>
-    <nav class="menu">
-      <a href="#" class="see-menu">&#xe870;</a>
+    <nav class="menu" data-behavior="dropdown">
+      <a href="#" class="see-menu"></a>
       <ul class="main-menu">
         {{ header_navigations.each 'website_navigation' }}
           <li>
@@ -31,7 +31,6 @@
           </li>
         {{ else }}
           <li><a href="{{ routes.log_in_path }}">{{t('.log_in')}}</a></li>
-          <li><a href="{{ routes.sign_up_path }}">{{t('.sign_up')}}</a></li>
         {{ end }}
       </ul>
     </nav>

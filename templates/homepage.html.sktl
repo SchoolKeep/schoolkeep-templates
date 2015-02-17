@@ -25,7 +25,7 @@
     </div>
 
     {{ if homepage.published_featured_courses }}
-      <ul class="courses">
+      <ul class="courses" data-behavior="listResize">
         {{ homepage.published_featured_courses.each 'course' }}
           {{ partial 'course' }}
         {{ end }}

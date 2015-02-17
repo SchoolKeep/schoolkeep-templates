@@ -1,7 +1,9 @@
 <section class="course">
   <header>
     {{ if course.promo_video_embed }}
-      {{ course.promo_video_embed }}
+      <div class="video-container course-promo-video" data-behavior="scaleEmbed">
+        {{ course.promo_video_embed }}
+      </div>
     {{ else }}
       <div class="course-image">
         <img src="{{ course.featured_image_url }}">

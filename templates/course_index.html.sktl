@@ -3,7 +3,7 @@
   <h2 class="u-type--300">{{ course_catalog.subheadline }}</h2>
 </header>
 
-<ul class="courses">
+<ul class="courses" data-behavior="listResize">
   {{ courses.each 'course' }}
     {{ partial 'course' }}
   {{ end }}
