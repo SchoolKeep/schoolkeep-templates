@@ -26,6 +26,30 @@ In the terminal and in the `schoolkeep-templates` directory:
 
     `bundle install`
 
+### Microsoft Window
+
+If you know how to use git, clone this repository.
+
+Required software:
+
+- Ruby: http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.1.5.exe?direct
+    - Make sure to select the `Add Ruby executables to your PATH` when running the installer
+- Ruby Devkit: http://cdn.rubyinstaller.org/archives/devkits/DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe
+
+If not install https://windows.github.com/ and clone this repository by clicking
+[here](github-mac://openRepo/https://github.com/SchoolKeep/schoolkeep-templates) or using the `Clone in Desktop` on the right.
+To open up the command prompt in the `schoolkeep-templates` folder press `SHIFT+RIGHT CLICK` on the folder and select `Open command window here`
+
+In the comand prompt and in the `schoolkeep-templates` directory:
+
+1. Install bundler to manage packages
+
+    `gem install bundler`
+
+2. Install the gems required by `schoolkeep-templates`
+
+    `bundle install`
+
 ## Edit Templates
 
 All templates are in the templates folder. You can edit the files using any text editor.
