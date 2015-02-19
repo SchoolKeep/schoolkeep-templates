@@ -14,15 +14,11 @@ To open up the terminal in the `schoolkeep-templates` folder press Command+T or 
 
 In the terminal and in the `schoolkeep-templates` directory:
 
-1. Install command line tools to compile ruby gems
-
-    `xcode-select --install`
-
-2. Install bundler to manage packages
+1. Install bundler to manage packages
 
     `sudo gem install bundler`
 
-3. Install the gems required by `schoolkeep-templates`
+2. Install the gems required by `schoolkeep-templates`
 
     `bundle install`
 
