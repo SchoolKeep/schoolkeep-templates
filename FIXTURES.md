@@ -1,7 +1,7 @@
 # Fixtures & Variables
 To change the local development example data you can open another terminal and execute:
 ```sh
-bundle exec sk fixtures
+bundle exec sk generate-fixtures
 ```
 and modify `config/fixtures.yml`. No changes to the fixtures file will ever effect your school.
 

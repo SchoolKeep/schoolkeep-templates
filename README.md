@@ -38,7 +38,12 @@ bundle exec sk server
 ```
 You can access your local server and view all changes you make to the templates
 by opening and browser and going to http://localhost:4000.
-If you want to learn about changing the default local example data read the `FIXTURES.md` file.
+
+You can download your school settings by executing this command:
+```sh
+SK_API_KEY=your-api-key bundle exec sk download-fixtures
+```
+If you want to learn about changing the example data read the `FIXTURES.md` file.
 
 To upload all templates and deploy local template changes to our server:
 ```sh
