@@ -22,10 +22,6 @@
           <p>{{ course.progress_text(current_student) }}</p>
         {{ end }}
         <a href="{{ course.next_action(current_student).href }}" class="action">{{ course.next_action(current_student).text }}</a>
-      {{ elsif current_student.subscribed? }}
-        <form method="post" action="{{ course.enrollment_path }}" class="action button_to">
-          <div><input value="{{ t('.quick_start') }}" type="submit"/></div>
-        </form>
       {{ else }}
         <p>{{ course.formatted_price }}</p>
         <a href="{{course.details_path}}" class="action">{{ t('.view_course') }}</a>

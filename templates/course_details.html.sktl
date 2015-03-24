@@ -27,21 +27,8 @@
 
       {{ unless course.placeholder? }}
         <div class="start-course">
-          {{ if current_school.subscriptions_enabled? & !(current_student.subscribed?) }}
-            <a href="{{ routes.new_subscription_path }}" class="subscribe-button with-price">
-              <span class="price">
-                {{ current_school.formatted_subscription_price }}
-              </span>
-              {{ t('.subscribe') }}
-            </a>
-          {{ end }}
-
           {{ if current_student.enrolled_in?(course) }}
             <a href="{{ course.next_action(current_student).href }}" class="action">{{ course.next_action(current_student).text }}</a>
-          {{ elsif current_student.subscribed? }}
-            <form method="post" action="{{ course.enrollment_path }}" class="action button_to">
-              <div><input value="{{ t('.start') }}" type="submit"/></div>
-            </form>
           {{ else }}
             <a href="{{ course.new_order_path }}" class="enroll-button with-price">
               <span class="price">{{ course.formatted_price }}</span>
