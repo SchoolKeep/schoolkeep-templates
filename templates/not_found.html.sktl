@@ -1,0 +1,6 @@
+<h1>{{ t('.headline') }}</h1>
+<h2 class="u-type--300">{{ t('.subheadline') }}</h2>
+
+<div>
+  <a href="/">{{ t('.home') }}</a>
+</div>
