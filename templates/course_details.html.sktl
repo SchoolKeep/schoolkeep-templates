@@ -27,13 +27,17 @@
 
       {{ unless course.placeholder? }}
         <div class="start-course">
-          {{ if current_student.enrolled_in?(course) }}
-            <a href="{{ course.next_action(current_student).href }}" class="action">{{ course.next_action(current_student).text }}</a>
-          {{ else }}
+          {{ if current_learner.access_course?(course) }}
+            <a href="{{ course.next_action(current_learner).href }}" class="action">{{ course.next_action(current_learner).text }}</a>
+          {{ elsif course.payment_required? }}
             <a href="{{ course.new_order_path }}" class="enroll-button with-price">
               <span class="price">{{ course.formatted_price }}</span>
               {{ t('.buy_course') }}
             </a>
+          {{ else }}
+            <form action="{{ course.enrollment_url }}" method="POST">
+              <button type="submit" class="uk-button enroll-button">{{ t('.enroll') }}</button>
+            </form>
           {{ end }}
 
         </div>

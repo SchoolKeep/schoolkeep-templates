@@ -17,13 +17,15 @@
       <h3 class="instructor-name">{{ course.partnership_names }}</h3>
     </hgroup>
     <div class="course-details">
-      {{ if current_student.enrolled_in?(course) }}
-        {{ if course.progress_text(current_student) }}
-          <p>{{ course.progress_text(current_student) }}</p>
+      {{ if current_learner.access_course?(course) }}
+        {{ if course.progress_text(current_learner) }}
+          <p>{{ course.progress_text(current_learner) }}</p>
         {{ end }}
-        <a href="{{ course.next_action(current_student).href }}" class="action">{{ course.next_action(current_student).text }}</a>
+        <a href="{{ course.next_action(current_learner).href }}" class="action">{{ course.next_action(current_learner).text }}</a>
       {{ else }}
-        <p>{{ course.formatted_price }}</p>
+        {{ if app('commerce').active? }}
+          <p>{{ course.formatted_price }}</p>
+        {{ end }}
         <a href="{{course.details_path}}" class="action">{{ t('.view_course') }}</a>
       {{ end }}
     </div>

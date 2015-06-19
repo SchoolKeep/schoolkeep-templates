@@ -3,7 +3,7 @@
     <h1 class="logo">
       <a href="{{current_school.logo_navigation_url}}">
         {{ if current_school.logo_url }}
-        <img src="{{current_school.logo_url}}" alt="{{current_school.name}}">
+          <img src="{{current_school.logo_url}}" alt="{{current_school.name}}">
         {{ else }}
           {{ current_school.name }}
         {{ end }}
@@ -20,12 +20,14 @@
           </li>
         {{ end }}
 
-        {{ if current_student }}
+        {{ if current_learner }}
           <li class="dropdown">
-            <a href="" class="activate-dropdown">{{current_student.name}}</a>
+            <a href="" class="activate-dropdown">{{current_learner.name}}</a>
             <ul>
               <li><a href="{{ routes.my_courses_path }}">{{t('.my_courses')}}</a></li>
-              <li><a href="{{ routes.my_profile_path }}">{{t('.my_profile')}}</a></li>
+              {{ unless current_school.sso_enabled? }}
+                <li><a href="{{ routes.my_profile_path }}">{{t('.my_profile')}}</a></li>
+              {{ end }}
               <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{{t('.log_out')}}</a></li>
             </ul>
           </li>
