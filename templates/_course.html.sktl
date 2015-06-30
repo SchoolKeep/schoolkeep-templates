@@ -21,7 +21,7 @@
         {{ if course.progress_text(current_learner) }}
           <p>{{ course.progress_text(current_learner) }}</p>
         {{ end }}
-        <a href="{{ course.next_action(current_learner).href }}" class="action">{{ course.next_action(current_learner).text }}</a>
+        <a href="{{ course.dashboard_path }}" class="action">{{ t('custom_templates.course_details.go_to_course') }}</a>
       {{ else }}
         {{ if app('commerce').active? }}
           <p>{{ course.formatted_price }}</p>

@@ -28,7 +28,7 @@
       {{ unless course.placeholder? }}
         <div class="start-course">
           {{ if current_learner.access_course?(course) }}
-            <a href="{{ course.next_action(current_learner).href }}" class="action">{{ course.next_action(current_learner).text }}</a>
+            <a href="{{ course.dashboard_path }}" class="action">{{ t('.go_to_course') }}</a>
           {{ elsif course.payment_required? }}
             <a href="{{ course.new_order_path }}" class="enroll-button with-price">
               <span class="price">{{ course.formatted_price }}</span>
@@ -39,7 +39,6 @@
               <button type="submit" class="uk-button enroll-button">{{ t('.enroll') }}</button>
             </form>
           {{ end }}
-
         </div>
       {{ end }}
 
