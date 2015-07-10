@@ -1,40 +1,66 @@
-<header class="main">
-  <div class="header-container">
-    <h1 class="logo">
-      <a href="{{current_school.logo_navigation_url}}">
+<header class="school-website-header uk-z-4">
+  <div class="uk-padding-horizontal uk-container uk-container-center">
+    <nav class="uk-navbar" data-behavior="dropdown">
+      <a href="{{current_school.logo_navigation_url}}" class="uk-brand">
         {{ if current_school.logo_url }}
           <img src="{{current_school.logo_url}}" alt="{{current_school.name}}">
         {{ else }}
-          {{ current_school.name }}
+          <span class="uk-text-large uk-text-bold">{{ current_school.name }}</span>
         {{ end }}
       </a>
-    </h1>
-    <nav class="menu" data-behavior="dropdown">
-      <a href="#" class="see-menu"></a>
-      <ul class="main-menu">
-        {{ header_navigations.each 'website_navigation' }}
-          <li>
-            <a href="{{ website_navigation.path }}" {{if website_navigation.external?}} target="_blank" {{end}}>
-              {{website_navigation.name}}
-            </a>
-          </li>
-        {{ end }}
+      <div class="uk-navbar-flip">
+        <ul class="uk-navbar-nav uk-hidden-small">
+          {{ header_navigations.each 'website_navigation' }}
+            <li>
+              <a href="{{ website_navigation.path }}" {{if website_navigation.external?}} target="_blank" {{end}}>
+                {{ website_navigation.name }}
+              </a>
+            </li>
+          {{ end }}
 
-        {{ if current_learner }}
-          <li class="dropdown">
-            <a href="" class="activate-dropdown">{{current_learner.name}}</a>
-            <ul>
-              <li><a href="{{ routes.my_courses_path }}">{{t('.my_courses')}}</a></li>
-              {{ unless current_school.sso_enabled? }}
-                <li><a href="{{ routes.my_profile_path }}">{{t('.my_profile')}}</a></li>
-              {{ end }}
-              <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{{t('.log_out')}}</a></li>
-            </ul>
-          </li>
-        {{ else }}
-          <li><a href="{{ routes.log_in_path }}">{{t('.log_in')}}</a></li>
-        {{ end }}
-      </ul>
+          {{ if current_learner }}
+            <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
+              <a href="#" class="learner-name">{{current_learner.name}}</a>
+              <div class="uk-dropdown uk-dropdown-flip uk-dropdown-navbar">
+                <ul class="uk-nav uk-nav-navbar">
+                  <li><a href="{{ current_school.my_content_path }}">{{ current_learner.my_content_label }}</a></li>
+                  {{ unless current_school.sso_enabled? }}
+                    <li><a href="{{ routes.my_profile_path }}">{{ t('.my_profile') }}</a></li>
+                  {{ end }}
+                  <li class="uk-nav-divider"></li>
+                  <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{{ t('.log_out') }}</a></li>
+                </ul>
+              </div>
+            </li>
+          {{ else }}
+            <li><a href="{{ routes.log_in_path }}">{{ t('.log_in') }}</a></li>
+          {{ end }}
+        </ul>
+        <a href="#mobile-nav" class="mobile-navbar-toggle uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+      </div>
     </nav>
   </div>
 </header>
+
+<div id="mobile-nav" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+    <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+      {{ header_navigations.each 'website_navigation' }}
+        <li>
+          <a href="{{ website_navigation.path }}" {{if website_navigation.external?}} target="_blank" {{end}}>
+            {{website_navigation.name}}
+          </a>
+        </li>
+      {{ end }}
+
+      {{ if current_learner }}
+        <li><a href="{{ routes.my_courses_path }}">{{t('.my_courses')}}</a></li>
+        <li><a href="{{ routes.my_profile_path }}">{{t('.my_profile')}}</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{{t('.log_out')}}</a></li>
+      {{ else }}
+        <li><a href="{{ routes.log_in_path }}">{{t('.log_in')}}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</div>

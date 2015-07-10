@@ -1,10 +1,20 @@
-<header class="page-title">
-  <h1>{{ course_catalog.headline }}</h1>
-  <h2 class="u-type--300">{{ course_catalog.subheadline }}</h2>
-</header>
-
-<ul class="courses" data-behavior="listResize">
-  {{ courses.each 'course' }}
-    {{ partial 'course' }}
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+  {{ if course_catalog.headline | course_catalog.subheadline }}
+    <div class="uk-text-center uk-padding-large-vertical uk-padding-horizontal">
+      {{ if courses }}
+        <h1>{{ course_catalog.headline }}</h1>
+        <h2 class="page-header">{{ course_catalog.subheadline }}</h2>
+      {{ else }}
+        <h1>Courses Coming Soon</h1>
+        <h2 class="page-header">We're still working on polishing up our courses. Check back soon.</h2>
+      {{ end }}
+    </div>
   {{ end }}
-</ul>
+  <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-padding-horizontal uk-container-center uk-padding-top uk-margin-large-bottom">
+    <ul class="uk-grid school-website-course-list" data-behavior="listResize">
+      {{ courses.each 'course' }}
+        {{ partial 'course' }}
+      {{ end }}
+    </ul>
+  </div>
+</div>

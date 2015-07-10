@@ -1,35 +1,39 @@
-<section class="home">
-  <header class="hero">
+<div class="school-website-hero hero-tall uk-overlay uk-cover-background" style="background-image: url('{{ homepage.artwork_url }};');">
+  <div class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+    <hgroup class="uk-container uk-container-center uk-padding-large-horizontal">
+      {{ if homepage.headline }}
+        <h1 class="uk-text-center uk-heading-large uk-container-center">{{ homepage.headline }}</h1>
+      {{ end }}
+      {{ if homepage.subheadline }}
+        <h2 class="uk-text-center uk-margin-large-bottom">{{ homepage.subheadline }}</h2>
+      {{ end }}
+      <a href="/courses" class="uk-button uk-button-primary uk-button-large uk-margin-large-top">Discover Catalog</a>
+    </hgroup>
+  </div>
+</div>
 
-    {{ if homepage.headline | homepage.subheadline }}
-      <div class="title-group headline-group">
-        {{ if homepage.headline }}
-          <h1>{{ homepage.headline }}</h1>
-        {{ end }}
-
-        {{ if homepage.subheadline }}
-          <h2>{{ homepage.subheadline }}</h2>
-        {{ end }}
-      </div>
-    {{ end }}
-
-    <div class="image-wrapper">
-      <img src="{{ homepage.artwork_url }}" />
-    </div>
-  </header>
-
-  <section class="featured">
-    <div class="title-group">
-      <h1>{{ homepage.featured_courses_headline }}</h1>
-      <h2>{{ homepage.featured_courses_subheadline }}</h2>
-    </div>
-
+<div class="uk-container uk-container-center uk-padding-large-top uk-padding-large-bottom">
+  <hgroup class="banner uk-text-center uk-padding-large-top uk-padding-large-horizontal">
     {{ if homepage.published_featured_courses }}
-      <ul class="courses" data-behavior="listResize">
+      {{ if homepage.featured_courses_headline | homepage.featured_courses_subheadline }}
+        {{ if homepage.featured_courses_headline }}
+          <h2>{{ homepage.featured_courses_headline }}</h2>
+        {{ end }}
+
+        {{ if homepage.featured_courses_subheadline }}
+          <h3class="uk-margin-remove uk-text-muted">{{ homepage.featured_courses_subheadline }}</h3>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </hgroup>
+
+  {{ if homepage.published_featured_courses }}
+    <div class="uk-width-small-1-1 uk-width-1-1 uk-padding-large-horizontal uk-container-center uk-padding-large-top uk-padding-large-bottom uk-margin-large-bottom">
+      <ul class="uk-grid school-website-course-list" data-behavior="listResize">
         {{ homepage.published_featured_courses.each 'course' }}
           {{ partial 'course' }}
         {{ end }}
       </ul>
-    {{ end }}
-  </section>
-</section>
+    </div>
+  {{ end }}
+</div>

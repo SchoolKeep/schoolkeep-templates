@@ -1,33 +1,30 @@
-<li class="course-link-pane">
-  {{ if course.ribbon }}
-    <span class="ribbon">
-      <span class="ribbon__item">
-        <span class="ribbon__text">
-          {{ course.ribbon }}
-        </span>
-      </span>
-    </span>
-  {{ end }}
-  <div class="crop">
-    <a href="{{ course.details_path }}"><img src="{{ course.list_image_url }}"></a>
-  </div>
-  <div>
-    <hgroup>
-      <h2><a href="{{ course.details_path }}">{{ course.name }}</a></h2>
-      <h3 class="instructor-name">{{ course.partnership_names }}</h3>
-    </hgroup>
-    <div class="course-details">
-      {{ if current_learner.access_course?(course) }}
-        {{ if course.progress_text(current_learner) }}
-          <p>{{ course.progress_text(current_learner) }}</p>
-        {{ end }}
-        <a href="{{ course.dashboard_path }}" class="action">{{ t('custom_templates.course_details.go_to_course') }}</a>
-      {{ else }}
-        {{ if app('commerce').active? }}
-          <p>{{ course.formatted_price }}</p>
-        {{ end }}
-        <a href="{{course.details_path}}" class="action">{{ t('.view_course') }}</a>
-      {{ end }}
+<li class="uk-width-medium-1-3 uk-width-small-1-1 uk-margin-large-bottom school-website-course-tile">
+  <div class="uk-panel uk-panel-box uk-panel-box-secondary uk-border">
+    {{ if course.ribbon }}
+      <div class="uk-panel-badge uk-badge">
+        {{ course.ribbon }}
+      </div>
+    {{ end }}
+    <div class="uk-panel-teaser">
+      <a href="{{ course.details_path }}">
+        <img src="{{ course.list_image_url }}" style="width:100%;">
+      </a>
     </div>
+    <h3 class="uk-panel-title uk-margin-bottom-remove">
+      <a href="{{ course.details_path }}">{{ course.name }}</a>
+    </h3>
+    <p class="uk-margin-small-top uk-margin-large-bottom">{{ course.partnership_names }}</p>
+    {{ if current_learner.access_course?(course) }}
+      <p>{{ course.progress_text(current_learner) }}</p>
+      <a href="{{ course.dashboard_path }}" class="uk-button uk-button-primary school-website-course-tile-action uk-position-bottom-right">{{ course.go_to_label }}</a>
+    {{ else }}
+      <a href="{{ course.details_path }}" class="uk-button uk-button-outline school-website-course-tile-action uk-position-bottom-right">
+        {{ if app('commerce').active? }}
+          {{ course.formatted_price }}
+        {{ else }}
+          {{ course.view_label }}
+        {{ end }}
+      </a>
+    {{ end }}
   </div>
 </li>

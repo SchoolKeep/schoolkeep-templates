@@ -2,12 +2,9 @@
  Put your custom overlay styles in here
  You can use your schoolkeep color palette in this file
 
-{{ color_palette.background_font_color }}
-{{ color_palette.background_color }}
 {{ color_palette.button_font_color }}
 {{ color_palette.button_color }}
 {{ color_palette.button_hover_color }}
-{{ color_palette.banner_font_color }}
 {{ color_palette.header_font_color }}
 {{ color_palette.header_font_hover_color }}
 {{ color_palette.header_color }}

@@ -1,118 +1,99 @@
-<section class="course">
-  <header>
-    {{ if course.promo_video_embed }}
-      <div class="video-container course-promo-video" data-behavior="scaleEmbed">
-        {{ course.promo_video_embed }}
-      </div>
-    {{ else }}
-      <div class="course-image">
-        <img src="{{ course.featured_image_url }}">
-      </div>
-    {{ end }}
+<div class="uk-container uk-container-center uk-margin-top uk-margin-bottom uk-padding-large-top">
+  <h1 class="uk-text-center page-header uk-padding-horizontal">{{ course.name }}</h1>
+</div>
 
-    <div class="inner">
-      <h2>{{ course.name }}</h2>
-      <p>{{ course.short_description }}</p>
-    </div>
-  </header>
-
-  <div class="course-content">
-    <aside>
-      {{ if course.partnership_names }}
-        <div class="byline">
-          <span>{{ pluralize(course.partnerships.count, t('.instructor.one'), t('.instructor.many')) }}</span>
-          <h2 class="u-text--right">{{ course.partnership_names }}</h2>
+<div class="uk-block uk-block-muted uk-margin-large-bottom uk-border-top uk-border-bottom">
+  <div class="uk-container uk-container-center">
+    <div class="uk-grid uk-padding-horizontal">
+      <div class="uk-width-medium-6-10 uk-margin-bottom">
+        {{ if course.promo_video_embed }}
+        <div class="video-container course-promo-video" data-behavior="scaleEmbed">
+          {{ course.promo_video_embed }}
         </div>
-      {{ end }}
+        {{ else }}
+          <img src="{{ course.featured_image_url }}" alt="{{ course.name }}" class="course-image uk-responsive-width uk-width-1-1">
+        {{ end }}
+      </div>
 
-      {{ unless course.placeholder? }}
-        <div class="start-course">
+      <div class="uk-width-medium-4-10">
+        <div class="uk-margin-large-bottom uk-text-large uk-text-muted">
+          {{ course.short_description }}
+        </div>
+        {{ unless course.placeholder? }}
           {{ if current_learner.access_course?(course) }}
-            <a href="{{ course.dashboard_path }}" class="action">{{ t('.go_to_course') }}</a>
+            <a href="{{ course.dashboard_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>
           {{ elsif course.payment_required? }}
-            <a href="{{ course.new_order_path }}" class="enroll-button with-price">
-              <span class="price">{{ course.formatted_price }}</span>
-              {{ t('.buy_course') }}
+            <a href="{{ course.new_order_path }}" class="uk-button uk-button-primary uk-button-large">
+              {{ course.buy_label }} - {{ course.formatted_price }}
             </a>
           {{ else }}
             <form action="{{ course.enrollment_url }}" method="POST">
-              <button type="submit" class="uk-button enroll-button">{{ t('.enroll') }}</button>
+              <button class="enroll-button uk-button uk-button-primary uk-button-large">
+                {{ if app('commerce').active? }}
+                  {{ course.buy_label }} - {{ course.formatted_price }}
+                {{ else }}
+                  {{ t('.enroll') }}
+                {{ end }}
+              </button>
             </form>
           {{ end }}
-        </div>
-      {{ end }}
-
-      {{ unless current_school.disable_social_share? }}
-        {{ course.social_links }}
-      {{ end }}
-    </aside>
-
-    <div class="tabs">
-      <nav>
-        <a href="#tab-1" class="active">{{ t('.tabs.about') }}</a>
-        <a href="#tab-2">{{ t('.tabs.syllabus') }}</a>
-      </nav>
-
-      <div class="tab-content">
-        <section class="tab" id="tab-1">
-          <article >
-            <h1>{{ t('.tabs.about') }}</h1>
-            <div class="wysiwyg">{{ course.full_description }}</div>
-          </article>
-
-          {{ if course.partnerships }}
-            <h1>{{ pluralize(course.partnerships.count, t('.partnership_bio_title.one'), t('.partnership_bio_title.many')) }}</h1>
-            {{ course.partnerships.each 'partnership' }}
-              <article class="partnership-info">
-                <div class="partnership-bio-header">
-                  {{ if partnership.image_url }}
-                    <img
-                      src="{{ partnership.image_url }}"
-                      alt="{{ partnership.name }}"
-                      title="{{ partnership.name }}"
-                      class="partnership-image">
-                  {{ end }}
-                  <div class="partnership-titles">
-                    {{ if partnership.name }}
-                    <h2 class="partnership-name">
-                      {{ partnership.name }}
-                    </h2>
-                    {{ end }}
-                    {{ if partnership.title }}
-                    <h3 class="partnership-title">
-                      {{ partnership.title }}
-                    </h3>
-                    {{ end }}
-                  </div>
-                </div>
-                <div class="partnership-bio wysiwyg">
-                  {{ partnership.bio }}
-                </div>
-              </article>
-            {{ end }}
-          {{ end }}
-        </section>
-
-        <section class="tab" id="tab-2">
-          <h1>{{ t('.tabs.syllabus') }}</h1>
-          <section class="syllabus-sections">
-            <ol class="sections">
-              {{ course.published_sections.each 'section' }}
-                <li>
-                  <h2>{{ section.name }}</h2>
-                  <ol class="collapsable-container">
-                    {{ section.activities.each 'activity' }}
-                      <li class="file {{ activity.list_class }}">
-                        {{ activity.title }}
-                      </li>
-                    {{ end }}
-                  </ol>
-                </li>
-              {{ end }}
-            </ol>
-          </section>
-        </section>
+        {{ end }}
+        {{ unless current_school.disable_social_share? }}
+          {{ course.social_links }}
+        {{ end }}
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<div class="uk-container uk-container-center uk-padding-large-bottom uk-pargin-large-bottom">
+  <div class="uk-grid uk-grid-reverse uk-padding-horizontal">
+    <div class="uk-width-medium-4-10 uk-push-6-10 school-website-course-meta">
+      <h2>{{ course.syllabus_label }}</h2>
+      <div class="course-syllabus uk-panel uk-panel-box uk-border uk-margin-large-bottom">
+        {{ course.published_sections.each 'section' }}
+          <div class="uk-margin-bottom">
+            <h4 class="uk-margin-small-bottom"><strong>{{ section.name }}</strong></h4>
+            <ol class="uk-list uk-margin-small-top">
+              {{ section.activities.each 'activity' }}
+                <li>
+                  <i class="uk-icon-{{ activity.list_class }} uk-margin-small-right"></i> {{ activity.title }}
+                </li>
+              {{ end }}
+            </ol>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+    <div class="uk-width-medium-6-10 uk-pull-4-10">
+      <h2>{{ course.about_label }}</h2>
+      <div class="school-website-course-description uk-margin-large-bottom uk-padding-large-right">
+        {{ course.full_description }}
+      </div>
+      {{ if course.partnerships }}
+        <h2>{{ pluralize(course.partnerships.count, t('.partnership_bio_title.one'), t('.partnership_bio_title.many')) }}</h2>
+        {{ course.partnerships.each 'partnership' }}
+          <div class="uk-grid uk-grid-small uk-margin-large-bottom">
+            <div class="uk-width-medium-1-6 uk-width-1-3">
+              <figure class="uk-thumbnail">
+                {{ if partnership.image_url }}
+                  <img src="{{ partnership.image_url }}" alt="{{ partnership.name }}">
+                {{ else }}
+                  <img src="https://dlzk7uhnqygt7.cloudfront.net/assets/partnership-placeholder.jpg">
+                {{ end }}
+              </figure>
+            </div>
+            <div class="uk-width-medium-5-6 uk-width-2-3">
+              <div class="uk-padding-left">
+                {{ if partnership.name | partnership.title }}
+                  <h4 class="uk-margin-top-remove uk-margin-small-bottom">{{ if partnership.name }}<strong>{{ partnership.name }}</strong>{{ end }}{{ if partnership.title }}, <span class="uk-text-muted">{{ partnership.title }}</span>{{ end }}</h4>
+                {{ end }}
+                {{ partnership.bio }}
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>

@@ -1,6 +1,12 @@
-<h1>{{ t('.headline') }}</h1>
-<h2 class="u-type--300">{{ t('.subheadline') }}</h2>
+<div class="uk-container uk-container-center uk-padding-large-horizontal uk-margin-large-top uk-margin-bottom">
+  <hgroup class="uk-text-center vertical-align uk-padding-large-top">
+    <h1 class="page-header">{{ t('.headline') }}</h1>
+  </hgroup>
 
-<div>
-  <a href="/">{{ t('.home') }}</a>
+  <div class="uk-width-small-1-1 uk-width-medium-1-2 uk-container-center uk-padding-large-top">
+    <div class="school-website-custom-page-content uk-text-center uk-padding-large-bottom uk-margin-large-bottom">
+      <h3 class="uk-margin-top-remove uk-margin-large-bottom">{{ t('.subheadline') }}</h3>
+      <p><a href="/" class="uk-button uk-button-primary">{{ t('.home') }}</a></p>
+    </div>
+  </div>
 </div>
