@@ -1,0 +1,25 @@
+<div class="uk-container uk-container-center school-website-course-index-list uk-margin-large-top uk-margin-large-bottom">
+  <div class="uk-margin-large-bottom uk-padding-horizontal">
+    <div class="uk-text-center uk-padding-large-vertical">
+      <h1>{{ my_content.headline }}</h1>
+      <h3 class="page-header">{{ my_content.subheadline }}</h3>
+    </div>
+    <ul class="uk-grid uk-grid-medium school-website-course-list uk-padding-large-top uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+      {{ my_content.courses.each 'course' }}
+        <li class="uk-width-medium-1-3 uk-width-small-1-1 uk-margin-large-bottom school-website-course-tile">
+          <div class="uk-panel uk-panel-box uk-panel-box-secondary uk-border">
+            <div class="uk-panel-teaser">
+              <a href="{{ course.dashboard_path }}" class="main-link">
+                <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
+              </a>
+            </div>
+            <h3 class="uk-panel-title uk-margin-bottom-remove">
+              <a href="{{ course.dashboard_path }}">{{ course.name }}</a>
+            </h3>
+            <p class="uk-margin-small-top">{{ course.progress_text(current_learner) }}</p>
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
