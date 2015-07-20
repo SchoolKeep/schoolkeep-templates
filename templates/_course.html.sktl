@@ -6,17 +6,17 @@
       </div>
     {{ end }}
     <div class="uk-panel-teaser">
-      <a href="{{ course.details_path }}">
-        <img src="{{ course.list_image_url }}" style="width:100%;">
+      <a href="{{ course.details_path }}" class="main-link">
+        <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
       </a>
     </div>
     <h3 class="uk-panel-title uk-margin-bottom-remove">
       <a href="{{ course.details_path }}">{{ course.name }}</a>
     </h3>
-    <p class="uk-margin-small-top uk-margin-large-bottom">{{ course.partnership_names }}</p>
+    <p class="uk-margin-small-top uk-margin-large-bottom">{{ course.instructor_names }}</p>
     {{ if current_learner.access_course?(course) }}
       <p>{{ course.progress_text(current_learner) }}</p>
-      <a href="{{ course.dashboard_path }}" class="uk-button uk-button-primary school-website-course-tile-action uk-position-bottom-right">{{ course.go_to_label }}</a>
+      <a href="{{ course.cover_path }}" class="uk-button uk-button-primary school-website-course-tile-action uk-position-bottom-right">{{ course.go_to_label }}</a>
     {{ else }}
       <a href="{{ course.details_path }}" class="uk-button uk-button-outline school-website-course-tile-action uk-position-bottom-right">
         {{ if app('commerce').active? }}

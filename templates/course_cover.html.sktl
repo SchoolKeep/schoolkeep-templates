@@ -1,0 +1,77 @@
+<header class="uk-navbar uk-navbar-attached uk-border-bottom learning-header slide">
+  <div class="uk-navbar-flip">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="{{ routes.my_content_path }}" class="uk-border-left uk-button-small">{{ t('.exit') }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="uk-navbar-content uk-navbar-center">
+    {{ if current_school.logo_url }}
+      <img src="{{ current_school.logo_url }}" class="uk-responsive-height">
+    {{ else }}
+      {{ current_school.name }}
+    {{ end }}
+  </div>
+</header>
+
+<div class="uk-container uk-container-center uk-padding-large uk-margin-large-top">
+  <h4 class="uk-text-muted uk-margin-remove">{{ course.superscript }}</h4>
+  <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button">{{ course.start_or_continue }}</a>
+  <h1 class="uk-margin-remove">{{ course.name }}</h1>
+
+  <hr class="uk-article-divider uk-margin-top">
+
+  <div class="uk-grid uk-grid-large">
+    <div class="uk-width-medium-1-2 uk-margin-bottom">
+      <article class="uk-article">
+        <img src="{{ course.featured_image_url }}" />
+        <h3>{{ course.about_label }}</h3>
+        <p>{{ course.full_description }}</p>
+      </article>
+      {{ if course.instructors }}
+        <article class="uk-article">
+          <h3>{{ course.instructors_title }}</h3>
+          {{ course.instructors.each 'instructor' }}
+            <div>
+              <div class="uk-comment-header">
+                {{ if instructor.image_url }}
+                  <img
+                    src="{{ instructor.image_url }}"
+                    alt="{{instructor.name}}"
+                    class="uk-comment-avatar"
+                    width="80">
+                {{ end }}
+                <h4 class="uk-comment-title">{{ instructor.name }}</h4>
+                <div class="uk-comment-meta">{{ instructor.title }}</div>
+              </div>
+              <div class="wysiwyg">{{ instructor.bio }}</div>
+            </div>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+
+    <div class="uk-width-medium-1-2">
+      <h3>{{ course.progress_title }}</h3>
+      {{ course.progress_bar }}
+
+      <h3>{{ course.outline_label }}</h3>
+      <ol class="uk-list">
+        {{ course.published_sections.each 'section' }}
+          <li class="uk-margin-large-bottom">
+            <h3><strong>{{ section.name }}</strong></h3>
+            <ol class="uk-list cover-outline">
+              {{ section.activities.each 'activity' }}
+                <li{{ if activity.completed? }} class="completed"{{ end }}>
+                  <a href="{{ activity.path }}">{{ activity.title }}</a>
+                </li>
+              {{ end }}
+            </ol>
+          </li>
+        {{ end }}
+      </ol>
+    </div>
+  </div>
+</div>

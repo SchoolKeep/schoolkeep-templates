@@ -23,7 +23,7 @@
               <a href="#" class="learner-name">{{current_learner.name}}</a>
               <div class="uk-dropdown uk-dropdown-flip uk-dropdown-navbar">
                 <ul class="uk-nav uk-nav-navbar">
-                  <li><a href="{{ current_school.my_content_path }}">{{ current_learner.my_content_label }}</a></li>
+                  <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
                   {{ unless current_school.sso_enabled? }}
                     <li><a href="{{ routes.my_profile_path }}">{{ t('.my_profile') }}</a></li>
                   {{ end }}
@@ -54,8 +54,8 @@
       {{ end }}
 
       {{ if current_learner }}
-        <li><a href="{{ routes.my_courses_path }}">{{t('.my_courses')}}</a></li>
-        <li><a href="{{ routes.my_profile_path }}">{{t('.my_profile')}}</a></li>
+        <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
+        <li><a href="{{ routes.my_profile_path }}">{{ t('.my_profile') }}</a></li>
         <li class="uk-nav-divider"></li>
         <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{{t('.log_out')}}</a></li>
       {{ else }}

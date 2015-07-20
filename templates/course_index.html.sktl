@@ -2,8 +2,8 @@
   {{ if course_catalog.headline | course_catalog.subheadline }}
     <div class="uk-text-center uk-padding-large-vertical uk-padding-horizontal">
       {{ if courses }}
-        <h1>{{ course_catalog.headline }}</h1>
-        <h2 class="page-header">{{ course_catalog.subheadline }}</h2>
+        <h2>{{ course_catalog.headline }}</h2>
+        <h3 class="page-header uk-margin-top-remove">{{ course_catalog.subheadline }}</h3>
       {{ else }}
         <h1>Courses Coming Soon</h1>
         <h2 class="page-header">We're still working on polishing up our courses. Check back soon.</h2>
