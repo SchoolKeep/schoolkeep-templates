@@ -1,4 +1,4 @@
-<li class="uk-width-medium-1-3 uk-width-small-1-1 uk-margin-large-bottom school-website-course-tile">
+<li class="uk-width-large-1-3 uk-width-medium-1-2 uk-width-small-1-1 uk-margin-large-bottom school-website-course-tile">
   <div class="uk-panel uk-panel-box uk-panel-box-secondary uk-border">
     {{ if course.ribbon }}
       <div class="uk-panel-badge uk-badge">
@@ -6,12 +6,22 @@
       </div>
     {{ end }}
     <div class="uk-panel-teaser">
-      <a href="{{ course.details_path }}" class="main-link">
-        <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
-      </a>
+      {{ if current_learner.access_course?(course) }}
+        <a href="{{ course.cover_path }}" class="main-link">
+          <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
+        </a>
+      {{ else }}
+        <a href="{{ course.details_path }}" class="main-link">
+          <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
+        </a>
+      {{ end }}
     </div>
     <h3 class="uk-panel-title uk-margin-bottom-remove">
-      <a href="{{ course.details_path }}">{{ course.name }}</a>
+      {{ if current_learner.access_course?(course) }}
+        <a href="{{ course.cover_path }}">{{ course.name }}</a>
+      {{ else }}
+        <a href="{{ course.details_path }}">{{ course.name }}</a>
+      {{ end }}
     </h3>
     <p class="uk-margin-small-top uk-margin-large-bottom">{{ course.instructor_names }}</p>
     {{ if current_learner.access_course?(course) }}
