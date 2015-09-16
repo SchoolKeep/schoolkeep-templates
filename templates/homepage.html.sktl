@@ -1,4 +1,4 @@
-<div class="school-website-hero hero-tall uk-overlay uk-cover-background" style="background-image: url('{{ homepage.artwork_url }};');">
+<div class="school-website-hero hero-tall uk-overlay uk-cover-background" style="background-image: url('{{ homepage.artwork_url }}');">
   <div class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
     <hgroup class="uk-container uk-container-center uk-padding-large-horizontal">
       {{ if homepage.headline }}
