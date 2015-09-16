@@ -36,13 +36,11 @@
           {{ course.instructors.each 'instructor' }}
             <div>
               <div class="uk-comment-header">
-                {{ if instructor.image_url }}
-                  <img
-                    src="{{ instructor.image_url }}"
-                    alt="{{instructor.name}}"
-                    class="uk-comment-avatar"
-                    width="80">
-                {{ end }}
+                <img
+                  src="{{ instructor.image_url }}"
+                  alt="{{instructor.name}}"
+                  class="uk-comment-avatar"
+                  width="80">
                 <h4 class="uk-comment-title">{{ instructor.name }}</h4>
                 <div class="uk-comment-meta">{{ instructor.title }}</div>
               </div>
