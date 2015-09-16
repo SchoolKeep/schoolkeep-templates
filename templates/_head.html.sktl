@@ -1,4 +1,3 @@
-<link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" media="all" href="{{ routes.schoolkeep_v3_styles_url }}">
 <link rel="stylesheet" media="all" href="{{ routes.color_scheme_path }}">
 
