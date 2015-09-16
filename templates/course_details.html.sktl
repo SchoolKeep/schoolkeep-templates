@@ -7,9 +7,9 @@
     <div class="uk-grid uk-padding-horizontal">
       <div class="uk-width-medium-6-10 uk-margin-bottom">
         {{ if course.promo_video_embed }}
-        <div class="video-container course-promo-video" data-behavior="scaleEmbed">
-          {{ course.promo_video_embed }}
-        </div>
+          <div class="video-container course-promo-video" data-behavior="scaleEmbed">
+            {{ course.promo_video_embed }}
+          </div>
         {{ else }}
           <img src="{{ course.featured_image_url }}" alt="{{ course.name }}" class="course-image uk-responsive-width uk-width-1-1">
         {{ end }}
@@ -19,27 +19,29 @@
         <div class="uk-margin-large-bottom uk-text-large uk-text-muted">
           {{ course.short_description }}
         </div>
-        {{ unless course.placeholder? }}
-          {{ if current_learner.access_course?(course) }}
-            <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>
-          {{ elsif course.payment_required? }}
-            <a href="{{ course.new_order_path }}" class="uk-button uk-button-primary uk-button-large">
-              {{ course.buy_label }} - {{ course.formatted_price }}
-            </a>
-          {{ else }}
-            <form action="{{ course.enrollment_url }}" method="POST">
-              <button class="enroll-button uk-button uk-button-primary uk-button-large">
-                {{ if app('commerce').active? }}
-                  {{ course.buy_label }} - {{ course.formatted_price }}
-                {{ else }}
-                  {{ t('.enroll') }}
-                {{ end }}
-              </button>
-            </form>
-          {{ end }}
+
+        {{ if current_learner.access_course?(course) }}
+          <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>
+        {{ elsif course.payment_required? }}
+          <a href="{{ course.new_order_path }}" class="uk-button uk-button-primary uk-button-large">
+            {{ course.buy_label }} - {{ course.formatted_price }}
+          </a>
+        {{ else }}
+          <form action="{{ course.enrollment_url }}" method="POST">
+            <button class="enroll-button uk-button uk-button-primary uk-button-large">
+              {{ if app('commerce').active? }}
+                {{ course.buy_label }} - {{ course.formatted_price }}
+              {{ else }}
+                {{ t('.enroll') }}
+              {{ end }}
+            </button>
+          </form>
         {{ end }}
+
         {{ unless current_school.disable_social_share? }}
-          {{ course.social_links }}
+          <div class="uk-padding-large-top uk-margin-top">
+            {{ course.social_links }}
+          </div>
         {{ end }}
       </div>
     </div>
