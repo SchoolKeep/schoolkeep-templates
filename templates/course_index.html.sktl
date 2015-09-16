@@ -5,8 +5,10 @@
         <h2>{{ course_catalog.headline }}</h2>
         <h3 class="page-header uk-margin-top-remove">{{ course_catalog.subheadline }}</h3>
       {{ else }}
-        <h1>Courses Coming Soon</h1>
-        <h2 class="page-header">We're still working on polishing up our courses. Check back soon.</h2>
+        <h1>{{ course_catalog.headline_empty_collection }}</h1>
+        <h2 class="page-header">
+          {{ course_catalog.subheadline_empty_collection }}
+        </h2>
       {{ end }}
     </div>
   {{ end }}
