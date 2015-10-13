@@ -24,6 +24,26 @@
   <hr class="uk-article-divider uk-margin-top">
 
   <div class="uk-grid uk-grid-large">
+    <div class="uk-width-medium-1-2">
+      <h3>{{ course.progress_title }}</h3>
+      {{ course.progress_bar }}
+
+      <h3>{{ course.outline_label }}</h3>
+      <ol class="uk-list">
+        {{ course.published_sections.each 'section' }}
+          <li class="uk-margin-large-bottom">
+            <h3><strong>{{ section.name }}</strong></h3>
+            <ol class="uk-list cover-outline">
+              {{ section.activities.each 'activity' }}
+                <li{{ if activity.completed? }} class="completed"{{ end }}>
+                  <a href="{{ activity.path }}">{{ activity.title }}</a>
+                </li>
+              {{ end }}
+            </ol>
+          </li>
+        {{ end }}
+      </ol>
+    </div>
     <div class="uk-width-medium-1-2 uk-margin-bottom">
       <article class="uk-article">
         <img src="{{ course.featured_image_url }}" />
@@ -49,27 +69,6 @@
           {{ end }}
         </article>
       {{ end }}
-    </div>
-
-    <div class="uk-width-medium-1-2">
-      <h3>{{ course.progress_title }}</h3>
-      {{ course.progress_bar }}
-
-      <h3>{{ course.outline_label }}</h3>
-      <ol class="uk-list">
-        {{ course.published_sections.each 'section' }}
-          <li class="uk-margin-large-bottom">
-            <h3><strong>{{ section.name }}</strong></h3>
-            <ol class="uk-list cover-outline">
-              {{ section.activities.each 'activity' }}
-                <li{{ if activity.completed? }} class="completed"{{ end }}>
-                  <a href="{{ activity.path }}">{{ activity.title }}</a>
-                </li>
-              {{ end }}
-            </ol>
-          </li>
-        {{ end }}
-      </ol>
     </div>
   </div>
 </div>
