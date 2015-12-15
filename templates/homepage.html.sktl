@@ -7,7 +7,7 @@
       {{ if homepage.subheadline }}
         <h2 class="uk-text-center uk-margin-large-bottom">{{ homepage.subheadline }}</h2>
       {{ end }}
-      <a href="/courses" class="uk-button uk-button-primary uk-button-large uk-margin-large-top">Discover Catalog</a>
+      <a href="/courses" class="uk-button uk-button-primary uk-button-large uk-margin-large-top">{{ t('.discover_catalog') }}</a>
     </hgroup>
   </div>
 </div>
