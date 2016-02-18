@@ -33,7 +33,7 @@
             </ul>
           </nav>
         {{ end }}
-        {{ if website_footer.show_powered_by_school_keep? }}
+        {{ if current_school.show_powered_by_school_keep? }}
           <p class="{{ if website_footer.show_customer_service_email? | website_footer.show_navigation_links? }}uk-text-right {{ else }}uk-text-center {{ end }} uk-text-center-small"><a href="https://www.schoolkeep.com">{{ t('.powered_by') }}</a></p>
         {{ end }}
       </div>
