@@ -4,10 +4,24 @@
       <li>
         <a href="{{ routes.my_content_path }}" class="uk-border-left uk-button-small">{{ t('.exit') }}</a>
       </li>
+      {{ if course.has_forum? }}
+        <li>
+          <a href="{{ course.forum_path }}" class="uk-border-left uk-button-small">
+            <i class="uk-icon-comments-o"></i>
+          </a>
+        </li>
+      {{ end }}
+      {{ if course.show_events? }}
+        <li>
+          <a href="{{ course.virtual_events_path }}" class="uk-border-left uk-button-small">
+            <i class="uk-icon-calendar-o"></i>
+          </a>
+        </li>
+       {{ end }}
     </ul>
   </div>
 
-  <div class="uk-navbar-content uk-navbar-center">
+  <div class="uk-navbar-content uk-text-center sk-float-remove">
     {{ if current_school.logo_url }}
       <img src="{{ current_school.logo_url }}" class="uk-responsive-height">
     {{ else }}
@@ -16,40 +30,44 @@
   </div>
 </header>
 
+{{ if preview_banner }}
+  {{ preview_banner }}
+{{ end }}
+
 <div class="uk-container uk-container-center uk-padding-large uk-margin-large-top">
   <h4 class="uk-text-muted uk-margin-remove">{{ course.superscript }}</h4>
-  <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button">{{ course.start_or_continue }}</a>
+  {{ if course.learner_can_retake? }}
+    <form action="{{ course.course_attempts_path }}" method="POST">
+      <button type="submit" class="uk-button uk-float-right completion-button">{{ course.retake_course }}</button>
+    </form>
+  {{ else }}
+    <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button">{{ course.start_or_continue }}</a>
+  {{ end }}
+  {{ if current_school.filtering_enabled? }}
+    <h3 class="uk-margin-remove">{{ course.course_category_names }}</h3>
+  {{ end }}
   <h1 class="uk-margin-remove">{{ course.name }}</h1>
-
   <hr class="uk-article-divider uk-margin-top">
 
-  <div class="uk-grid uk-grid-large">
-    <div class="uk-width-medium-1-2">
-      <h3>{{ course.progress_title }}</h3>
-      {{ course.progress_bar }}
-
-      <h3>{{ course.outline_label }}</h3>
-      <ol class="uk-list">
-        {{ course.published_sections.each 'section' }}
-          <li class="uk-margin-large-bottom">
-            <h3><strong>{{ section.name }}</strong></h3>
-            <ol class="uk-list cover-outline">
-              {{ section.activities.each 'activity' }}
-                <li{{ if activity.completed? }} class="completed"{{ end }}>
-                  <a href="{{ activity.path }}">{{ activity.title }}</a>
-                </li>
-              {{ end }}
-            </ol>
-          </li>
-        {{ end }}
-      </ol>
-    </div>
-    <div class="uk-width-medium-1-2 uk-margin-bottom">
+  <div{{ if course.has_outline? }} class="uk-grid uk-grid-large"{{ end }}>
+    <div class="uk-width-medium-1-2 uk-margin-bottom{{ unless course.has_outline? }} uk-container-center{{ end }}">
       <article class="uk-article">
         <img src="{{ course.featured_image_url }}" />
         <h3>{{ course.about_label }}</h3>
         <p>{{ course.full_description }}</p>
       </article>
+      {{ if course.show_events? }} 
+        <article class="uk-article cover-virtual-events">
+          <h3>{{ course.virtual_events_title }}</h3>
+          {{ course.upcoming_event_sessions.each 'session' }}
+            {{ partial 'virtual_event_session' }}
+          {{ end }}
+
+          <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-default">
+            {{ t('.show_virtual_events') }}
+          </a>
+        </article>
+      {{ end }}
       {{ if course.instructors }}
         <article class="uk-article">
           <h3>{{ course.instructors_title }}</h3>
@@ -70,5 +88,42 @@
         </article>
       {{ end }}
     </div>
+
+    {{ if course.has_outline? }}
+      <div class="uk-width-medium-1-2">
+        <h3>{{ course.progress_title }}</h3>
+        {{ course.progress_bar }}
+
+        <h3>{{ course.outline_label }}</h3>
+        <ol class="uk-list cover-outline">
+          {{ learner_syllabus.sections.each 'section' }}
+            <li class="uk-margin-large-bottom">
+              <h3><strong>{{ section.name }}</strong></h3>
+              <ol class="uk-list cover-outline-section-activities">
+                {{ section.activities.each 'activity' }}
+                  <li class="{{ if activity.completed? }}completed {{ end }}{{ if activity.locked? }}locked{{ end }}" >
+                    {{ if activity.locked? }}
+                      <span>
+                        {{ if activity.milestone? }}
+                          <i class="uk-icon-flag"></i>
+                        {{ end }}
+                        {{ activity.title }}
+                      </span>
+                    {{ else }}
+                      <a href="{{ activity.path }}">
+                        {{ if activity.milestone? }}
+                          <i class="uk-icon-flag"></i>
+                        {{ end }}
+                        {{ activity.title }}
+                      </a>
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ol>
+            </li>
+          {{ end }}
+        </ol>
+      </div>
+    {{ end }}
   </div>
 </div>

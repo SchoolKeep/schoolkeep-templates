@@ -16,7 +16,13 @@
           </nav>
         {{ end }}
         {{ if website_footer.show_customer_service_email? & website_footer.school_customer_service_email & (current_school.public | current_learner) }}
-          <p class="uk-text-center-small">Need help? Email <a href="mailto:{{ website_footer.school_customer_service_email }}">{{ website_footer.school_customer_service_email }}</a></p>
+          <p class="uk-text-center-small">
+            {{ t('.need_help') }}
+            {{ t('.email') }}
+            <a href="mailto:{{ website_footer.school_customer_service_email }}">
+              {{ website_footer.school_customer_service_email }}
+            </a>
+          </p>
         {{ end }}
       </div>
       <div class="{{ if website_footer.show_customer_service_email? | website_footer.show_navigation_links? }}uk-width-medium-3-10{{ else }}uk-width-medium-1-1{{ end }}">

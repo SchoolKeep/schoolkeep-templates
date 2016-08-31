@@ -1,0 +1,4 @@
+<div class="uk-padding-large-vertical uk-padding-horizontal uk-border-bottom">
+  <h2>{{ my_content.headline }}</h2>
+  <h3 class="uk-margin-top-remove">{{ my_content.subheadline }}</h3>
+</div>

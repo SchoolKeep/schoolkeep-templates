@@ -1,0 +1,19 @@
+{{ if current_school.filtering_enabled? & current_learner.filterable_categories.any? }}
+  <div class="uk-width-medium-1-6 uk-block uk-padding">
+    {{ t('.filter_by_category') }}:
+    <ul class="uk-list uk-list-space">
+      <li class="uk-margin-top">
+        <a href="{{ routes.my_content_path }}" class="{{ no_filter_selected_class }}">
+          {{ t('.all') }}
+        </a>
+      </li>
+      {{ current_learner.filterable_categories.each 'filterable_category' }}
+        <li>
+          <a href="{{ filterable_category.link }}" class="{{ if filterable_category.active? }}uk-text-bold{{ end }}">
+            {{ filterable_category.name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

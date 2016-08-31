@@ -1,13 +1,19 @@
 <div class="uk-container uk-container-center school-website-course-index-list uk-margin-top uk-margin-bottom">
   <div class="uk-padding-horizontal">
-    <div class="uk-text-center uk-padding-large-vertical">
-      <h2>{{ my_content.headline }}</h2>
-      <h3 class="page-header uk-margin-top-remove">{{ my_content.subheadline }}</h3>
+    {{ partial 'my_content_header' }}
+    <div class="uk-grid uk-grid-flex uk-margin-left-remove">
+      {{ partial 'filters' }}
+       {{ if current_school.filtering_enabled? & current_learner.filterable_categories.any? }}
+         <div class="uk-width-medium-5-6 uk-padding">
+       {{ else }}
+         <div class="uk-width-1-1 uk-padding">
+       {{ end }}
+        <ul class="uk-grid uk-grid-medium school-website-course-list uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+          {{ my_content.courses.each 'course' }}
+            {{ partial 'course' }}
+          {{ end }}
+        </ul>
+      </div>
     </div>
-    <ul class="uk-grid uk-grid-medium school-website-course-list uk-padding-top uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
-      {{ my_content.courses.each 'course' }}
-        {{ partial 'course' }}
-      {{ end }}
-    </ul>
   </div>
 </div>

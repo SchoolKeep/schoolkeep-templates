@@ -18,6 +18,12 @@
             </li>
           {{ end }}
 
+          {{ if display_search_form }}
+            <li class="uk-padding-top">
+              {{ partial 'search_form' }}
+            </li>
+          {{ end }}
+
           {{ if current_learner }}
             <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
               <a href="#" class="learner-name">{{current_learner.name}}</a>
@@ -36,11 +42,24 @@
             <li><a href="{{ routes.log_in_path }}">{{ t('.log_in') }}</a></li>
           {{ end }}
         </ul>
-        <a href="#mobile-nav" class="mobile-navbar-toggle uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+        <div class="uk-visible-small">
+         {{ if display_search_form }}
+           <button class="uk-button uk-button-link uk-navbar-toggle mobile-search-toggle mobile-navbar-toggle" data-uk-toggle="{target:'#mobile-search'}">
+           </button>
+         {{ end }}
+          <a href="#mobile-nav" class="mobile-navbar-toggle uk-navbar-toggle" data-uk-offcanvas></a>
+        </div>
       </div>
     </nav>
   </div>
 </header>
+
+<div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom-gray {{ if hide_search_box }}uk-hidden {{end}}">
+  {{ if display_search_form }}
+    {{ partial 'search_form' }}
+  {{ end }}
+  <a class="uk-button uk-button-link" href="{{ routes.my_content_path }}">{{ t('.cancel') }}</a>
+</div>
 
 <div id="mobile-nav" class="uk-offcanvas">
   <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">

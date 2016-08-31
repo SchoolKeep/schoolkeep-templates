@@ -21,7 +21,7 @@
         {{ end }}
 
         {{ if homepage.featured_courses_subheadline }}
-          <h3class="uk-margin-remove uk-text-muted">{{ homepage.featured_courses_subheadline }}</h3>
+          <h3 class="uk-margin-remove uk-text-muted">{{ homepage.featured_courses_subheadline }}</h3>
         {{ end }}
       {{ end }}
     {{ end }}
