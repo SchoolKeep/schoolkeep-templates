@@ -43,6 +43,13 @@
   {{ else }}
     <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button">{{ course.start_or_continue }}</a>
   {{ end }}
+
+  {{ if course.show_events? }}
+    <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-white uk-float-right uk-margin-right">
+      {{ course.register_for_events }}
+    </a>
+  {{ end }}
+
   {{ if current_school.filtering_enabled? }}
     <h3 class="uk-margin-remove">{{ course.course_category_names }}</h3>
   {{ end }}
@@ -63,7 +70,7 @@
             {{ partial 'virtual_event_session' }}
           {{ end }}
 
-          <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-default">
+          <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-primary">
             {{ t('.show_virtual_events') }}
           </a>
         </article>

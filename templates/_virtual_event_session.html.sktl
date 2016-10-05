@@ -1,4 +1,7 @@
 <div class="cover-virtual-event">
+  <span class="uk-float-right">
+    {{ session.join_link }}
+  </span>
   <span class="uk-text-muted">
     {{ l(session.starts_at, 'day_month_long') }} | 
     {{ l(session.starts_at, 'clock_with_zone') }} -
@@ -9,3 +12,4 @@
     {{ session.virtual_event_name }}
   </h4>
 </div>
+<hr>
