@@ -106,27 +106,31 @@
           {{ learner_syllabus.sections.each 'section' }}
             <li class="uk-margin-large-bottom">
               <h3><strong>{{ section.name }}</strong></h3>
-              <ol class="uk-list cover-outline-section-activities">
-                {{ section.activities.each 'activity' }}
-                  <li class="{{ if activity.completed? }}completed {{ end }}{{ if activity.locked? }}locked{{ end }}" >
-                    {{ if activity.locked? }}
-                      <span>
-                        {{ if activity.milestone? }}
-                          <i class="uk-icon-flag"></i>
-                        {{ end }}
-                        {{ activity.title }}
-                      </span>
-                    {{ else }}
-                      <a href="{{ activity.path }}">
-                        {{ if activity.milestone? }}
-                          <i class="uk-icon-flag"></i>
-                        {{ end }}
-                        {{ activity.title }}
-                      </a>
-                    {{ end }}
-                  </li>
-                {{ end }}
-              </ol>
+              {{ if section.will_be_published? }}
+                {{ t('.scheduled_info') }} {{ section.published_at }}
+              {{ else }}
+                <ol class="uk-list cover-outline-section-activities">
+                  {{ section.activities.each 'activity' }}
+                    <li class="{{ if activity.completed? }}completed {{ end }}{{ if activity.locked? }}locked{{ end }}" >
+                      {{ if activity.locked? }}
+                        <span>
+                          {{ if activity.milestone? }}
+                            <i class="uk-icon-flag"></i>
+                          {{ end }}
+                          {{ activity.title }}
+                        </span>
+                      {{ else }}
+                        <a href="{{ activity.path }}">
+                          {{ if activity.milestone? }}
+                            <i class="uk-icon-flag"></i>
+                          {{ end }}
+                          {{ activity.title }}
+                        </a>
+                      {{ end }}
+                    </li>
+                  {{ end }}
+                </ol>
+              {{ end }}
             </li>
           {{ end }}
         </ol>
