@@ -3,8 +3,8 @@
     <input name="utf8" type="hidden" value="✓">
     <input type="search" name="q" id="q" placeholder="{{ t('.search_placeholder') }}"
       class="search__input" autofocus="autofocus" pattern=".{3,}"
-      required title="{{ t('.search_title') }}" value="{{ query_parameter_value }}">
-    <input type="hidden" name="filter[category_name]" id="filter" value="{{ filter_parameter_value }}">
+      required title="{{ t('.search_title') }}" value="{{ Rack::Utils.escape_html(query_parameter_value) }}">
+    <input type="hidden" name="filter[category_name]" id="filter" value="{{ Rack::Utils.escape_html(filter_parameter_value) }}">
     <div id="search_results_count" class="search__results">
       {{ if search_result }}
         {{ search_result.count}} {{ pluralize(search_result.count , t('.results.one'), t('.results.many')) }}
