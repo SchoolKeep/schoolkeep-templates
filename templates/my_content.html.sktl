@@ -1,9 +1,21 @@
 <div class="uk-container uk-container-center school-website-course-index-list uk-margin-top uk-margin-bottom">
   <div class="uk-padding-horizontal">
+    {{ if app('instructor_led_training').active? }}
+      {{ if current_person.upcoming_registered_events.any? }}
+        {{ partial 'events' }}
+      {{ else }}
+        {{ partial 'events_empty' }}
+      {{ end }}
+    {{ end }}
+
+    {{ if my_content.learning_paths? }}
+      {{ partial 'my_paths' }}
+    {{ end }}
+
     {{ partial 'my_content_header' }}
     <div class="uk-grid uk-grid-flex uk-margin-left-remove">
       {{ partial 'filters' }}
-       {{ if current_school.filtering_enabled? & current_learner.filterable_categories.any? }}
+       {{ if current_school.filtering_enabled? & current_person.filterable_categories.any? }}
          <div class="uk-width-medium-5-6 uk-padding">
        {{ else }}
          <div class="uk-width-1-1 uk-padding">

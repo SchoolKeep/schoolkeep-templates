@@ -1,0 +1,10 @@
+<div class="uk-width-1-1 uk-padding-large-vertical uk-padding-horizontal uk-border-bottom">
+  <h2>My events</h2>
+  <div class="uk-margin-bottom sk-text-link">
+    You haven't registered for any events yet.
+  </div>
+
+  <a href="/training_events" class="uk-button uk-button-primary">
+    Discover Events
+  </a>
+</div>

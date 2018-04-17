@@ -20,7 +20,7 @@
           {{ course.short_description }}
         </div>
 
-        {{ if current_learner.access_course?(course) }}
+        {{ if current_person.enrolled_in_course?(course) }}
           <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>
         {{ elsif course.payment_required? }}
           <a href="{{ course.new_order_path }}" class="uk-button uk-button-primary uk-button-large">

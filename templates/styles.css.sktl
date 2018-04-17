@@ -1,6 +1,6 @@
  /*
  Put your custom overlay styles in here
- You can use your schoolkeep color palette in this file
+ You can use your northpass color palette in this file
 
 {{ color_palette.button_font_color }}
 {{ color_palette.button_color }}

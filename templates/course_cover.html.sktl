@@ -94,6 +94,14 @@
           {{ end }}
         </article>
       {{ end }}
+
+      <article class="uk-article">
+        {{ upcoming_events }}
+      </article>
+
+      {{ if course.discover_events_path }}
+        <a href="{{ course.discover_events_path }}" class="uk-padding-left-remove">{{ t('.see_all_events') }}</a>
+      {{ end }}
     </div>
 
     {{ if course.has_outline? }}
@@ -107,7 +115,9 @@
             <li class="uk-margin-large-bottom">
               <h3><strong>{{ section.name }}</strong></h3>
               {{ if section.will_be_published? }}
-                {{ t('.scheduled_info') }} {{ section.published_at }}
+                <div class="uk-margin-top">
+                  {{ t('.scheduled_info') }} {{ section.published_at }}
+                </div>
               {{ else }}
                 <ol class="uk-list cover-outline-section-activities">
                   {{ section.activities.each 'activity' }}
