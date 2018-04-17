@@ -1,4 +1,4 @@
-{{ if current_school.filtering_enabled? & current_learner.filterable_categories.any? }}
+{{ if current_school.filtering_enabled? & current_person.filterable_categories.any? }}
   <div class="uk-width-medium-1-6 uk-block uk-padding">
     {{ t('.filter_by_category') }}:
     <ul class="uk-list uk-list-space">
@@ -7,7 +7,7 @@
           {{ t('.all') }}
         </a>
       </li>
-      {{ current_learner.filterable_categories.each 'filterable_category' }}
+      {{ current_person.filterable_categories.each 'filterable_category' }}
         <li>
           <a href="{{ filterable_category.link }}" class="{{ if filterable_category.active? }}uk-text-bold{{ end }}">
             {{ filterable_category.name }}

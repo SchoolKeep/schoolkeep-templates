@@ -24,9 +24,9 @@
             </li>
           {{ end }}
 
-          {{ if current_learner }}
+          {{ if current_person }}
             <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
-              <a href="#" class="learner-name">{{current_learner.name}}</a>
+              <a href="#" class="learner-name">{{current_person.name}}</a>
               <div class="uk-dropdown uk-dropdown-flip uk-dropdown-navbar">
                 <ul class="uk-nav uk-nav-navbar">
                   <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
@@ -54,7 +54,7 @@
   </div>
 </header>
 
-<div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom-gray {{ if hide_search_box }}uk-hidden {{end}}">
+<div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {{ if hide_search_box }}uk-hidden {{end}}">
   {{ if display_search_form }}
     {{ partial 'search_form' }}
   {{ end }}
@@ -72,7 +72,7 @@
         </li>
       {{ end }}
 
-      {{ if current_learner }}
+      {{ if current_person }}
         <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
         <li><a href="{{ routes.my_profile_path }}">{{ t('.my_profile') }}</a></li>
         <li class="uk-nav-divider"></li>
