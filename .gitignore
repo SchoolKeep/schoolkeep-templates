@@ -2,3 +2,4 @@
 Gemfile.lock
 config/fixtures.yml
 .pairs
+node_modules
