@@ -23,9 +23,9 @@
     {{ end }}
     <h3 class="uk-panel-title uk-margin-bottom-remove">
       {{ if current_person.enrolled_in_course?(course) }}
-        <a href="{{ course.cover_path }}">{{ course.name }}</a>
+        <a href="{{ course.cover_path }}" data-test="course-name">{{ course.name }}</a>
       {{ else }}
-        <a href="{{ course.details_path }}">{{ course.name }}</a>
+        <a href="{{ course.details_path }}" data-test="course-name">{{ course.name }}</a>
       {{ end }}
     </h3>
     <p class="uk-margin-small-top uk-margin-large-bottom">{{ course.instructor_names }}</p>

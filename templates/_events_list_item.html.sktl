@@ -10,10 +10,15 @@
         <a href="{{ event.join_url }}" target="_blank">{{ t('.join') }}</a> <i class="actions-ellipsis-button"></i>
       </div>
   {{ end }}
-  {{ if event.in_person? }}
+  {{ if event.internal? }}
     {{ event.starts_at }} {{ t('.is_your') }} <span class="uk-text-primary event-list-item__title">{{ event.title }}</span>
     {{ if event.location_name }}
       {{ t('.event_held_in') }} {{ event.room_name }} {{ t('.at') }} {{ event.location_name }}
+    {{ end }}
+    {{ if event.session_url }}
+      <div class="event-list-item__actions uk-float-right">
+        <a href="{{ event.session_url }}" target="_blank">{{ t('.join') }}</a> <i class="actions-ellipsis-button"></i>
+      </div>
     {{ end }}
   {{ end }}
 </li>
