@@ -1,5 +1,5 @@
 <div class="search-box uk-float-right">
-  <form class="uk-form search" action="{{ routes.school_website_search_path }}" accept-charset="UTF-8" method="get">
+  <form class="uk-form search" action="{{ routes.school_website_catalog_search_path }}" accept-charset="UTF-8" method="get">
     <input name="utf8" type="hidden" value="✓">
     <input type="search" name="q" id="q" placeholder="{{ t('.search_placeholder') }}"
       class="search__input" autofocus="autofocus" pattern=".{3,}"

@@ -1,0 +1,105 @@
+<header class="uk-navbar uk-navbar-attached uk-border-bottom learning-header slide">
+  <div class="uk-navbar-flip">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="{{ routes.my_content_path }}" class="uk-border-left uk-button-small">{{ t('.exit') }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="uk-navbar-content uk-text-center sk-float-remove">
+    {{ if current_school.logo_url }}
+      <img src="{{ current_school.logo_url }}" class="uk-responsive-height">
+    {{ else }}
+      {{ current_school.name }}
+    {{ end }}
+  </div>
+</header>
+
+{{ if preview_banner }}
+  {{ preview_banner }}
+{{ end }}
+<div class="uk-container uk-container-center uk-padding-large uk-margin-large-top  learning-path-cover">
+  <h4 class="uk-text-muted uk-margin-remove">{{ t('.title') }}</h4>
+  {{ if learning_path.has_progress? }}
+    {{ learning_path_item learning_path.current_person_learning_path_item }}
+      <button class="uk-button uk-float-right completion-button">
+        {{ t('.continue') }}
+      </button>
+    {{ end }}
+  {{ else }}
+    {{ if learning_path.items.any? }}
+      {{ learning_path_item learning_path.current_person_learning_path_item }}
+        <button
+          class="uk-button uk-float-right completion-button"
+          data-test="start-learning-path-button"
+        >
+          {{ t('.start') }}
+        </button>
+      {{ end }}
+    {{ else }}
+      <button
+        disabled
+        class="uk-button uk-float-right completion-button"
+        data-test="start-learning-path-button"
+      >
+        {{ t('.start') }}
+      </button>
+    {{ end }}
+  {{ end }}
+
+  <h1 class="uk-margin-remove" data-test="learning-path-name">{{ learning_path.name }}</h1>
+  <hr class="uk-article-divider uk-margin-top">
+
+  <div class="uk-grid uk-grid-large">
+    <div class="uk-width-medium-1-3 uk-margin-bottom uk-container-center">
+      <article class="uk-article">
+        <img src="{{ learning_path.featured_image_url }}" />
+      </article>
+    </div>
+
+    <div class="uk-width-medium-2-3">
+      <h3>{{ t('.about_label') }}</h3>
+      <p>{{ learning_path.description }}</p>
+      {{ if learning_path.has_instructors? }}
+        <h3>{{ learning_path.instructors_title }}</h3>
+        <div class="uk-grid uk-grid-large">
+          {{ learning_path.instructors.each 'instructor' }}
+            <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-comment-header">
+                <img
+                  src="{{ instructor.image_url }}"
+                  alt="{{ instructor.name }}"
+                  class="uk-comment-avatar"
+                  width="80">
+                <h4 class="uk-comment-title">{{ instructor.name }}</h4>
+                <div class="uk-comment-meta">{{ instructor.title }}</div>
+              </div>
+              <div class="wysiwyg">{{ instructor.bio }}</div>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    <div class="uk-width-medium">
+      <h3>{{ learning_path.progress_text }}</h3>
+      {{ learning_path.progress_bar }}
+
+      <h3><strong>{{ t('.outline_label') }}</strong></h3>
+      <ol class="uk-list cover-outline learning-path-items uk-margin-large-bottom" data-test="learning-path-items">
+        {{ learning_path.items.each 'item' }}
+          <li class="{{ if item.completed? }}completed{{ end }} {{ if item.locked? }}locked{{ end }}" data-test="learning-path-item">
+            {{ item.progress_icon }}
+            {{ learning_path_item item }}
+              {{ item.type_icon }}
+              {{ item.name }}
+              {{ if item.optional? }}
+                <span class="sk-badge uk-margin-small-left">optional</span>
+              {{ end }}
+            {{ end }}
+          </li>
+        {{ end }}
+      </ol>
+    </div>
+  </div>
+</div>

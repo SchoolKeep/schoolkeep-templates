@@ -24,6 +24,12 @@
             </li>
           {{ end }}
 
+          {{ if display_catalog_search_form }}
+            <li class="uk-padding-top">
+              {{ partial 'catalog_search_form' }}
+            </li>
+          {{ end }}
+
           {{ if current_person }}
             <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
               <a href="#" class="learner-name">{{current_person.name}}</a>
@@ -47,6 +53,11 @@
            <button class="uk-button uk-button-link uk-navbar-toggle mobile-search-toggle mobile-navbar-toggle" data-uk-toggle="{target:'#mobile-search'}">
            </button>
          {{ end }}
+
+         {{ if display_catalog_search_form }}
+           <button class="uk-button uk-button-link uk-navbar-toggle mobile-search-toggle mobile-navbar-toggle" data-uk-toggle="{target:'#mobile-search'}">
+           </button>
+         {{ end }}
           <a href="#mobile-nav" class="mobile-navbar-toggle uk-navbar-toggle" data-uk-offcanvas></a>
         </div>
       </div>
@@ -54,12 +65,19 @@
   </div>
 </header>
 
-<div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {{ if hide_search_box }}uk-hidden {{end}}">
-  {{ if display_search_form }}
+{{ if display_search_form }}
+  <div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {{ if hide_search_box }}uk-hidden {{end}}">
     {{ partial 'search_form' }}
-  {{ end }}
-  <a class="uk-button uk-button-link" href="{{ routes.my_content_path }}">{{ t('.cancel') }}</a>
-</div>
+    <a class="uk-button uk-button-link" href="{{ routes.my_content_path }}">{{ t('.cancel') }}</a>
+  </div>
+{{ end }}
+
+{{ if display_catalog_search_form }}
+  <div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {{ if hide_search_box }}uk-hidden {{end}}">
+    {{ partial 'catalog_search_form' }}
+    <a class="uk-button uk-button-link" href="{{ routes.school_website_catalog_path }}">{{ t('.cancel') }}</a>
+  </div>
+{{ end }}
 
 <div id="mobile-nav" class="uk-offcanvas">
   <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">

@@ -1,0 +1,153 @@
+<div class="top-bar">
+  <div class="top-bar__container uk-container uk-container-center uk-padding-horizontal">
+    <div class="top-bar__col">
+      <h2 class="top-bar__headline" data-test="session-name">{{ training_session.session_name }}</h2>
+      <div class="top-bar__attributes">
+        <div class="top-bar__attribute" data-test="event-title">
+          <div class="top-bar__attribute-label">
+            {{ t('.belongs_to') }}
+          </div>
+          <div class="top-bar__attribute-value">
+            {{ training_session.title }}
+          </div>
+        </div>
+        <div class="top-bar__attribute">
+          <div class="top-bar__attribute-label">
+            {{ t('.type') }}
+          </div>
+          <div class="top-bar__attribute-value">
+            {{ training_session.event_type_title }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ if training_session.instructor_assigned? }}
+      <div class="top-bar__col uk-hidden-small">
+        <div class="person" data-test="instructor-panel">
+          <div class="person__avatar">
+            <img src="{{ training_session.instructor_image_url }}" alt="avatar" />
+          </div>
+          <div class="person__details">
+            <div class="person__name">
+              {{ training_session.instructor_name }}
+            </div>
+            <div class="person__title">
+              {{ training_session.instructor_title }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+<div class="uk-container uk-container-center uk-padding-horizontal">
+  <div class="uk-flex uk-flex-wrap">
+    <div class="uk-width-large-6-10 uk-visible-large">
+      <div class="session-description">
+        {{ training_session.description }}
+      </div>
+    </div>
+    <div class="uk-width-large-4-10">
+      <div class="session-sidebar">
+        <div class="session-sidebar__content">
+          <div class="session-dialog dialog">
+            <div class="dialog__body">
+              <div class="uk-flex">
+                <div class="uk-width-1-4">
+                  <div class="calendar-card">
+                    <div class="calendar-card__day">
+                      {{ training_session.session_day }}
+                    </div>
+                    <div class="calendar-card__month">
+                      {{ training_session.session_month }}
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-width-3-4">
+                  <h4 class="session-dialog__headline">
+                    {{ training_session.title }}
+                  </h4>
+                  <p class="session-dialog__detail">
+                    <i class="uk-icon-clock-o"></i>
+                    {{ training_session.session_time }}
+                  </p>
+                  <p class="session-dialog__detail">
+                    {{ if training_session.location }}
+                      <i class="uk-icon-map-marker"></i>
+                      {{ training_session.location }}
+                    {{ end }}
+                    {{ if training_session.session_url }}
+                      <i class="uk-icon-globe"></i>
+                      <a href="{{ training_session.session_url }}">{{ training_session.session_url }}</a>
+                    {{ end }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="dialog__footer">
+              {{ training_session.registration_actions }}
+            </div>
+          </div>
+          <div class="session-description uk-hidden-large">
+            {{ training_session.description }}
+          </div>
+          <section class="other-sessions">
+            <header class="other-sessions__header">
+              <h4 class="other-sessions__headline">
+                {{ t('.other_sessions_headline') }}
+              </h4>
+            </header>
+            <div class="other-sessions__body">
+              <ul class="other-sessions__list">
+                {{ training_session.other_sessions.each 'other_session' }}
+                  <li class="other-session">
+                    <div class="other-session__calendar-card-wrapper">
+                      <div class="calendar-card calendar-card--small">
+                        <div class="calendar-card__day">
+                          {{ other_session.session_day }}
+                        </div>
+                        <div class="calendar-card__month">
+                          {{ other_session.session_month }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="other-session__details">
+                      <h5 class="other-session__name">
+                        {{ other_session.session_name }}
+                      </h5>
+                      <div class="other-session__time">
+                        <i class="uk-icon-clock-o"></i>
+                        {{ other_session.session_time }}
+                      </div>
+                    </div>
+                    <div class="other-session__buttons">
+                      <a class="uk-button" href={{ other_session.self_url }}>
+                        {{ t('.attend') }}
+                      </a>
+                    </div>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+            <footer class="other-sessions__footer">
+              {{ if training_session.other_sessions_count > 3 }}
+                <button class="other-sessions__more-button" onclick="findOutMore();">
+                  {{ t('.find_out_more') }}
+                </button>
+              {{ end }}
+            </footer>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function findOutMore() {
+    var button = document.querySelector(".other-sessions__more-button");
+    var container = document.querySelector(".other-sessions__body");
+    var list = document.querySelector(".other-sessions__list");
+    container.style.height = list.clientHeight + "px";
+    button.style.display = "none";
+  }
+</script>

@@ -11,13 +11,6 @@
           </a>
         </li>
       {{ end }}
-      {{ if course.show_events? }}
-        <li>
-          <a href="{{ course.virtual_events_path }}" class="uk-border-left uk-button-small">
-            <i class="uk-icon-calendar-o"></i>
-          </a>
-        </li>
-       {{ end }}
     </ul>
   </div>
 
@@ -38,16 +31,10 @@
   <h4 class="uk-text-muted uk-margin-remove">{{ course.superscript }}</h4>
   {{ if course.learner_can_retake? }}
     <form action="{{ course.course_attempts_path }}" method="POST">
-      <button type="submit" class="uk-button uk-float-right completion-button">{{ course.retake_course }}</button>
+      <button type="submit" class="uk-button uk-float-right completion-button" data-test="retake-course-button">{{ course.retake_course }}</button>
     </form>
   {{ else }}
-    <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button">{{ course.start_or_continue }}</a>
-  {{ end }}
-
-  {{ if course.show_events? }}
-    <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-white uk-float-right uk-margin-right">
-      {{ course.register_for_events }}
-    </a>
+    <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button" data-test="start-course-button">{{ course.start_or_continue }}</a>
   {{ end }}
 
   {{ if current_school.filtering_enabled? }}
@@ -63,18 +50,6 @@
         <h3>{{ course.about_label }}</h3>
         <p>{{ course.full_description }}</p>
       </article>
-      {{ if course.show_events? }} 
-        <article class="uk-article cover-virtual-events">
-          <h3>{{ course.virtual_events_title }}</h3>
-          {{ course.upcoming_event_sessions.each 'session' }}
-            {{ partial 'virtual_event_session' }}
-          {{ end }}
-
-          <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-primary">
-            {{ t('.show_virtual_events') }}
-          </a>
-        </article>
-      {{ end }}
       {{ if course.instructors }}
         <article class="uk-article">
           <h3>{{ course.instructors_title }}</h3>

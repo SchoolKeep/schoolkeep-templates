@@ -3,9 +3,15 @@
     {{ t('.filter_by_category') }}:
     <ul class="uk-list uk-list-space">
       <li class="uk-margin-top">
-        <a href="{{ routes.my_content_path }}" class="{{ no_filter_selected_class }}">
-          {{ t('.all') }}
-        </a>
+        {{ if query_parameter_value }}
+          <a href="{{ routes.school_website_search_path }}?q={{ query_parameter_value }}" class="{{ no_filter_selected_class }}">
+            {{ t('.all') }}
+          </a>
+        {{ else }}
+          <a href="{{ routes.my_content_path }}" class="{{ no_filter_selected_class }}">
+            {{ t('.all') }}
+          </a>
+        {{ end }}
       </li>
       {{ current_person.filterable_categories.each 'filterable_category' }}
         <li>

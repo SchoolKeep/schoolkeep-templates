@@ -1,0 +1,16 @@
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+  <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-margin-vertical">
+    <h2 class="uk-padding-horizontal uk-margin-large-bottom" data-test="discover-learning-paths-header">
+      {{ t('.discover_learning_paths') }}
+    </h2>
+    <hr/>
+  </div>
+
+  <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-padding-horizontal uk-container-center uk-padding-top uk-margin-large-bottom">
+    <ul class="uk-grid school-website-course-list" data-behavior="listResize">
+      {{ learning_paths.each 'learning_path' }}
+        {{ partial 'learning_path' }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
