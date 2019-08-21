@@ -20,10 +20,8 @@ You can edit the existing templates, but there is no way to add additional
 templates.  Currently there is 1 template for each page
 (ie: 1 homepage template, 1 course details page template, 1 custom page template).
 
-### Scribble
+### Liquid
 
-We use Scribble as our templating language.  See more here: https://github.com/SchoolKeep/scribble
+We use Liquid as our templating language. See more here: https://shopify.github.io/liquid/
 
-Scribble provides variables so that your data can be pulled from what you've
-entered into SchoolKeep.  `{{ variable_name }}` will pull the corresponding
-data from what you had entered into SchoolKeep.
+Liquid is used to load dynamic content on the school website. Using variables will pull your data from Northpass.
