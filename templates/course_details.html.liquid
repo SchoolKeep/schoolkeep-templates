@@ -6,13 +6,13 @@
   <div class="uk-container uk-container-center">
     <div class="uk-grid uk-padding-horizontal">
       <div class="uk-width-medium-6-10 uk-margin-bottom">
-        {{ if course.promo_video_embed }}
+        {% if course.promo_video_embed %}
           <div class="video-container course-promo-video" data-behavior="scaleEmbed">
             {{ course.promo_video_embed }}
           </div>
-        {{ else }}
+        {% else %}
           <img src="{{ course.featured_image_url }}" alt="{{ course.name }}" class="course-image uk-responsive-width uk-width-1-1">
-        {{ end }}
+        {% endif %}
       </div>
 
       <div class="uk-width-medium-4-10">
@@ -20,29 +20,29 @@
           {{ course.short_description }}
         </div>
 
-        {{ if current_person.enrolled_in_course?(course) }}
+        {% if current_person.enrolled_in_course? %}
           <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>
-        {{ elsif course.payment_required? }}
+        {% elsif course.payment_required? %}
           <a href="{{ course.new_order_path }}" class="uk-button uk-button-primary uk-button-large">
             {{ course.buy_label }} - {{ course.formatted_price }}
           </a>
-        {{ else }}
+        {% else %}
           <form action="{{ course.enrollment_url }}" method="POST">
             <button class="enroll-button uk-button uk-button-primary uk-button-large">
-              {{ if app('commerce').active? }}
+              {% if current_school.apps.commerce.active? %}
                 {{ course.buy_label }} - {{ course.formatted_price }}
-              {{ else }}
-                {{ t('.enroll') }}
-              {{ end }}
+              {% else %}
+                {% t .enroll %}
+              {% endif %}
             </button>
           </form>
-        {{ end }}
+        {% endif %}
 
-        {{ unless current_school.disable_social_share? }}
+        {% unless current_school.disable_social_share? %}
           <div class="uk-padding-large-top uk-margin-top">
             {{ course.social_links }}
           </div>
-        {{ end }}
+        {% endunless %}
       </div>
     </div>
   </div>
@@ -53,18 +53,18 @@
     <div class="uk-width-medium-4-10 uk-push-6-10 school-website-course-meta">
       <h2>{{ course.outline_label }}</h2>
       <div class="course-syllabus uk-panel uk-panel-box uk-border uk-margin-large-bottom">
-        {{ course.published_sections.each 'section' }}
+        {% for section in course.published_sections %}
           <div class="uk-margin-bottom">
             <h4 class="uk-margin-small-bottom"><strong>{{ section.name }}</strong></h4>
             <ol class="uk-list uk-margin-small-top">
-              {{ section.activities.each 'activity' }}
+              {% for activity in section.activities %}
                 <li>
                   <i class="uk-icon-{{ activity.list_class }} uk-margin-small-right"></i> {{ activity.title }}
                 </li>
-              {{ end }}
+              {% endfor %}
             </ol>
           </div>
-        {{ end }}
+        {% endfor %}
       </div>
     </div>
     <div class="uk-width-medium-6-10 uk-pull-4-10">
@@ -72,9 +72,9 @@
       <div class="school-website-course-description uk-margin-large-bottom uk-padding-large-right">
         {{ course.full_description }}
       </div>
-      {{ if course.instructors }}
-        <h2>{{ pluralize(course.instructors.count, t('.instructor_bio_title.one'), t('.instructor_bio_title.many')) }}</h2>
-        {{ course.instructors.each 'instructor' }}
+      {% if course.instructors.count > 0 %}
+        <h2>{% pluralize course.instructors.count, .instructor_bio_title %}</h2>
+        {% for instructor in course.instructors %}
           <div class="uk-grid uk-grid-small uk-margin-large-bottom">
             <div class="uk-width-medium-1-6 uk-width-1-3">
               <figure class="uk-thumbnail">
@@ -83,15 +83,15 @@
             </div>
             <div class="uk-width-medium-5-6 uk-width-2-3">
               <div class="uk-padding-left">
-                {{ if instructor.name | instructor.title }}
-                  <h4 class="uk-margin-top-remove uk-margin-small-bottom">{{ if instructor.name }}<strong>{{ instructor.name }}</strong>{{ end }}{{ if instructor.title }}, <span class="uk-text-muted">{{ instructor.title }}</span>{{ end }}</h4>
-                {{ end }}
+                {% if instructor.name or instructor.title %}
+                  <h4 class="uk-margin-top-remove uk-margin-small-bottom">{% if instructor.name %}<strong>{{ instructor.name }}</strong>{% endif %}{% if instructor.title %}, <span class="uk-text-muted">{{ instructor.title }}</span>{% endif %}</h4>
+                {% endif %}
                 {{ instructor.bio }}
               </div>
             </div>
           </div>
-        {{ end }}
-      {{ end }}
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>

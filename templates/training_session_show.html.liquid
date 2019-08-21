@@ -5,7 +5,7 @@
       <div class="top-bar__attributes">
         <div class="top-bar__attribute" data-test="event-title">
           <div class="top-bar__attribute-label">
-            {{ t('.belongs_to') }}
+            {% t .belongs_to %}
           </div>
           <div class="top-bar__attribute-value">
             {{ training_session.title }}
@@ -13,7 +13,7 @@
         </div>
         <div class="top-bar__attribute">
           <div class="top-bar__attribute-label">
-            {{ t('.type') }}
+            {% t .type %}
           </div>
           <div class="top-bar__attribute-value">
             {{ training_session.event_type_title }}
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    {{ if training_session.instructor_assigned? }}
+    {% if training_session.instructor_assigned? %}
       <div class="top-bar__col uk-hidden-small">
         <div class="person" data-test="instructor-panel">
           <div class="person__avatar">
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-    {{ end }}
+    {% endif %}
   </div>
 </div>
 <div class="uk-container uk-container-center uk-padding-horizontal">
@@ -72,20 +72,21 @@
                     {{ training_session.session_time }}
                   </p>
                   <p class="session-dialog__detail">
-                    {{ if training_session.location }}
+                    {% if training_session.location %}
                       <i class="uk-icon-map-marker"></i>
                       {{ training_session.location }}
-                    {{ end }}
-                    {{ if training_session.session_url }}
+                    {% endif %}
+                    {% if training_session.session_url %}
                       <i class="uk-icon-globe"></i>
                       <a href="{{ training_session.session_url }}">{{ training_session.session_url }}</a>
-                    {{ end }}
+                    {% endif %}
                   </p>
                 </div>
               </div>
             </div>
             <div class="dialog__footer">
               {{ training_session.registration_actions }}
+            </div>
             </div>
           </div>
           <div class="session-description uk-hidden-large">
@@ -94,12 +95,12 @@
           <section class="other-sessions">
             <header class="other-sessions__header">
               <h4 class="other-sessions__headline">
-                {{ t('.other_sessions_headline') }}
+                {% t .other_sessions_headline %}
               </h4>
             </header>
             <div class="other-sessions__body">
               <ul class="other-sessions__list">
-                {{ training_session.other_sessions.each 'other_session' }}
+                {% for other_session in training_session.other_sessions %}
                   <li class="other-session">
                     <div class="other-session__calendar-card-wrapper">
                       <div class="calendar-card calendar-card--small">
@@ -121,20 +122,20 @@
                       </div>
                     </div>
                     <div class="other-session__buttons">
-                      <a class="uk-button" href={{ other_session.self_url }}>
-                        {{ t('.attend') }}
+                      <a class="uk-button" href="{{ other_session.self_url }}">
+                        {% t .attend %}
                       </a>
                     </div>
                   </li>
-                {{ end }}
+                {% endfor %}
               </ul>
             </div>
             <footer class="other-sessions__footer">
-              {{ if training_session.other_sessions_count > 3 }}
+              {% if training_session.other_sessions_count > 3 %}
                 <button class="other-sessions__more-button" onclick="findOutMore();">
-                  {{ t('.find_out_more') }}
+                  {% t .find_out_more %}
                 </button>
-              {{ end }}
+              {% endif %}
             </footer>
           </section>
         </div>

@@ -1,15 +1,15 @@
 <div class="search-box uk-float-right">
   <form class="uk-form search" action="{{ routes.school_website_catalog_search_path }}" accept-charset="UTF-8" method="get">
     <input name="utf8" type="hidden" value="✓">
-    <input type="search" name="q" id="q" placeholder="{{ t('.search_placeholder') }}"
+    <input type="search" name="q" id="q" placeholder="{% t .search_placeholder %}"
       class="search__input" autofocus="autofocus" pattern=".{3,}"
-      required title="{{ t('.search_title') }}" value="{{ query_parameter_value }}"
+      required title="{% t .search_title %}" value="{{ query_parameter_value }}"
       data-test="search-input">
-    <input type="hidden" name="filter[category_name]" id="filter" value="{{ filter_parameter_value }}">
+    <input type="hidden" name="filter[categories_name]" id="filter" value="{{ filter_parameter_value }}">
     <div id="search_results_count" class="search__results">
-      {{ if search_result }}
-        {{ search_result.count}} {{ pluralize(search_result.count , t('.results.one'), t('.results.many')) }}
-      {{ end }}
+      {% if search_result %}
+        {{ search_result.count }} {% pluralize search_result.count, .results %}
+      {% endif %}
     </div>
     <div class="search__submit">
       <i class="uk-icon-search search__icon"></i>

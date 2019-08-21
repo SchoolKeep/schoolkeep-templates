@@ -1,0 +1,31 @@
+<div class="uk-container uk-container-center school-website-course-index-list uk-margin-top uk-margin-bottom">
+  <div class="uk-padding-horizontal">
+    {% if current_school.apps.instructor_led_training.active? %}
+      {% if current_person.upcoming_registered_events.any? %}
+        {% include "events" %}
+      {% else %}
+        {% include "events_empty" %}
+      {% endif %}
+    {% endif %}
+
+    {% if my_content.learning_paths? %}
+      {% include "my_paths" %}
+    {% endif %}
+
+    {% include "my_content_header" with "" %}
+    <div class="uk-grid uk-grid-flex uk-margin-left-remove">
+      {% include "filters" with "" %}
+      {% if current_school.filtering_enabled? and current_person.filterable_categories.count > 0 %}
+        <div class="uk-width-medium-5-6 uk-padding">
+      {% else %}
+        <div class="uk-width-1-1 uk-padding">
+      {% endif %}
+        <ul class="uk-grid uk-grid-medium school-website-course-list uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+          {% for course in my_content.courses %}
+            {% include "course" %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

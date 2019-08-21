@@ -1,39 +1,39 @@
 <div class="school-website-hero hero-tall uk-overlay uk-cover-background" style="background-image: url('{{ homepage.artwork_url }}');">
   <div class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
     <hgroup class="uk-container uk-container-center uk-padding-large-horizontal">
-      {{ if homepage.headline }}
+      {% if homepage.headline %}
         <h1 class="uk-text-center uk-heading-large uk-container-center">{{ homepage.headline }}</h1>
-      {{ end }}
-      {{ if homepage.subheadline }}
+      {% endif %}
+      {% if homepage.subheadline %}
         <h2 class="uk-text-center uk-margin-large-bottom">{{ homepage.subheadline }}</h2>
-      {{ end }}
-      <a href="/courses" class="uk-button uk-button-primary uk-button-large uk-margin-large-top">{{ t('.discover_catalog') }}</a>
+      {% endif %}
+      <a href="/courses" class="uk-button uk-button-primary uk-button-large uk-margin-large-top">{% t .discover_catalog %}</a>
     </hgroup>
   </div>
 </div>
 
 <div class="uk-container uk-container-center uk-padding-large-top uk-padding-large-bottom">
   <hgroup class="banner uk-text-center uk-padding-large-top uk-padding-large-horizontal">
-    {{ if homepage.published_featured_courses }}
-      {{ if homepage.featured_courses_headline | homepage.featured_courses_subheadline }}
-        {{ if homepage.featured_courses_headline }}
+    {% if homepage.published_featured_courses %}
+      {% if homepage.featured_courses_headline or homepage.featured_courses_subheadline %}
+        {% if homepage.featured_courses_headline %}
           <h2>{{ homepage.featured_courses_headline }}</h2>
-        {{ end }}
+        {% endif %}
 
-        {{ if homepage.featured_courses_subheadline }}
+        {% if homepage.featured_courses_subheadline %}
           <h3 class="uk-margin-remove uk-text-muted">{{ homepage.featured_courses_subheadline }}</h3>
-        {{ end }}
-      {{ end }}
-    {{ end }}
+        {% endif %}
+      {% endif %}
+    {% endif %}
   </hgroup>
 
-  {{ if homepage.published_featured_courses }}
+  {% if homepage.published_featured_courses %}
     <div class="uk-width-small-1-1 uk-width-1-1 uk-padding-large-horizontal uk-container-center uk-padding-large-top uk-padding-large-bottom uk-margin-large-bottom">
       <ul class="uk-grid school-website-course-list" data-behavior="listResize">
-        {{ homepage.published_featured_courses.each 'course' }}
-          {{ partial 'course' }}
-        {{ end }}
+        {% for course in homepage.published_featured_courses %}
+          {% include "course" %}
+        {% endfor %}
       </ul>
     </div>
-  {{ end }}
+  {% endif %}
 </div>

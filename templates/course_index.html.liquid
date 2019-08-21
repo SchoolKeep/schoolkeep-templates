@@ -1,22 +1,22 @@
 <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
-  {{ if course_catalog.headline | course_catalog.subheadline }}
+  {% if course_catalog.headline or course_catalog.subheadline %}
     <div class="uk-text-center uk-padding-large-vertical uk-padding-horizontal">
-      {{ if courses }}
+      {% if courses %}
         <h2>{{ course_catalog.headline }}</h2>
         <h3 class="page-header uk-margin-top-remove">{{ course_catalog.subheadline }}</h3>
-      {{ else }}
+      {% else %}
         <h1>{{ course_catalog.headline_empty_collection }}</h1>
         <h2 class="page-header">
           {{ course_catalog.subheadline_empty_collection }}
         </h2>
-      {{ end }}
+      {% endif %}
     </div>
-  {{ end }}
+  {% endif %}
   <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-padding-horizontal uk-container-center uk-padding-top uk-margin-large-bottom">
     <ul class="uk-grid school-website-course-list" data-behavior="listResize">
-      {{ courses.each 'course' }}
-        {{ partial 'course' }}
-      {{ end }}
+      {% for course in courses %}
+        {% include "course" %}
+      {% endfor %}
     </ul>
   </div>
 </div>
