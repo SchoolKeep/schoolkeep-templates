@@ -2,63 +2,64 @@
   <div class="uk-navbar-flip">
     <ul class="uk-navbar-nav">
       <li>
-        <a href="{{ routes.my_content_path }}" class="uk-border-left uk-button-small">{{ t('.exit') }}</a>
+        <a href="{{ routes.my_content_path }}" class="uk-border-left uk-button-small">{% t .exit %}</a>
       </li>
-      {{ if course.has_forum? }}
+      {% if course.has_forum? %}
         <li>
           <a href="{{ course.forum_path }}" class="uk-border-left uk-button-small">
             <i class="uk-icon-comments-o"></i>
           </a>
         </li>
-      {{ end }}
+      {% endif %}
     </ul>
   </div>
 
   <div class="uk-navbar-content uk-text-center sk-float-remove">
-    {{ if current_school.logo_url }}
+    {% if current_school.logo_url %}
       <img src="{{ current_school.logo_url }}" class="uk-responsive-height">
-    {{ else }}
+    {% else %}
       {{ current_school.name }}
-    {{ end }}
+    {% endif %}
   </div>
 </header>
 
-{{ if preview_banner }}
+{% if preview_banner %}
   {{ preview_banner }}
-{{ end }}
+{% endif %}
 
 <div class="uk-container uk-container-center uk-padding-large uk-margin-large-top">
   <h4 class="uk-text-muted uk-margin-remove">{{ course.superscript }}</h4>
-  {{ if course.learner_can_retake? }}
+  {% if course.learner_can_retake? %}
     <form action="{{ course.course_attempts_path }}" method="POST">
       <button type="submit" class="uk-button uk-float-right completion-button" data-test="retake-course-button">{{ course.retake_course }}</button>
     </form>
-  {{ else }}
+  {% else %}
     <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button" data-test="start-course-button">{{ course.start_or_continue }}</a>
-  {{ end }}
+  {% endif %}
 
-  {{ if current_school.filtering_enabled? }}
+  {% if current_school.filtering_enabled? %}
     <h3 class="uk-margin-remove">{{ course.course_category_names }}</h3>
-  {{ end }}
-  <h1 class="uk-margin-remove">{{ course.name }}</h1>
+  {% endif %}
+  <h1 data-test="course-name" class="uk-margin-remove">{{ course.name }}</h1>
   <hr class="uk-article-divider uk-margin-top">
 
-  <div{{ if course.has_outline? }} class="uk-grid uk-grid-large"{{ end }}>
-    <div class="uk-width-medium-1-2 uk-margin-bottom{{ unless course.has_outline? }} uk-container-center{{ end }}">
+  <div{% if course.has_outline? %} class="uk-grid uk-grid-large"{% endif %}>
+      <div class="uk-width-medium-1-2 uk-margin-bottom{% unless course.has_outline? %} uk-container-center{% endunless %}">
       <article class="uk-article">
         <img src="{{ course.featured_image_url }}" />
         <h3>{{ course.about_label }}</h3>
         <p>{{ course.full_description }}</p>
       </article>
-      {{ if course.instructors }}
+      
+      {% if course.instructors.count > 0 %}
         <article class="uk-article">
           <h3>{{ course.instructors_title }}</h3>
-          {{ course.instructors.each 'instructor' }}
+          {% for instructor in course.instructors %}
             <div>
               <div class="uk-comment-header">
                 <img
                   src="{{ instructor.image_url }}"
-                  alt="{{instructor.name}}"
+                  alt="{{ instructor.name }}"
                   class="uk-comment-avatar"
                   width="80">
                 <h4 class="uk-comment-title">{{ instructor.name }}</h4>
@@ -66,60 +67,60 @@
               </div>
               <div class="wysiwyg">{{ instructor.bio }}</div>
             </div>
-          {{ end }}
+          {% endfor %}
         </article>
-      {{ end }}
+      {% endif %}
 
       <article class="uk-article">
         {{ upcoming_events }}
       </article>
 
-      {{ if course.discover_events_path }}
-        <a href="{{ course.discover_events_path }}" class="uk-padding-left-remove">{{ t('.see_all_events') }}</a>
-      {{ end }}
+      {% if course.discover_events_path %}
+        <a href="{{ course.discover_events_path }}" class="uk-padding-left-remove">{% t .see_all_events %}</a>
+      {% endif %}
     </div>
 
-    {{ if course.has_outline? }}
+    {% if course.has_outline? %}
       <div class="uk-width-medium-1-2">
         <h3>{{ course.progress_title }}</h3>
         {{ course.progress_bar }}
 
         <h3>{{ course.outline_label }}</h3>
         <ol class="uk-list cover-outline">
-          {{ learner_syllabus.sections.each 'section' }}
+          {% for section in learner_syllabus.sections %}
             <li class="uk-margin-large-bottom">
               <h3><strong>{{ section.name }}</strong></h3>
-              {{ if section.will_be_published? }}
+              {% if section.will_be_published? %}
                 <div class="uk-margin-top">
-                  {{ t('.scheduled_info') }} {{ section.published_at }}
+                  {% t .scheduled_info %} {{ section.published_at }}
                 </div>
-              {{ else }}
+              {% else %}
                 <ol class="uk-list cover-outline-section-activities">
-                  {{ section.activities.each 'activity' }}
-                    <li class="{{ if activity.completed? }}completed {{ end }}{{ if activity.locked? }}locked{{ end }}" >
-                      {{ if activity.locked? }}
+                  {% for activity in section.activities %}
+                    <li class="{% if activity.completed? %}completed {% endif %}{% if activity.locked? %}locked{% endif %}" >
+                      {% if activity.locked? %}
                         <span>
-                          {{ if activity.milestone? }}
+                          {% if activity.milestone? %}
                             <i class="uk-icon-flag"></i>
-                          {{ end }}
+                          {% endif %}
                           {{ activity.title }}
                         </span>
-                      {{ else }}
+                      {% else %}
                         <a href="{{ activity.path }}">
-                          {{ if activity.milestone? }}
+                          {% if activity.milestone? %}
                             <i class="uk-icon-flag"></i>
-                          {{ end }}
+                          {% endif %}
                           {{ activity.title }}
                         </a>
-                      {{ end }}
+                      {% endif %}
                     </li>
-                  {{ end }}
+                  {% endfor %}
                 </ol>
-              {{ end }}
+              {% endif %}
             </li>
-          {{ end }}
+          {% endfor %}
         </ol>
       </div>
-    {{ end }}
+    {% endif %}
   </div>
 </div>

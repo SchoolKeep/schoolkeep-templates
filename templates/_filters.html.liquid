@@ -1,0 +1,24 @@
+{% if current_school.filtering_enabled? and current_person.filterable_categories.count > 0 %}
+  <div class="uk-width-medium-1-6 uk-block uk-padding">
+    {% t .filter_by_category %}:
+    <ul class="uk-list uk-list-space">
+      <li class="uk-margin-top">
+        {% if query_parameter_value %}
+          {% capture reset_filters_route %}{{ routes.school_website_search_path }}?q={{ query_parameter_value }}{% endcapture %}
+        {% else %}
+          {% assign reset_filters_route = routes.my_content_path %}
+        {% endif %}
+        <a href="{{ reset_filters_route }}" class="{% unless filter_parameter_value %}uk-text-bold{% endunless %}">
+          {% t .all %}
+        </a>
+      </li>
+      {% for filterable_category in current_person.filterable_categories %}
+        <li>
+          <a href="{{ filterable_category.link }}" class="{% if filterable_category.active? %}uk-text-bold{% endif %}">
+            {{ filterable_category.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

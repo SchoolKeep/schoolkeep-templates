@@ -1,0 +1,103 @@
+<header class="school-website-header uk-z-4">
+  <div class="uk-padding-horizontal uk-container uk-container-center">
+    <nav class="uk-navbar" data-behavior="dropdown">
+      <a href="{{ current_school.logo_navigation_url }}" class="uk-brand">
+        {% if current_school.logo_url %}
+          <img src="{{ current_school.logo_url }}" alt="{{ current_school.name }}">
+        {% else %}
+          <span class="uk-text-large uk-text-bold">{{ current_school.name }}</span>
+        {% endif %}
+      </a>
+      <div class="uk-navbar-flip">
+        <ul class="uk-navbar-nav uk-hidden-small">
+          {% for website_navigation in header_navigations %}
+            <li>
+              <a href="{{ website_navigation.path }}" {% if website_navigation.external? %} target="_blank" {% endif %}>
+                {{ website_navigation.name }}
+              </a>
+            </li>
+          {% endfor %}
+
+          {% search %}
+            <li class="uk-padding-top">
+              {% include "search_form" with "" %}
+            </li>
+          {% endsearch %}
+
+          {% catalog_search %}
+            <li class="uk-padding-top">
+              {% include "catalog_search_form" with "" %}
+            </li>
+          {% endcatalog_search %}
+
+          {% if current_person.signed_in? %}
+            <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
+              <a href="#" class="learner-name">{{ current_person.name }}</a>
+              <div class="uk-dropdown uk-dropdown-flip uk-dropdown-navbar">
+                <ul class="uk-nav uk-nav-navbar">
+                  <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
+                  {% unless current_school.sso_enabled? %}
+                    <li><a href="{{ routes.my_profile_path }}">{% t .my_profile %}</a></li>
+                  {% endunless %}
+                  <li class="uk-nav-divider"></li>
+                  <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{% t .log_out %}</a></li>
+                </ul>
+              </div>
+            </li>
+          {% else %}
+            <li><a href="{{ routes.log_in_path }}">{% t .log_in %}</a></li>
+          {% endif %}
+        </ul>
+        <div class="uk-visible-small">
+          {% search %}
+            <button class="uk-button uk-button-link uk-navbar-toggle mobile-search-toggle mobile-navbar-toggle" data-uk-toggle="{target:'#mobile-search'}">
+            </button>
+          {% endsearch %}
+
+          {% catalog_search %}
+            <button class="uk-button uk-button-link uk-navbar-toggle mobile-search-toggle mobile-navbar-toggle" data-uk-toggle="{target:'#mobile-search'}">
+            </button>
+          {% endcatalog_search %}
+          <a href="#mobile-nav" class="mobile-navbar-toggle uk-navbar-toggle" data-uk-offcanvas></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+{% search %}
+  <div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {% if hide_search_box %}uk-hidden {% endif %}">
+    {% include "search_form" with "" %}
+    <a class="uk-button uk-button-link" href="{{ routes.my_content_path }}">{% t .cancel %}</a>
+  </div>
+{% endsearch %}
+
+{% catalog_search %}
+  <div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {% if hide_search_box %}uk-hidden {% endif %}">
+    {% include "catalog_search_form" with "" %}
+    <a class="uk-button uk-button-link" href="{{ routes.school_website_catalog_path }}">{% t .cancel %}</a>
+  </div>
+{% endcatalog_search %}
+
+<div id="mobile-nav" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+    <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+      {% for website_navigation in header_navigations %}
+        <li>
+          <a href="{{ website_navigation.path }}" {% if website_navigation.external? %} target="_blank" {% endif %}>
+            {{ website_navigation.name }}
+          </a>
+        </li>
+      {% endfor %}
+
+      {% if current_person.signed_in? %}
+        <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
+        <li><a href="{{ routes.my_profile_path }}">{% t .my_profile %}</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{% t .log_out %}</a></li>
+      {% else %}
+        <li><a href="{{ routes.log_in_path }}">{% t .log_in %}</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>

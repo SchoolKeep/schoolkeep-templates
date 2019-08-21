@@ -1,0 +1,22 @@
+<div class="uk-padding-large-vertical uk-padding-horizontal uk-border-bottom">
+  <h2 data-test="my-paths">{{ my_content.learning_paths_headline }}</h2>
+  <h3 class="uk-margin-top-remove">{{ my_content.learning_paths_subheadline }}</h3>
+</div>
+<div class="uk-grid uk-grid-flex uk-margin-left-remove">
+  {% include "learning_path_filters" with "" %}
+  {% if current_school.filtering_enabled? and current_school.learning_paths_enabled? and current_person.filterable_learning_path_categories.count > 0 %}
+    <div class="uk-width-medium-5-6 uk-padding">
+  {% else %}
+    <div class="uk-width-1-1 uk-padding">
+  {% endif %}
+    <ul class="uk-grid uk-grid-medium my-dashboard__list learning-paths__list uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+      {% if my_content.learning_paths.any? %}
+        {% for learning_path in my_content.learning_paths %}
+          {% include "learning_path" %}
+        {% endfor %}
+      {% else %}
+        <p>{{ my_content.empty_learning_paths }}</p>
+      {% endif %}
+    </ul>
+  </div>
+</div>

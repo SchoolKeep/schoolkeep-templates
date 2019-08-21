@@ -1,0 +1,22 @@
+<div class="uk-width-1-1 uk-padding-large-vertical uk-padding-horizontal uk-border-bottom">
+  <h2>{% t .my_events %}</h2>
+  <ul class="uk-list event-list">
+    {% for event in current_person.upcoming_registered_events.sessions.head %}
+        {% include "events_list_item" event = event %}
+    {% endfor %}
+    {% for event in current_person.upcoming_registered_events.sessions.tail %}
+      <div class="uk-hidden hideable">
+        {% include "events_list_item" event = event %}
+      </div>
+    {% endfor %}
+  </ul>
+
+  {% if current_person.upcoming_registered_events.additional_sessions? %}
+    <div class="uk-width-1-1 uk-text-center">
+      <a href="#" data-uk-toggle="{target: '.hideable'}">
+        <span class="hideable">{% t .show_all_events %}</span>
+        <span class="hideable uk-hidden">{% t .show_fewer_events %}</span>
+      </a>
+    </div>
+  {% endif %}
+</div>

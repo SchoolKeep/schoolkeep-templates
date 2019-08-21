@@ -16,7 +16,7 @@
           {{ learning_path.description }}
         </div>
 
-        {{ if current_person.enrolled_in_learning_path?(learning_path) }}
+        {% if current_person.enrolled_in_learning_path? %}
           <a
             href="{{ learning_path.cover_path }}"
             class="uk-button uk-button-primary uk-button-large"
@@ -24,15 +24,15 @@
           >
             {{ learning_path.go_to_label }}
           </a>
-        {{ else }}
+        {% else %}
           <a
             href="{{ learning_path.enrollment_url }}"
             class="enroll-button uk-button uk-button-primary uk-button-large"
             data-test="enroll-button"
           >
-            {{ t('.enroll') }}
+            {% t .enroll %}
           </a>
-        {{ end }}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -43,11 +43,11 @@
     <div class="uk-width-medium-4-10 uk-push-6-10 school-website-course-meta">
       <h2>{{ learning_path.outline_label }}</h2>
       <div class="course-syllabus uk-panel uk-panel-box uk-border uk-margin-large-bottom">
-        {{ learning_path.items.each 'item' }}
+        {% for item in learning_path.items %}
           <div class="uk-margin-bottom">
             <h4 class="uk-margin-small-bottom"><strong>{{ item.name }}</strong></h4>
           </div>
-        {{ end }}
+        {% endfor %}
       </div>
     </div>
     <div class="uk-width-medium-6-10 uk-pull-4-10">
@@ -55,9 +55,9 @@
       <div class="school-website-course-description uk-margin-large-bottom uk-padding-large-right">
         {{ learning_path.description }}
       </div>
-      {{ if learning_path.instructors }}
-        <h2>{{ pluralize(learning_path.instructors.count, t('.instructor_bio_title.one'), t('.instructor_bio_title.many')) }}</h2>
-        {{ learning_path.instructors.each 'instructor' }}
+      {% if learning_path.instructors.count > 0 %}
+        <h2>{% pluralize learning_path.instructors.count, .instructor_bio_title %}</h2>
+        {% for instructor in learning_path.instructors %}
           <div class="uk-grid uk-grid-small uk-margin-large-bottom">
             <div class="uk-width-medium-1-6 uk-width-1-3">
               <figure class="uk-thumbnail">
@@ -66,15 +66,15 @@
             </div>
             <div class="uk-width-medium-5-6 uk-width-2-3">
               <div class="uk-padding-left">
-                {{ if instructor.name | instructor.title }}
-                  <h4 class="uk-margin-top-remove uk-margin-small-bottom">{{ if instructor.name }}<strong>{{ instructor.name }}</strong>{{ end }}{{ if instructor.title }}, <span class="uk-text-muted">{{ instructor.title }}</span>{{ end }}</h4>
-                {{ end }}
+                {% if instructor.name or instructor.title %}
+                  <h4 class="uk-margin-top-remove uk-margin-small-bottom">{% if instructor.name %}<strong>{{ instructor.name }}</strong>{% endif %}{% if instructor.title %}, <span class="uk-text-muted">{{ instructor.title }}</span>{% endif %}</h4>
+                {% endif %}
                 {{ instructor.bio }}
               </div>
             </div>
           </div>
-        {{ end }}
-      {{ end }}
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>

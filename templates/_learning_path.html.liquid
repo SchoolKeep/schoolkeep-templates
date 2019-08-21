@@ -1,38 +1,38 @@
 <li class="uk-width-large-1-3 uk-width-medium-1-2 uk-width-small-1-1 uk-margin-large-bottom school-website-course-tile my-dashboard__tile">
   <div class="uk-panel uk-panel-box uk-panel-box-secondary uk-border">
     <div class="uk-panel-teaser">
-      {{ if current_person.enrolled_in_learning_path?(learning_path) }}
+      {% if current_person.enrolled_in_learning_path? %}
         <a href="{{ learning_path.cover_path }}" class="main-link">
           <img src="{{ learning_path.list_image_url }}" class="uk-responsive-width uk-width-1-1">
         </a>
-      {{ else }}
+      {% else %}
         <a href="{{ learning_path.details_path }}" class="main-link">
           <img src="{{ learning_path.list_image_url }}" class="uk-responsive-width uk-width-1-1">
         </a>
-      {{ end }}
+      {% endif %}
     </div>
-    {{ if current_school.filtering_enabled? & current_school.learning_paths_enabled? }}
+    {% if current_school.filtering_enabled? and current_school.learning_paths_enabled? %}
       <span>
         {{ learning_path.learning_path_category_names }}
       </span>
-    {{ end }}
+    {% endif %}
     <h3 class="uk-panel-title uk-margin-bottom-remove">
-      {{ if current_person.enrolled_in_learning_path?(learning_path) }}
+      {% if current_person.enrolled_in_learning_path? %}
         <a href="{{ learning_path.cover_path }}" data-test="learning-path-name">{{ learning_path.name }}</a>
-      {{ else }}
+      {% else %}
         <a href="{{ learning_path.details_path }}" data-test="learning-path-name">{{ learning_path.name }}</a>
-      {{ end }}
+      {% endif %}
     </h3>
     <p class="uk-margin-small-top uk-margin-large-bottom">{{ learning_path.instructor_names }}</p>
     <p class="uk-margin-small-bottom">{{ learning_path.progress_text }}</p>
-    {{ if current_person.enrolled_in_learning_path?(learning_path) }}
+    {% if current_person.enrolled_in_learning_path? %}
       <a href="{{ learning_path.cover_path }}" class="uk-button uk-button-primary my-dashboard__tile-action uk-position-bottom-right" data-test="go-to-path">
         {{ learning_path.go_to_label }}
       </a>
-    {{ else }}
-      <a href="{{ learning_path.details_path }}" class="uk-button uk-button-primary my-dashboard__tile-action uk-position-bottom-right" data-test="go-to-path">
+    {% else %}
+      <a href="{{ learning_path.details_path }}" class="uk-button uk-button-outline my-dashboard__tile-action uk-position-bottom-right" data-test="go-to-path">
         {{ learning_path.view_label }}
       </a>
-    {{ end }}
+    {% endif %}
   </div>
 </li>
