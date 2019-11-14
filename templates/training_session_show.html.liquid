@@ -144,11 +144,20 @@
   </div>
 </div>
 <script>
+  var container = document.querySelector(".other-sessions__body");
+  var items = document.querySelectorAll(".other-session");
+  var containerHeight = 0;
+
+  for (var i = 0; i < Math.min(3, items.length); i++) {
+    containerHeight += items[i].offsetHeight;
+  }
+
+  container.style.height = containerHeight + "px";
+
   function findOutMore() {
     var button = document.querySelector(".other-sessions__more-button");
-    var container = document.querySelector(".other-sessions__body");
     var list = document.querySelector(".other-sessions__list");
-    container.style.height = list.clientHeight + "px";
+    container.style.height = list.offsetHeight + "px";
     button.style.display = "none";
   }
 </script>
