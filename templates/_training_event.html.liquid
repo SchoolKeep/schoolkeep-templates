@@ -1,0 +1,43 @@
+<li
+  id="training-event-{{training_event.id}}"
+  class="uk-width-large-1-3 uk-width-medium-1-2 uk-width-small-1-1 uk-margin-large-bottom"
+>
+  <div
+    class="sk-event sk-event--border sk-event--height"
+    data-test="event-{{ training_event.title.parameterize }}"
+  >
+    <div class="sk-event__top uk-flex">
+      <div class="sk-event__header uk-width-4-4 uk-padding-large-left">
+        <div class="sk-event__title">{{ training_event.title }}</div>
+        <div class="sk-event__type-v2">{{ training_event.type }}</div>
+      </div>
+    </div>
+    <div class="uk-padding">
+      <div class="sk-event__sessions">
+        <ul style="list-style-type: none; margin-bottom: 15px; padding-left: 0;">
+          {% for session in training_event.sessions limit: 3 %}
+            {% include "training_session", session: session, offset: 0, class_name: "" %}
+          {% endfor %}
+
+          {% for session in training_event.sessions offset: 3 %}
+            {% include "training_session", session: session, offset: 3, class_name: "hideable uk-hidden" %}
+          {% endfor %}
+        </ul>
+        {% if training_event.sessions.size > 3 %}
+          <a
+            href="#"
+            data-uk-toggle="{target: '#training-event-{{training_event.id}} .hideable'}"
+            style="
+              cursor: pointer;
+              font-size: 12px;
+              margin: 15px 0;
+              outline: 0;"
+          >
+            <span class="hideable">{% t .view_more %}</span>
+            <span class="hideable uk-hidden">{% t .collapse %}</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</li>

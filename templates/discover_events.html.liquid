@@ -1,0 +1,36 @@
+<div class="uk-padding-horizontal uk-container uk-container-center">
+  <div class="uk-padding-large-vertical uk-padding-horizontal uk-border-bottom">
+    <h2>{% t .title %}</h2>
+  </div>
+
+  {% if discover_events.filter_options.any? %}
+    <div class="sk-events__filter uk-margin-large-top uk-margin-bottom uk-margin-horizontal">
+      <form class="uk-form uk-grid uk-width-large-2-3 uk-width-small-1-1">
+        <label class="uk-display-inline-block" for="filter">{% t .filter.label %}</label>
+        <div class="uk-display-inline-block uk-width-medium-4-10 uk-width-small-1-1 uk-margin-bottom">
+          {{ discover_events.filter }}
+        </div>
+        <div class="uk-display-inline-block">
+          <button class="uk-button uk-button-primary">{% t .filter.apply %}</button>
+        </div>
+      </form>
+    </div>
+  {% endif %}
+
+  {% if training_events.empty? %}
+    <div class="sk-margin-xlarge-top">
+      <h1 class="uk-text-center">{% t .no_events %}</h1>
+      <h1 class="uk-text-center uk-margin-top-remove">{% t .check_later %}</h1>
+    </div>
+  {% else %}
+    <div class="uk-grid uk-grid-flex uk-margin-left-remove">
+      <div class="uk-width-1-1 uk-padding">
+        <ul class="uk-grid uk-grid-medium school-website-course-list uk-grid-match">
+          {% for training_event in training_events %}
+            {% include "training_event" training_event = training_event %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+</div>

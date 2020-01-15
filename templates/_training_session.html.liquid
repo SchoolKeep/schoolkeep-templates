@@ -1,0 +1,24 @@
+<li
+  class="de-session uk-flex uk-flex-middle uk-margin-bottom {{ class_name }}"
+  data-test="session-{{ forloop.index | plus: offset }}"
+>
+  <i class="far fa-stopwatch de-session-icon uk-margin-horizontal uk-text-primary"/></i>
+  <div>
+    <span class="de-session-name">{% t .name %} {{ forloop.index | plus: offset }}</span>
+    <span
+      class="de-session-status uk-padding-small-left"
+      data-test="registration-status"
+    >
+      {{session.registration_status}}
+    </span>
+    <span class="de-session-date">
+      {{ session.session_date }}
+    </span>
+  </div>
+  <a
+    class="de-session-button uk-button uk-button-outline"
+    href="{{ session.self_url }}"
+  >
+    {% t .view %}
+  </a>
+</li>
