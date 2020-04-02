@@ -30,8 +30,8 @@
 <div class="uk-container uk-container-center uk-padding-large uk-margin-large-top">
   <h4 class="uk-text-muted uk-margin-remove">{{ course.superscript }}</h4>
   {% if course.learner_can_retake? %}
-    <form action="{{ course.course_attempts_path }}" method="POST">
-      <button type="submit" class="uk-button uk-float-right completion-button" data-test="retake-course-button">{{ course.retake_course }}</button>
+    <form action="{{ course.course_attempts_path }}" method="POST" onsubmit="retakeButton.disabled = true;">
+      <button type="submit" class="uk-button uk-float-right completion-button" data-test="retake-course-button" name="retakeButton">{{ course.retake_course }}</button>
     </form>
   {% else %}
     <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button" data-test="start-course-button">{{ course.start_or_continue }}</a>
