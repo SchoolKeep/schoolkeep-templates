@@ -1,6 +1,21 @@
-# Northpass Templates
+<h1 align="center">
+  <br>
+  <a href="https://www.northpass.com/">
+    <img width="256" src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/northpass_emblem.svg" alt="Northpass Logo">
+  </a>
+  <br>
+  Northpass Templates
+  <br>
+</h1>
+<br>
 
-Use this to edit the templates of the marketing pages for your school.
+<div align="center">
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Build with Love">
+  <img src="https://forthebadge.com/images/badges/for-you.svg" alt="For You">
+</div>
+
+<h4 align="center">Use this to customize the User Experience for your school</h4>
+<br>
 
 ## Edit Templates
 
