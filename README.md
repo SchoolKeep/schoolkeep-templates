@@ -17,29 +17,60 @@
 <h4 align="center">Use this to customize the User Experience for your school</h4>
 <br>
 
+## Table of Contents
+- [How Northpass templates works](#how-northpass-templates-works)
+  - [General information](#general-information)
+  - [Liquid](#liquid)
+  - [Root and partial templates](#root-and-partial-templates)
+  - [Important](#warning-important-warning)
+  
+
+## How Northpass templates works
+### General information 
+In this repository we give you access to base templates, which should be the starting point for your customizations. All templates are in the `/templates` directory. You can edit them, but you can't add your own.
+
+[:arrow_up:](#table-of-contents)
+
+### Liquid
+At Northpass, we use Liquid as a template language. [Liquid](https://shopify.github.io/liquid/) was created by Shopify and is used in production by dozens of companies around the world. We use it to load dynamic content on the school website. In individual templates you can use variables that download data directly from the Northpass platform. Thanks to this, you have the opportunity to create a completely unique User Experience in your school.
+
+We encourage you to read the [Liquid documentation](https://shopify.github.io/liquid/) to learn more about the syntax and possible use cases.
+
+[:arrow_up:](#table-of-contents)
+
+### Root and partial templates
+The templates available in our application are divided into two types: 
+* **root templates**
+* **partial templates**
+
+**Root template** occurs only once for pages in the application for which we enable customizations, e.g. `my_content`, `course_index` or `course_details`.
+
+**Partial templates** are smaller fragments that can be included in root templates, their name always begins with the prefix `_`.
+
+Thanks to this division, we are able for instance to customize a footer once and use it in all other templates.
+
+This is the example of the root template and its partial templates:
+```
+course_index
+    ├── _head
+    ├── _header
+    ├── _footer
+    ├── _catalog_search_form
+    ├── _course
+```
+
+[:arrow_up:](#table-of-contents)
+
+### :warning: Important :warning:
+Once you’ve edited your templates we won’t support automatic updates with additional features that Northpass makes to the base templates. You will need to merge the changes into your templates directory. Additionally, we will not be able to support the look and feel of your website.
+
+[:arrow_up:](#table-of-contents)
+
 ## Edit Templates
 
 All templates are in the templates folder. You can edit the files using any text editor.
 If you don't know how to edit the files you can download the Atom editor https://atom.io/
 then inside the github app you can press Command+Shift+A or clicking the menu item `Repository -> Open in Atom`
-
-## Usage
-
-### Disclaimer
-
-Once you’ve edited your templates we won’t support automatic updates with additional features that Northpass makes to the base templates. You will need to merge the changes into your templates directory.  Additionally, we will not be able to support the look and feel of your website.
-
-### Templates overview
-
-You can edit the existing templates, but there is no way to add additional
-templates.  Currently there is 1 template for each page
-(ie: 1 homepage template, 1 course details page template, 1 custom page template).
-
-### Liquid
-
-We use Liquid as our templating language. See more here: https://shopify.github.io/liquid/
-
-Liquid is used to load dynamic content on the school website. Using variables will pull your data from Northpass.
 
 # Templates available in each page. ([FAQ](#FAQ))
 
