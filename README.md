@@ -23,6 +23,8 @@
   - [Liquid](#liquid)
   - [Root and partial templates](#root-and-partial-templates)
   - [Important](#warning-important-warning)
+- [Quick start](#quick-start)
+  - [Text editor](#text-editor)
   
 
 ## How Northpass templates works
@@ -63,6 +65,16 @@ course_index
 
 ### :warning: Important :warning:
 Once you’ve edited your templates we won’t support automatic updates with additional features that Northpass makes to the base templates. You will need to merge the changes into your templates directory. Additionally, we will not be able to support the look and feel of your website.
+
+[:arrow_up:](#table-of-contents)
+
+
+## Quick start
+### Text editor
+
+VSCode             |  Atom          |  Sublime  
+:-------------------------:|:-------------------------:|:-------------------------:  
+<a href="https://code.visualstudio.com/">![](img/vscode.png)</a>  |  <a href="https://atom.io/">![](img/atom.png)</a> |  <a href="https://www.sublimetext.com/">![](img/sublime.png)</a>  
 
 [:arrow_up:](#table-of-contents)
 
