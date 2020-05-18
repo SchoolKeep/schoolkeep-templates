@@ -24,7 +24,6 @@
   - [Root and partial templates](#root-and-partial-templates)
   - [Important](#warning-important-warning)
 - [Quick start](#quick-start)
-  - [Text editor](#text-editor)
   
 
 ## How Northpass templates works
@@ -70,19 +69,33 @@ Once you’ve edited your templates we won’t support automatic updates with ad
 
 
 ## Quick start
-### Text editor
+**1. Clone the repository**
+
+```
+git clone https://github.com/SchoolKeep/schoolkeep-templates.git
+```  
+
+**2. Install text editor**
+
+If you don't have any text editor installed, you should now choose one. Below is a list of a few that are very popular and you can certainly trust them.
 
 VSCode             |  Atom          |  Sublime  
 :-------------------------:|:-------------------------:|:-------------------------:  
 <a href="https://code.visualstudio.com/">![](img/vscode.png)</a>  |  <a href="https://atom.io/">![](img/atom.png)</a> |  <a href="https://www.sublimetext.com/">![](img/sublime.png)</a>  
 
+**3. Modify base templates**
+
+Open the directory with the cloned repository in the text editor of your choice and you can get started! 🚀🚀🚀
+
+**4. Upload modified templates to the Northpass application**
+
+After you make changes to selected base templates, you should upload them to the application. Go to the `Design` tab in the administrator view and then to `School Website Styling`.
+
+Click the `Upload Templates` button and add the templates you have chosen, then confirm the changes with the `Save` button.
+
+![](img/school_website_styling.png)
+
 [:arrow_up:](#table-of-contents)
-
-## Edit Templates
-
-All templates are in the templates folder. You can edit the files using any text editor.
-If you don't know how to edit the files you can download the Atom editor https://atom.io/
-then inside the github app you can press Command+Shift+A or clicking the menu item `Repository -> Open in Atom`
 
 # Templates available in each page. ([FAQ](#FAQ))
 
