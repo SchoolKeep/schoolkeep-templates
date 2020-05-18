@@ -24,7 +24,26 @@
   - [Root and partial templates](#root-and-partial-templates)
   - [Important](#warning-important-warning)
 - [Quick start](#quick-start)
-  
+- [Templates](#templates)
+  - [/my_dashboard](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#my-dashboard)
+  - [/learning_paths](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-paths)
+  - [/learning_paths/:id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-paths-id-cover)
+  - [/courses/:id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#course-id-cover)
+  - [/learning_paths/:lp_id/courses/:c_id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning_paths-lpid-courses-cid-cover)
+  - [Learning Experience V3](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-experience-v3)
+  - [Learning Experience V2](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-experience-v2)
+  - [/account/edit](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#account-edit)
+  - [/training_events](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#training-events)
+  - [/training_sessions/:id](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#training-session-id)
+  - [/search](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#search)
+  - [/catalog](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#catalog)
+  - [/catalog_search](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#catalog-search)
+  - [/catalog/:id/:slug](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#catalog-id-slug)
+  - [/learning_paths/:id](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-paths-id)
+  - [/](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#homepage-path)
+  - [/404](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#not-found)
+  - [/500](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#server-error)
+
 
 ## How Northpass templates works
 ### General information 
@@ -97,183 +116,597 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 
 [:arrow_up:](#table-of-contents)
 
-# Templates available in each page. ([FAQ](#FAQ))
+## Templates
 
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="my-dashboard">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png">
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b><code>/my_dashboard</code></b></td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/my_content.html.liquid">my_content</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_course.html.liquid">_course</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_filters.html.liquid">_filters</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_learning_path.html.liquid">_learning_path</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_learning_path_filters.html.liquid">_learning_path_filters</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_my_content_header.html.liquid">_my_content_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_my_paths.html.liquid">_my_paths</a></li>  
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-## `/my_dashboard`
+[:arrow_up:](#table-of-contents)
 
-templates:
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="learning-paths">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png">
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b><code>/learning_paths</code></b></td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/my_content.html.liquid">learning_paths_index</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_learning_path.html.liquid">_learning_path</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-- my_content
-- _course
-- _filters
-- _footer
-- _head
-- _header
-- _learning_path
-- _learning_path_filters
-- _my_content_header
-- _my_paths
+[:arrow_up:](#table-of-contents)
 
-## `/learning_paths`
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="learning-paths-id-cover">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png">
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b><code>/learning_paths/:id/cover</code></b></td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/learning_path_cover.html.liquid">learning_path_cover</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-templates:
+[:arrow_up:](#table-of-contents)
 
-- learning_paths_index
-- _footer
-- _head
-- _header
-- _learning_path
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="course-id-cover">
+		<b>Screenshoot</b>
+		</a>
+		<a name="learning_paths-lpid-courses-cid-cover">
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/courses/:id/cover</code></b>
+        <br>
+        <b><code>/learning_paths/:lp_id/courses/:c_id/cover</code></b>
+        </td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_cover.html.liquid">course_cover</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a> (when on Learning Experience V3)</li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v2.html.liquid">custom_javascript_v2</a> (when on Learning Experience V2)</li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-## `/learning_paths/:id/cover`
+[:arrow_up:](#table-of-contents)
 
-templates:
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="learning-experience-v3">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b><code>Learning Experience V3</code></b></td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a></li>  
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-- custom_javascript_v3
-- learning_path_cover
+[:arrow_up:](#table-of-contents)
 
-## `/courses/:id/cover, /learning_paths/:lp_id/courses/:c_id/cover`
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="learning-experience-v2">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b><code>Learning Experience V2</code></b></td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v2.html.liquid">custom_javascript_v2</a></li>  
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-templates:
+[:arrow_up:](#table-of-contents)
 
-- course_cover
-- custom_javascript_v3 (when on v3)
-- custom_javascript_v2 (when on v2)
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="account-edit">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2"> 
+            <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/account_edit.png">  
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b><code>/account/edit</code></b></td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>  
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-## `LX V3`
+[:arrow_up:](#table-of-contents)
 
-templates:
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="training-events">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/training_events</code></b>
+        <br>
+        (available when Instructor-Led Training is active)
+        </td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/discover_events.html.liquid">discover_events</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_training_session.html.liquid">_training_session</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_training_event.html.liquid">_training_event</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-- custom_javascript_v3
+[:arrow_up:](#table-of-contents)
 
-## `LX V2`
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="training-session-id">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/training_sessions/:id</code></b>
+        <br>
+        (available when Instructor-Led Training is active)
+        </td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/training_session_show.html.liquid">training_session_show</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-templates:
+[:arrow_up:](#table-of-contents)
 
-- custom_javascript_v2
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="search">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/search</code></b>
+        <br>
+        (available when Search + Discovery is active)
+        </td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_filters.html.liquid">_filters</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_search_form.html.liquid">_search_form</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-## `/account/edit`
+[:arrow_up:](#table-of-contents)
 
-templates:
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="catalog">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/catalog</code></b>
+        <br>
+        (available when Website and Catalog is active)
+        </td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_index.html.liquid">course_index</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_course.html.liquid">_course</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-- _footer
-- _head
-- _header
+[:arrow_up:](#table-of-contents)
 
-## `/training_events`
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="catalog-search">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/catalog_search</code></b>
+        <br>
+        (available when Search + Discovery is active)
+        </td>  
+        <td>
+            <ul>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_filters.html.liquid">_catalog_filters</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-(available when ILT is active)
+[:arrow_up:](#table-of-contents)
 
-templates:
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="catalog-id-slug">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/catalog/:id/:slug</code></b>
+        <br>
+        (available when Website and Catalog is active)
+        </td>  
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_details.html.liquid">course_details</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-- _head
-- _header
-- discover_events
-- _training_session
-- _training_event
-- _footer
+[:arrow_up:](#table-of-contents)
 
-## `/training_sessions/:id`
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="learning-paths-id">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/learning_paths/:id</code></b>
+        <br>
+        (available when Search + Discovery is active)
+        </td>  
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/learning_path_details.html.liquid">learning_path_details</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-(available when ILT is active)
+[:arrow_up:](#table-of-contents)
 
-templates:
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="homepage-path">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/</code></b>
+        <br>
+        (available when Website and Catalog is active)
+        </td>  
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/homepage.html.liquid">homepage</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-- training_session_show
-- _footer
-- _head
-- _header
+[:arrow_up:](#table-of-contents)
 
-## `/search`
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="not-found">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/404</code></b>
+        </td>  
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/not_found.html.liquid">not_found</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-(available when Search + Discovery is active)
+[:arrow_up:](#table-of-contents)
 
-templates:
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="server-error">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/500</code></b>
+        </td>  
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/server_error.html.liquid">server_error</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
 
-- _filters
-- _footer
-- _head
-- _header
-- _search_form
-
-## `/catalog`
-
-(available when Website and Catalog is active)
-
-templates:
-
-- course_index
-- _catalog_search_form
-- _course
-- _footer
-- _head
-- _header
-
-## `/catalog_search`
-
-(available when Search + Discovery is active)
-
-templates:
-
-- _catalog_filters
-- _footer
-- _head
-- _header
-- _catalog_search_form
-
-## `/catalog/:id/:slug`
-
-(available when Website and Catalog is active)
-
-templates:
-
-- course_details
-- _catalog_seach_form
-- _footer
-- _head
-- _header
-
-## `/learning_paths/:id`
-
-(available when Search + Discovery is active)
-
-templates:
-
-- learning_path_details
-- _footer
-- _head
-- _header
-
-## `/`
-
-(available when Website and Catalog is active)
-
-templates:
-
-- homepage
-- _footer
-- _head
-- _header
-
-## `/404`
-
-templates:
-
-- not_found
-- _footer
-- _head
-- _header
-
-## `/500`
-
-templates:
-
-- server_error
-- _footer
-- _head
-- _header
-
----
+[:arrow_up:](#table-of-contents)
 
 # Variables that are available in certain templates. 
 
