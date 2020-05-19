@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <a href="https://www.northpass.com/">
-    <img width="256" src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/northpass_emblem.svg" alt="Northpass Logo">
+    <img width="256" src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/northpass_emblem.svg" alt="Northpass Logo">
   </a>
   <br>
   Northpass Templates
@@ -18,50 +18,46 @@
 <br>
 
 ## Table of Contents
-- [How Northpass templates works](#how-northpass-templates-works)
+- [How Northpass templates work](#how-northpass-templates-work)
   - [General information](#general-information)
   - [Liquid](#liquid)
   - [Root and partial templates](#root-and-partial-templates)
   - [Important](#warning-important-warning)
 - [Quick start](#quick-start)
 - [Templates](#templates)
-  - [/my_dashboard](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#my-dashboard)
-  - [/learning_paths](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-paths)
-  - [/learning_paths/:id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-paths-id-cover)
-  - [/courses/:id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#course-id-cover)
-  - [/learning_paths/:lp_id/courses/:c_id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning_paths-lpid-courses-cid-cover)
-  - [Learning Experience V3](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-experience-v3)
-  - [Learning Experience V2](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-experience-v2)
-  - [/account/edit](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#account-edit)
-  - [/training_events](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#training-events)
-  - [/training_sessions/:id](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#training-session-id)
-  - [/search](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#search)
-  - [/catalog](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#catalog)
-  - [/catalog_search](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#catalog-search)
-  - [/catalog/:id/:slug](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#catalog-id-slug)
-  - [/learning_paths/:id](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning-paths-id)
-  - [/](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#homepage-path)
-  - [/404](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#not-found)
-  - [/500](https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#server-error)
+  - [/](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#homepage-path)
+  - [/my_dashboard](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#my-dashboard)
+  - [/learning_paths](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning-paths)
+  - [/learning_paths/:id](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning-paths-id)
+  - [/learning_paths/:id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning-paths-id-cover)
+  - [/courses/:id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#course-id-cover)
+  - [/learning_paths/:lp_id/courses/:c_id/cover](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning_paths-lpid-courses-cid-cover)
+  - [Learning Experience V3](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning-experience-v3)
+  - [Learning Experience V2](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning-experience-v2)
+  - [/account/edit](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#account-edit)
+  - [/training_events](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training-events)
+  - [/training_sessions/:id](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training-session-id)
+  - [/search](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#search)
+  - [/catalog](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#catalog)
+  - [/catalog_search](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#catalog-search)
+  - [/catalog/:id/:slug](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#catalog-id-slug)
+  - [/500](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#server-error)
 - [Variables](#variables)
   - [By template](#by-template)
   - [Definitions](#definitions)
+- [FAQ](#faq-questionquestionquestion)
     
 
-## How Northpass templates works
-### General information 
-In this repository we give you access to base templates, which should be the starting point for your customizations. All templates are in the `/templates` directory. You can edit them, but you can't add your own.
+## [How Northpass templates work](#table-of-contents)
+### [General information](#table-of-contents) 
+In this repository we give you the access to base templates, which should be the starting point for your customizations. All templates are in the `/templates` directory. You can edit them but you can't add your own.
 
-[:arrow_up:](#table-of-contents)
-
-### Liquid
-At Northpass, we use Liquid as a template language. [Liquid](https://shopify.github.io/liquid/) was created by Shopify and is used in production by dozens of companies around the world. We use it to load dynamic content on the school website. In individual templates you can use variables that download data directly from the Northpass platform. Thanks to this, you have the opportunity to create a completely unique User Experience in your school.
+### [Liquid](#table-of-contents)
+At Northpass we use Liquid as a template language. [Liquid](https://shopify.github.io/liquid/) was created by Shopify and is used in production by dozens of companies around the world. We use it to load dynamic content on the school website. In individual templates you can use variables that download data directly from the Northpass platform. Thanks to this you have the opportunity to create a completely unique User Experience in your school.
 
 We encourage you to read the [Liquid documentation](https://shopify.github.io/liquid/) to learn more about the syntax and possible use cases.
 
-[:arrow_up:](#table-of-contents)
-
-### Root and partial templates
+### [Root and partial templates](#table-of-contents)
 The templates available in our application are divided into two types: 
 * **root templates**
 * **partial templates**
@@ -70,7 +66,7 @@ The templates available in our application are divided into two types:
 
 **Partial templates** are smaller fragments that can be included in root templates, their name always begins with the prefix `_`.
 
-Thanks to this division, we are able for instance to customize a footer once and use it in all other templates.
+Thanks to this division we are able for instance to customize a footer once and use it in all other templates.
 
 This is the example of the root template and its partial templates:
 ```
@@ -82,15 +78,10 @@ course_index
     ├── _course
 ```
 
-[:arrow_up:](#table-of-contents)
+### :warning: [Important](#table-of-contents) :warning:
+Once you edit your templates we won’t support automatic updates with additional features that Northpass makes to the base templates. You will need to merge the changes into your templates directory. Additionally, we will not be able to support the look and feel of your website.
 
-### :warning: Important :warning:
-Once you’ve edited your templates we won’t support automatic updates with additional features that Northpass makes to the base templates. You will need to merge the changes into your templates directory. Additionally, we will not be able to support the look and feel of your website.
-
-[:arrow_up:](#table-of-contents)
-
-
-## Quick start
+## [Quick start](#table-of-contents)
 **1. Clone the repository**
 
 ```
@@ -117,9 +108,43 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 
 ![](img/school_website_styling.png)
 
-[:arrow_up:](#table-of-contents)
+## [Templates](#table-of-contents)
 
-## Templates
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="homepage-path">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/homepage.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/</code></b>
+        <br>
+        (available when Website and Catalog is active)
+        </td>  
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/homepage.html.liquid">homepage</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
+
+[:arrow_up:](#table-of-contents)
 
 <table align="center" border="0">  
 	<tr>
@@ -131,7 +156,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/my_dashboard.png">
         </td>  
     </tr>  
     <tr>  
@@ -142,16 +167,16 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         <td align="center"><b><code>/my_dashboard</code></b></td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/my_content.html.liquid">my_content</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_course.html.liquid">_course</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_filters.html.liquid">_filters</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_learning_path.html.liquid">_learning_path</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_learning_path_filters.html.liquid">_learning_path_filters</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_my_content_header.html.liquid">_my_content_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_my_paths.html.liquid">_my_paths</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/my_content.html.liquid">my_content</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_course.html.liquid">_course</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_filters.html.liquid">_filters</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_learning_path.html.liquid">_learning_path</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_learning_path_filters.html.liquid">_learning_path_filters</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_my_content_header.html.liquid">_my_content_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_my_paths.html.liquid">_my_paths</a></li>  
             </ul>  
         </td>  
     </tr>  
@@ -169,7 +194,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths.png">
         </td>  
     </tr>  
     <tr>  
@@ -180,11 +205,47 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         <td align="center"><b><code>/learning_paths</code></b></td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/my_content.html.liquid">learning_paths_index</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_learning_path.html.liquid">_learning_path</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/my_content.html.liquid">learning_paths_index</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_learning_path.html.liquid">_learning_path</a></li>
+            </ul>  
+        </td>  
+    </tr>  
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">  
+	<tr>
+		<td align="center" colspan="2">
+		<a name="learning-paths-id">
+		<b>Screenshoot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>  
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths_id.png"> 
+        </td>  
+    </tr>  
+    <tr>  
+        <td align="center"><b>Path</b></td>  
+        <td align="center"><b>Available Templates</b></td>  
+    </tr>  
+    <tr>  
+        <td align="center">
+        <b><code>/learning_paths/:id</code></b>
+        <br>
+        (available when Search + Discovery is active)
+        </td>  
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/learning_path_details.html.liquid">learning_path_details</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -202,7 +263,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths_cover.png">
         </td>  
     </tr>  
     <tr>  
@@ -213,8 +274,8 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         <td align="center"><b><code>/learning_paths/:id/cover</code></b></td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/learning_path_cover.html.liquid">learning_path_cover</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/learning_path_cover.html.liquid">learning_path_cover</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -234,7 +295,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/course_cover_screen.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -249,9 +310,9 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_cover.html.liquid">course_cover</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a> (when on Learning Experience V3)</li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v2.html.liquid">custom_javascript_v2</a> (when on Learning Experience V2)</li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/course_cover.html.liquid">course_cover</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a> (when on Learning Experience V3)</li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/custom_javascript_v2.html.liquid">custom_javascript_v2</a> (when on Learning Experience V2)</li>
             </ul>  
         </td>  
     </tr>  
@@ -269,7 +330,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/lx_v3.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -280,7 +341,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         <td align="center"><b><code>Learning Experience V3</code></b></td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/custom_javascript_v3.html.liquid">custom_javascript_v3</a></li>  
             </ul>  
         </td>  
     </tr>  
@@ -298,7 +359,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/lx_v2.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -309,7 +370,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         <td align="center"><b><code>Learning Experience V2</code></b></td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/custom_javascript_v2.html.liquid">custom_javascript_v2</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/custom_javascript_v2.html.liquid">custom_javascript_v2</a></li>  
             </ul>  
         </td>  
     </tr>  
@@ -327,7 +388,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2"> 
-            <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/account_edit.png">  
+            <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/account_edit.png">  
         </td>  
     </tr>  
     <tr>  
@@ -338,9 +399,9 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         <td align="center"><b><code>/account/edit</code></b></td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>  
             </ul>  
         </td>  
     </tr>  
@@ -358,7 +419,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/training_events.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -373,12 +434,12 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/discover_events.html.liquid">discover_events</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_training_session.html.liquid">_training_session</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_training_event.html.liquid">_training_event</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/discover_events.html.liquid">discover_events</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_training_session.html.liquid">_training_session</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_training_event.html.liquid">_training_event</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -396,7 +457,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/training_events_id.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -411,10 +472,10 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/training_session_show.html.liquid">training_session_show</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/training_session_show.html.liquid">training_session_show</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -432,7 +493,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_search_screen.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -447,11 +508,11 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_filters.html.liquid">_filters</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_search_form.html.liquid">_search_form</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_filters.html.liquid">_filters</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_search_form.html.liquid">_search_form</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -469,7 +530,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_screen.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -484,12 +545,12 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_index.html.liquid">course_index</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_course.html.liquid">_course</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/course_index.html.liquid">course_index</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_course.html.liquid">_course</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -507,7 +568,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_search_screen.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -522,11 +583,11 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_filters.html.liquid">_catalog_filters</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_catalog_filters.html.liquid">_catalog_filters</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -544,7 +605,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_id_slug.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -559,117 +620,11 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_details.html.liquid">course_details</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
-            </ul>  
-        </td>  
-    </tr>  
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">  
-	<tr>
-		<td align="center" colspan="2">
-		<a name="learning-paths-id">
-		<b>Screenshoot</b>
-		</a>
-		</td>
-	</tr>
-    <tr>  
-        <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
-        </td>  
-    </tr>  
-    <tr>  
-        <td align="center"><b>Path</b></td>  
-        <td align="center"><b>Available Templates</b></td>  
-    </tr>  
-    <tr>  
-        <td align="center">
-        <b><code>/learning_paths/:id</code></b>
-        <br>
-        (available when Search + Discovery is active)
-        </td>  
-        <td>
-            <ul>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/learning_path_details.html.liquid">learning_path_details</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-            </ul>  
-        </td>  
-    </tr>  
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">  
-	<tr>
-		<td align="center" colspan="2">
-		<a name="homepage-path">
-		<b>Screenshoot</b>
-		</a>
-		</td>
-	</tr>
-    <tr>  
-        <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
-        </td>  
-    </tr>  
-    <tr>  
-        <td align="center"><b>Path</b></td>  
-        <td align="center"><b>Available Templates</b></td>  
-    </tr>  
-    <tr>  
-        <td align="center">
-        <b><code>/</code></b>
-        <br>
-        (available when Website and Catalog is active)
-        </td>  
-        <td>
-            <ul>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/homepage.html.liquid">homepage</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
-            </ul>  
-        </td>  
-    </tr>  
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">  
-	<tr>
-		<td align="center" colspan="2">
-		<a name="not-found">
-		<b>Screenshoot</b>
-		</a>
-		</td>
-	</tr>
-    <tr>  
-        <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
-        </td>  
-    </tr>  
-    <tr>  
-        <td align="center"><b>Path</b></td>  
-        <td align="center"><b>Available Templates</b></td>  
-    </tr>  
-    <tr>  
-        <td align="center">
-        <b><code>/404</code></b>
-        </td>  
-        <td>
-            <ul>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/not_found.html.liquid">not_found</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/course_details.html.liquid">course_details</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_catalog_search_form.html.liquid">_catalog_search_form</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -687,7 +642,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 	</tr>
     <tr>  
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/readme-improvements/img/placeholder.png"> 
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/server_error.png"> 
         </td>  
     </tr>  
     <tr>  
@@ -700,10 +655,10 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         </td>  
         <td>
             <ul>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/server_error.html.liquid">server_error</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></li>  
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_head.html.liquid">_head</a></li>
-                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/server_error.html.liquid">server_error</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></li>  
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
             </ul>  
         </td>  
     </tr>  
@@ -711,121 +666,117 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 
 [:arrow_up:](#table-of-contents)
 
-## Variables
+## [Variables](#table-of-contents)
 Variables are one of the most useful functionalities when customizing the look of your school. Northpass provides a number of different variables in the available templates so that you can modify your school's appearance in a dynamic way.
 
-[:arrow_up:](#table-of-contents)
-
-### By template
-Below is a table with available variables broken down into individual templates. Unfortunately, at the moment not all variables are available from any template, so keep these restrictions in mind.
+### [By template](#table-of-contents)
+Below is a table with available variables broken down into individual templates. Unfortunately at the moment not all variables are available from any template so keep these restrictions in mind.
 
 <table border="0">
 <tr>
     <th>Template</th>
     <th>Variables</th>  
 </tr>  
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/my_content.html.liquid">my_content</a></td>  
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/my_content.html.liquid">my_content</a></td>  
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#my_content">my_content</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#my_content">my_content</a></li>
 	</ul>
 </td></tr>  
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/learning_paths_index.html.liquid">learning_paths_index</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/learning_paths_index.html.liquid">learning_paths_index</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning_path">learning_path</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning_path">learning_path</a></li>
 	</ul>
 </td></tr>
 <tr>
     <td>
-    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/learning_path_cover.html.liquid">learning_path_cover</a>
+    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/learning_path_cover.html.liquid">learning_path_cover</a>
     <br>
-    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/learning_path_details.html.liquid">learning_path_details</a>
+    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/learning_path_details.html.liquid">learning_path_details</a>
     </td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#learning_path">learning_path</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning_path">learning_path</a></li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_index.html.liquid">course_index</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/course_index.html.liquid">course_index</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#courses">courses</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#courses">courses</a></li>
 	</ul>
 </td></tr>
 <tr>
     <td>
-    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_cover.html.liquid">course_cover</a>
+    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/course_cover.html.liquid">course_cover</a>
     <br>
-    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/course_details.html.liquid">course_details</a>
+    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/course_details.html.liquid">course_details</a>
     </td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#course">course</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#course">course</a></li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/homepage.html.liquid">homepage</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/homepage.html.liquid">homepage</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#homepage">homepage</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#homepage">homepage</a></li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_footer.html.liquid">_footer</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#footer_navigations">footer_navigations</a></li>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#website_footer">website_footer</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#footer_navigations">footer_navigations</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#website_footer">website_footer</a></li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_header.html.liquid">_header</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#header_navigations">header_navigations</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#header_navigations">header_navigations</a></li>
 	</ul>
 </td></tr>
 <tr>
     <td>
-    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_search_form.html.liquid">_search_form</a>
+    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_search_form.html.liquid">_search_form</a>
     <br>
-    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_catalog_search_form.html.liquid">_catalog_search_form</a>
+    <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_catalog_search_form.html.liquid">_catalog_search_form</a>
     </td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#search_result">search_result</a></li>
-    <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#header_navigations">header_navigations</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#search_result">search_result</a></li>
+    <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#header_navigations">header_navigations</a></li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/training_session_show.html.liquid">training_session_show</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/training_session_show.html.liquid">training_session_show</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#training_session">training_session</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training_session">training_session</a></li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/discover_events.html.liquid">discover_events</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/discover_events.html.liquid">discover_events</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#training_events">training_events</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training_events">training_events</a></li>
 	<li>filter_options</li>
 	<li>filter</li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_training_session.html.liquid">_training_session</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_training_session.html.liquid">_training_session</a></td>
 <td>
 	<ul>
 	<li>session</li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/readme-improvements/templates/_training_event.html.liquid">_training_event</a></td>
+<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_training_event.html.liquid">_training_event</a></td>
 <td>
 	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/readme-improvements#training_event">training_event</a></li>
+	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training_event">training_event</a></li>
 	</ul>
 </td></tr>
 </table>
 
-[:arrow_up:](#table-of-contents)
-
-### Definitions
+### [Definitions](#table-of-contents)
 #### Arrays
 Some of the available variables in the templates are **Arrays**, so the following methods are available for them:
 
@@ -834,7 +785,7 @@ Some of the available variables in the templates are **Arrays**, so the followin
 * `empty?`
 * `size`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `color_palette`
 
@@ -852,7 +803,7 @@ Some of the available variables in the templates are **Arrays**, so the followin
 * `button_color`
 * `button_font_color`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `current_person`
 
@@ -893,7 +844,7 @@ Some of the available variables in the templates are **Arrays**, so the followin
 * `name`
 * `signed_in?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `current_school`
 
@@ -914,7 +865,7 @@ Some of the available variables in the templates are **Arrays**, so the followin
 * `my_content_label`
 * `public`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `custom_templates`
 
@@ -922,7 +873,7 @@ Some of the available variables in the templates are **Arrays**, so the followin
 * `each`
 * `any?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `custom_template`
 Available when using `each` method on [custom_templates](#custom_templates).
@@ -931,7 +882,7 @@ Available when using `each` method on [custom_templates](#custom_templates).
 * `name`
 * `fingerprint`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `my_content`
 
@@ -945,7 +896,7 @@ Available when using `each` method on [custom_templates](#custom_templates).
 * `empty_learning_paths`
 * `learning_paths?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `routes`
 
@@ -963,7 +914,7 @@ Available when using `each` method on [custom_templates](#custom_templates).
 * `color_scheme_path`
 * `custom_styles_path`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `courses`
 
@@ -971,7 +922,7 @@ Available when using `each` method on [custom_templates](#custom_templates).
 * `each`
 * `any?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `course`
 Available also when using `each` method on [courses](#courses).
@@ -1018,7 +969,7 @@ Available also when using `each` method on [courses](#courses).
 * `superscirpt`
 * `view_label`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `footer_navigations`
 
@@ -1026,7 +977,7 @@ Available also when using `each` method on [courses](#courses).
 * `each`
 * `any?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `header_navigations`
 
@@ -1034,7 +985,7 @@ Available also when using `each` method on [courses](#courses).
 * `each`
 * `any?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `website_navigation`
 Available when using `each` method on [header_navigations](#header_navigations) or [footer_navigations](#footer_navigations).
@@ -1044,7 +995,7 @@ Available when using `each` method on [header_navigations](#header_navigations) 
 * `name`
 * `path`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `website_footer`
 
@@ -1055,7 +1006,7 @@ Available when using `each` method on [header_navigations](#header_navigations) 
 * `show_navigation_links?`
 * `show_social_media_links?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 
 #### `learning_paths`
@@ -1064,7 +1015,7 @@ Available when using `each` method on [header_navigations](#header_navigations) 
 * `each`
 * `any?`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `learning_path`
 Available also when using `each` method on [learning_paths](#learning_paths)
@@ -1093,7 +1044,7 @@ Available also when using `each` method on [learning_paths](#learning_paths)
 * `items`
 * `current_person_learning_path_item`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `instructor`
 Available when using `each` method on [learning_path](#learning_path) `.instructors`.
@@ -1104,10 +1055,10 @@ Available when using `each` method on [learning_path](#learning_path) `.instruct
 * `name`
 * `title`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `person_learning_path_item`
-Available when using `each` method on **???**
+Available when using `each` method on [learning_path](#learning_path) `.items`.
 
 **Methods:**
 * `completed?`
@@ -1119,10 +1070,10 @@ Available when using `each` method on **???**
 * `traning_event`
 * `type_icon`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `section`
-Available when using `each` method on **???**
+Available when using `each` method on [course](#course) `.published_sections`.
 
 **Methods:**
 * `name`
@@ -1130,7 +1081,7 @@ Available when using `each` method on **???**
 * `will_be_published?`
 * `activities`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `activity`
 Available when using `each` method on [section](#section) `.activities`.
@@ -1143,7 +1094,7 @@ Available when using `each` method on [section](#section) `.activities`.
 * `path`
 * `title`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 
 #### `search_result`
@@ -1151,7 +1102,7 @@ Available when using `each` method on [section](#section) `.activities`.
 **Methods:**
 * `count`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `homepage`
 
@@ -1163,7 +1114,7 @@ Available when using `each` method on [section](#section) `.activities`.
 * `featured_courses_subheadline`
 * `headline`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `training_events`
 
@@ -1171,7 +1122,7 @@ The list of training events. The object is type of Array and [these methods](#ar
 
 Each of them has access to methods from [training_event](#training_event).
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `training_event`
 
@@ -1181,7 +1132,7 @@ Each of them has access to methods from [training_event](#training_event).
 * `type` - one of: `In person`, `Online`
 * `sessions` - list of training sessions. Each of them has access to methods from [training_session](#training_session).
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `training_session`
 
@@ -1208,25 +1159,19 @@ Each of them has access to methods from [training_event](#training_event).
 * `other_sessions`
 * `event_type_title`
 
-[:arrow_up:](#table-of-contents)
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
-## discover_events
+## [FAQ](#table-of-contents) :question::question::question:
 
-- [training_events](#training_events)
-- [filter_options] - list of values and labels to populate filter component
-- filter - renders filter dropdown component
+**1. What pages don't have templates?**
 
-# FAQ
+Any page not listed in [Templates](#templates) part.
 
-1. What pages don't have templates?
+**2. What objects are available (example: `_course.html.liquid`) on each page? What do they do?**
 
-Any page not listed in **[Pages] ** part
+We have a list of variables available to every template [here](#by-template). Additionally [in the same section](#by-template) we have templates that have more variables you can access. Please note that most of the templates starting with `_` are called **partials** (they are used inside another template) and have exactly the same variables as their **root template**.
 
-2. What objects are available (example: `_course.html.liquid`) on each page? What do they do?
-
-We have a list of variables available to every page **[here].** Additionally **[in the same section] ** we have templates that have more variables you can access. Please note that most of the templates starting with `_` are called **partials** (they are used inside other template) and have exactly the same variables as their "root" template
-
-3. How can we upload templates programmatically?
+**3. How can we upload templates programmatically?**
 
 There is an api endpoint:
 
@@ -1239,19 +1184,17 @@ There is an api endpoint:
             }
           }
 
-Additionally we've created a Visual Studio Code plugin that uses it [https://github.com/SchoolKeep/np-templates-vscode](https://github.com/SchoolKeep/np-templates-vscode). It's still private: needs README, would be nice to implement confirmation of account name before sending, maybe some kind of backup option?
+**4. What is the "homepage" template?**
 
-4. What is the "homepage" template?
+[Homepage template](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#homepage-path) is used on the `/` (no path, plain domain) url when Website & Catalog app is active.
 
-`[homepage` template] is used on the `/` (no path, plain domain) url when Website & Catalog app is active.
+**5. How do I get all learner's courses?**
 
-5. How do I get all learner courses?
+Probably the only way now is to use `my_content.courses` in the [my_content template](https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/my_content.html.liquid).
 
-Probably the only way now is to use **[my_content] .courses** in the [my_content]template.
+**6. Can I retrieve a specific course?**
 
-6. Can I retrieve a specific course?
-
-Only way would be to iterate over **[courses]** and then using some logic to use only specific course
+Only way would be to iterate over [courses](#courses) and then using some logic to use only specific course.
 
     {% for course in my_content.courses %}
        {% if course.name == "Course 1" %}
@@ -1260,12 +1203,10 @@ Only way would be to iterate over **[courses]** and then using some logic to use
     {% endfor %}
     
 
-7. What are all the custom_javascript files?
+**7. What are all the custom_javascript files?**
 
-**custom_javascript_v[LX version]** is used dependent on the current account LX version. Other custom_javascript files are remains of old code and are unused
+`custom_javascript_v[LX version]` is used dependent on the current account LX version. Other custom_javascript files are remains of old code and are unused.
 
-8. Is there a universal template we can use that *isn't* `_footer.html.liquid`? (there are **A LOT** of product hacks implemented using the footer template)
+**8. Is there a universal template we can use that *isn't* `_footer.html.liquid`?**
 
-Looking at **[Pages] ** its also _head and _header templates but _footer is the last one rendered in HTML which is the best place for javascript hacks.
-
----
+Looking at [Templates](#templates) there're also `_head` and `_header` templates but `_footer` is the last one rendered in HTML which is the best place for javascript workarounds.
