@@ -111,18 +111,6 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 ## [Templates](#table-of-contents)
 
 <table align="center" border="0">
-	<tr>
-		<td align="center" colspan="2">
-		<a name="homepage-path">
-		<b>Screenshot</b>
-		</a>
-		</td>
-	</tr>
-    <tr>
-        <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/homepage.png">
-        </td>
-    </tr>
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -142,23 +130,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="my-dashboard">
+		<a name="homepage-path">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/my_dashboard.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/homepage.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -180,23 +168,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-paths">
+		<a name="my-dashboard">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/my_dashboard.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -213,23 +201,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-paths-id">
+		<a name="learning-paths">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths_id.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -249,23 +237,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-paths-id-cover">
+		<a name="learning-paths-id">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths_cover.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths_id.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -279,25 +267,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="course-id-cover">
+		<a name="learning-paths-id-cover">
 		<b>Screenshot</b>
-		</a>
-		<a name="learning_paths-lpid-courses-cid-cover">
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/course_cover_screen.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/learning_paths_cover.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -316,23 +302,25 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-experience-v3">
+		<a name="course-id-cover">
 		<b>Screenshot</b>
+		</a>
+		<a name="learning_paths-lpid-courses-cid-cover">
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/lx_v3.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/course_cover_screen.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -345,23 +333,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-experience-v2">
+		<a name="learning-experience-v3">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/lx_v2.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/lx_v3.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -374,23 +362,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="account-edit">
+		<a name="learning-experience-v2">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-            <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/account_edit.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/lx_v2.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -405,23 +393,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="training-events">
+		<a name="account-edit">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/training_events.png">
+            <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/account_edit.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -443,23 +431,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="training-session-id">
+		<a name="training-events">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/training_events_id.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/training_events.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -479,23 +467,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="search">
+		<a name="training-session-id">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_search_screen.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/training_events_id.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -516,23 +504,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="catalog">
+		<a name="search">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_screen.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_search_screen.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -554,23 +542,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="catalog-search">
+		<a name="catalog">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_search_screen.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_screen.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -591,23 +579,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="catalog-id-slug">
+		<a name="catalog-search">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_id_slug.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_search_screen.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -628,23 +616,23 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
             </ul>
         </td>
     </tr>
-</table>
-
-[:arrow_up:](#table-of-contents)
-
-<table align="center" border="0">
 	<tr>
 		<td align="center" colspan="2">
-		<a name="server-error">
+		<a name="catalog-id-slug">
 		<b>Screenshot</b>
 		</a>
 		</td>
 	</tr>
     <tr>
         <td colspan="2">
-        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/server_error.png">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/catalog_id_slug.png">
         </td>
     </tr>
+</table>
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
     <tr>
         <td align="center"><b>Path</b></td>
         <td align="center"><b>Available Templates</b></td>
@@ -660,6 +648,18 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
                 <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_head.html.liquid">_head</a></li>
                 <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></li>
             </ul>
+        </td>
+    </tr>
+	<tr>
+		<td align="center" colspan="2">
+		<a name="server-error">
+		<b>Screenshot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/server_error.png">
         </td>
     </tr>
 </table>
