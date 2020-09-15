@@ -43,6 +43,7 @@
   - [/catalog/:id/:slug](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#catalog-id-slug)
   - [/500](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#server-error)
 - [Variables](#variables)
+  - [Global](#global)
   - [By template](#by-template)
   - [Definitions](#definitions)
 - [FAQ](#faq-questionquestionquestion)
@@ -669,6 +670,18 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 ## [Variables](#table-of-contents)
 Variables are one of the most useful functionalities when customizing the look of your school. Northpass provides a number of different variables in the available templates so that you can modify your school's appearance in a dynamic way.
 
+### [Global](#table-of-contents)
+The following variables are exposed globally and can be used in all the templates:
+
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#header_navigations">header_navigations</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#footer_navigations">footer_navigations</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#my_content">my_content</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning_paths">learning_paths</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#website_footer">website_footer</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#discover_events">discover_events</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training_events">training_events</a>
+
+
 ### [By template](#table-of-contents)
 Below is a table with available variables broken down into individual templates. Unfortunately at the moment not all variables are available from any template so keep these restrictions in mind.
 
@@ -677,18 +690,6 @@ Below is a table with available variables broken down into individual templates.
     <th>Template</th>
     <th>Variables</th>
 </tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/my_content.html.liquid">my_content</a></td>
-<td>
-	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#my_content">my_content</a></li>
-	</ul>
-</td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/learning_paths_index.html.liquid">learning_paths_index</a></td>
-<td>
-	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning_path">learning_path</a></li>
-	</ul>
-</td></tr>
 <tr>
     <td>
     <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/learning_path_cover.html.liquid">learning_path_cover</a>
@@ -723,19 +724,6 @@ Below is a table with available variables broken down into individual templates.
 	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#homepage">homepage</a></li>
 	</ul>
 </td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_footer.html.liquid">_footer</a></td>
-<td>
-	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#footer_navigations">footer_navigations</a></li>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#website_footer">website_footer</a></li>
-	</ul>
-</td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_header.html.liquid">_header</a></td>
-<td>
-	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#header_navigations">header_navigations</a></li>
-	</ul>
-</td></tr>
 <tr>
     <td>
     <a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_search_form.html.liquid">_search_form</a>
@@ -745,21 +733,12 @@ Below is a table with available variables broken down into individual templates.
 <td>
 	<ul>
 	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#search_result">search_result</a></li>
-    <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#header_navigations">header_navigations</a></li>
 	</ul>
 </td></tr>
 <tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/training_session_show.html.liquid">training_session_show</a></td>
 <td>
 	<ul>
 	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training_session">training_session</a></li>
-	</ul>
-</td></tr>
-<tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/discover_events.html.liquid">discover_events</a></td>
-<td>
-	<ul>
-	<li><a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training_events">training_events</a></li>
-	<li>filter_options</li>
-	<li>filter</li>
 	</ul>
 </td></tr>
 <tr><td><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/_training_session.html.liquid">_training_session</a></td>
@@ -780,38 +759,41 @@ Below is a table with available variables broken down into individual templates.
 #### Arrays
 Some of the available variables in the templates are **Arrays**, so the following methods are available for them:
 
-* `each`
 * `any?`
+* `each`
 * `empty?`
 * `size`
+
+For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `color_palette`
 
 **Methods:**
-* `learning_header_font_color`
+* `button_color`
+* `button_font_color`
+* `button_hover_color`
+* `color_palette`
+* `header_color`
 * `header_font_color`
 * `header_font_hover_color`
 * `learning_header_color`
+* `learning_header_font_color`
 * `learning_header_font_hover_color`
-* `button_hover_color`
 * `learning_link_button_color`
 * `learning_progress_bar_color`
-* `header_color`
-* `color_palette`
-* `button_color`
-* `button_font_color`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `current_person`
 
 **Methods:**
-* `sso_uid`
 * `email`
-* `first_name`
 * `enrolled_in_course?`
+* `first_name`
+* `id`
+* `sso_uid`
 
 **Example:**
 
@@ -835,43 +817,44 @@ Some of the available variables in the templates are **Arrays**, so the followin
 {% endfor %}
 ```
 ---
-* `filterable_categories`
 * `filterable_catalog_categories`
+* `filterable_categories`
 * `filterable_learning_path_categories`
 * `id`
-* `upcoming_registered_events`
 * `my_content_label`
 * `name`
 * `signed_in?`
+* `upcoming_registered_events`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `current_school`
 
 **Methods:**
-* `logo_navigation_url`
-* `search_enabled?`
+* `apps`
 * `disable_social_share?`
+* `filterable_categories`
 * `filtering_enabled?`
 * `has_custom_styles?`
+* `id`
 * `learning_paths_enabled?`
+* `logo_navigation_url`
 * `logo_url`
+* `my_content_label`
+* `name`
+* `public`
+* `search_enabled?`
 * `show_powered_by_school_keep?`
 * `sso_enabled?`
 * `uuid`
-* `filterable_categories`
-* `apps`
-* `name`
-* `my_content_label`
-* `public`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `custom_templates`
 
 **Methods:**
-* `each`
 * `any?`
+* `each`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -879,28 +862,31 @@ Some of the available variables in the templates are **Arrays**, so the followin
 Available when using `each` method on [custom_templates](#custom_templates).
 
 **Methods:**
-* `name`
 * `fingerprint`
+* `name`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `my_content`
 
 **Methods:**
-* `learning_paths`
-* `subheadline`
-* `headline`
 * `courses`
+* `empty_learning_paths`
+* `headline`
+* `learning_paths?`
 * `learning_paths_headline`
 * `learning_paths_subheadline`
-* `empty_learning_paths`
-* `learning_paths?`
+* `learning_paths`
+* `subheadline`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `routes`
 
 **Methods:**
+* `color_scheme_path`
+* `custom_styles_path`
+* `log_in_path`
 * `log_out_path`
 * `my_content_path`
 * `my_profile_path`
@@ -909,18 +895,15 @@ Available when using `each` method on [custom_templates](#custom_templates).
 * `school_website_search_path`
 * `schoolkeep_v3_styles_url`
 * `sign_up_path`
-* `log_in_path`
 * `url_helpers`
-* `color_scheme_path`
-* `custom_styles_path`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `courses`
 
 **Methods:**
-* `each`
 * `any?`
+* `each`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -928,13 +911,10 @@ Available when using `each` method on [custom_templates](#custom_templates).
 Available also when using `each` method on [courses](#courses).
 
 **Methods:**
-* `progress_text`
-* `instructors`
-* `published_sections`
-* `course_category_names`
 * `about_label`
 * `buy_label`
 * `course_attempts_path`
+* `course_category_names`
 * `cover_path`
 * `details_path`
 * `discover_events_path`
@@ -946,8 +926,10 @@ Available also when using `each` method on [courses](#courses).
 * `go_to_label`
 * `has_forum?`
 * `has_outline`
+* `id`
 * `instructor_names`
 * `instructors_title`
+* `instructors`
 * `learner_can_retake?`
 * `list_image_url`
 * `name`
@@ -955,10 +937,12 @@ Available also when using `each` method on [courses](#courses).
 * `outline_label`
 * `outline_path`
 * `payment_required?`
-* `progress`
 * `progress_bar`
+* `progress_text`
 * `progress_title`
+* `progress`
 * `promo_video_embed`
+* `published_sections`
 * `register_for_events`
 * `retake_course`
 * `ribbon`
@@ -974,16 +958,16 @@ Available also when using `each` method on [courses](#courses).
 #### `footer_navigations`
 
 **Methods:**
-* `each`
 * `any?`
+* `each`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `header_navigations`
 
 **Methods:**
-* `each`
 * `any?`
+* `each`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1000,11 +984,11 @@ Available when using `each` method on [header_navigations](#header_navigations) 
 #### `website_footer`
 
 **Methods:**
-* `social_media_links`
 * `school_customer_service_email`
 * `show_customer_service_email?`
 * `show_navigation_links?`
 * `show_social_media_links?`
+* `social_media_links`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1012,8 +996,8 @@ Available when using `each` method on [header_navigations](#header_navigations) 
 #### `learning_paths`
 
 **Methods:**
-* `each`
 * `any?`
+* `each`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1023,6 +1007,7 @@ Available also when using `each` method on [learning_paths](#learning_paths)
 **Methods:**
 * `about_label`
 * `cover_path`
+* `current_person_learning_path_item`
 * `description`
 * `details_path`
 * `enrollment_url`
@@ -1031,9 +1016,11 @@ Available also when using `each` method on [learning_paths](#learning_paths)
 * `go_to_label`
 * `has_instructors?`
 * `has_progress?`
+* `id`
 * `instructor_names`
-* `instructors`
 * `instructors_title`
+* `instructors`
+* `items`
 * `learning_path_category_names`
 * `list_image_url`
 * `name`
@@ -1041,8 +1028,6 @@ Available also when using `each` method on [learning_paths](#learning_paths)
 * `progress_bar`
 * `progress_text`
 * `view_label`
-* `items`
-* `current_person_learning_path_item`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1076,10 +1061,11 @@ Available when using `each` method on [learning_path](#learning_path) `.items`.
 Available when using `each` method on [course](#course) `.published_sections`.
 
 **Methods:**
+* `activities`
+* `id`
 * `name`
 * `published_at`
 * `will_be_published?`
-* `activities`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1088,6 +1074,7 @@ Available when using `each` method on [section](#section) `.activities`.
 
 **Methods:**
 * `completed?`
+* `id`
 * `list_class`
 * `locked?`
 * `milestone?`
@@ -1107,12 +1094,12 @@ Available when using `each` method on [section](#section) `.activities`.
 #### `homepage`
 
 **Methods:**
-* `subheadline`
-* `published_featured_courses`
 * `artwork_url`
 * `featured_courses_headline`
 * `featured_courses_subheadline`
 * `headline`
+* `published_featured_courses`
+* `subheadline`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1128,36 +1115,45 @@ Each of them has access to methods from [training_event](#training_event).
 
 **Methods:**
 * `id` - unique identifier of training event
+* `sessions` - list of training sessions. Each of them has access to methods from [training_session](#training_session).
 * `title`
 * `type` - one of: `In person`, `Online`
-* `sessions` - list of training sessions. Each of them has access to methods from [training_session](#training_session).
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `training_session`
 
 **Methods:**
-* `instructor_image_url`
 * `description`
+* `event_type_title`
+* `id`
+* `instructor_assigned?`
+* `instructor_image_url`
 * `instructor_name`
+* `instructor_title`
+* `location`
+* `other_sessions_count`
+* `other_sessions`
 * `register_url`
 * `registration_actions`
-* `instructor_title`
 * `self_url`
 * `session_day`
 * `session_month`
-* `instructor_assigned?`
-* `session_time`
 * `session_name`
-* `starts_at`
+* `session_time`
 * `session_url`
-* `other_sessions_count`
-* `unregister_url`
+* `starts_at`
 * `title`
-* `location`
 * `training_session`
-* `other_sessions`
-* `event_type_title`
+* `unregister_url`
+
+[:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
+
+#### `discover_events`
+
+**Methods:**
+* `filter_options`
+* `filter`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
