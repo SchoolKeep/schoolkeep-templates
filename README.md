@@ -153,6 +153,43 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
+        <td align="center">
+        <b><code>/learners/sign_in</code></b>
+        </td>
+        <td>
+            <ul>
+                <li><a href="https://github.com/SchoolKeep/schoolkeep-templates/blob/master/templates/login.html.liquid">login</a></li>
+            </ul>
+        </td>
+    </tr>
+	<tr>
+		<td align="center" colspan="2">
+		<a name="homepage-path">
+		<b>Screenshot</b>
+		</a>
+		</td>
+	</tr>
+    <tr>
+        <td colspan="2">
+        <img src="https://raw.githubusercontent.com/SchoolKeep/schoolkeep-templates/master/img/login.png">
+        </td>
+    </tr>
+</table>
+
+❗️ Important note ❗️
+The login page uses an HTML form to submit the learner's credentials. Please make sure you're not overwriting its internals:
+- the `action` and `method` attributes on the `<form>` tag
+- `form_authenticity_token` method inside the `<form>` tag
+- the `name` attribute on the `<input>` tags
+
+[:arrow_up:](#table-of-contents)
+
+<table align="center" border="0">
+    <tr>
+        <td align="center"><b>Path</b></td>
+        <td align="center"><b>Available Templates</b></td>
+    </tr>
+    <tr>
         <td align="center"><b><code>/my_dashboard</code></b></td>
         <td>
             <ul>
