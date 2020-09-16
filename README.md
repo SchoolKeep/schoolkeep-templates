@@ -26,6 +26,7 @@
 - [Quick start](#quick-start)
 - [Templates](#templates)
   - [/](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#homepage-path)
+  - [/learners/sign_in](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#login)
   - [/my_dashboard](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#my-dashboard)
   - [/learning_paths](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning-paths)
   - [/learning_paths/:id](https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning-paths-id)
@@ -113,7 +114,11 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="homepage-path">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -133,9 +138,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="homepage-path">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -149,7 +152,11 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="login">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -164,9 +171,7 @@ Click the `Upload Templates` button and add the templates you have chosen, then 
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="homepage-path">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -186,7 +191,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="my-dashboard">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -208,9 +217,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="my-dashboard">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -224,7 +231,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="learning-paths">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -241,9 +252,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-paths">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -257,7 +266,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="learning-paths-id">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -277,9 +290,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-paths-id">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -293,7 +304,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="learning-paths-id-cover">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -307,9 +322,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-paths-id-cover">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -323,7 +336,13 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="course-id-cover">
+            <b>Path</b>
+          </a>
+          <a name="learning_paths-lpid-courses-cid-cover">
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -342,11 +361,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="course-id-cover">
-		<b>Screenshot</b>
-		</a>
-		<a name="learning_paths-lpid-courses-cid-cover">
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -360,7 +375,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="learning-experience-v3">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -373,9 +392,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-experience-v3">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -389,7 +406,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="learning-experience-v2">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -402,9 +423,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="learning-experience-v2">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -418,7 +437,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="account-edit">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -433,9 +456,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="account-edit">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -449,7 +470,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="training-events">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -471,9 +496,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="training-events">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -487,7 +510,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="training-session-id">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -507,9 +534,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="training-session-id">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -523,7 +548,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="search">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -544,9 +573,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="search">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -560,7 +587,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="catalog">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -582,9 +613,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="catalog">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -598,7 +627,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="catalog-search">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -619,9 +652,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="catalog-search">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -635,7 +666,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="catalog-id-slug">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -656,9 +691,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="catalog-id-slug">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
@@ -672,7 +705,11 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
 
 <table align="center" border="0">
     <tr>
-        <td align="center"><b>Path</b></td>
+        <td align="center">
+		      <a name="server-error">
+            <b>Path</b>
+          </a>
+        </td>
         <td align="center"><b>Available Templates</b></td>
     </tr>
     <tr>
@@ -690,9 +727,7 @@ The login page uses an HTML form to submit the learner's credentials. Please mak
     </tr>
 	<tr>
 		<td align="center" colspan="2">
-		<a name="server-error">
-		<b>Screenshot</b>
-		</a>
+		  <b>Screenshot</b>
 		</td>
 	</tr>
     <tr>
