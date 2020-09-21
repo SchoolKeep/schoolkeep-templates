@@ -865,6 +865,8 @@ For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 * `enrolled_in_course?`
 * `first_name`
 * `id`
+* `last_name`
+* `name`
 * `sso_uid`
 
 **Example:**
