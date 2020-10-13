@@ -745,13 +745,15 @@ Variables are one of the most useful functionalities when customizing the look o
 ### [Global](#table-of-contents)
 The following variables are exposed globally and can be used in all the templates:
 
-* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#header_navigations">header_navigations</a>
-* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#footer_navigations">footer_navigations</a>
-* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#my_content">my_content</a>
-* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning_paths">learning_paths</a>
-* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#website_footer">website_footer</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#color_palette">color_palette</a>
 * <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#discover_events">discover_events</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#footer_navigations">footer_navigations</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#header_navigations">header_navigations</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#homepage">homepage</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#learning_paths">learning_paths</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#my_content">my_content</a>
 * <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#training_events">training_events</a>
+* <a href="https://github.com/SchoolKeep/schoolkeep-templates/tree/master#website_footer">website_footer</a>
 
 
 ### [By template](#table-of-contents)
@@ -836,8 +838,6 @@ Some of the available variables in the templates are **Arrays**, so the followin
 * `empty?`
 * `size`
 
-For more please visit: https://shopify.github.io/liquid/basics/introduction/.
-
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `color_palette`
@@ -846,7 +846,6 @@ For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 * `button_color`
 * `button_font_color`
 * `button_hover_color`
-* `color_palette`
 * `header_color`
 * `header_font_color`
 * `header_font_hover_color`
@@ -861,17 +860,14 @@ For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 #### `current_person`
 
 **Methods:**
+* `avatar_url`
+* `created_at`
 * `email`
 * `enrolled_in_course?`
-* `first_name`
-* `id`
-* `last_name`
-* `name`
-* `sso_uid`
 
 **Example:**
 
-:warning: It takes learning path from current context :warning:
+:warning: It takes course from the current context :warning:
 ```
 {% for course in my_content.courses %}
     {% if current_person.enrolled_in_course? %} // course variable is implicitly used here
@@ -883,7 +879,7 @@ For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 
 **Example:**
 
-:warning: It takes learning path from current context :warning:
+:warning: It takes learning path from the current context :warning:
 ```
 {% for learning_path in my_content.learning_paths %}
     {% if current_person.enrolled_in_learning_path? %} // learning_path variable is implicitly used here
@@ -894,18 +890,25 @@ For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 * `filterable_catalog_categories`
 * `filterable_categories`
 * `filterable_learning_path_categories`
+* `first_name`
+* `groups`
 * `id`
+* `last_name`
 * `my_content_label`
 * `name`
 * `signed_in?`
+* `sso_uid`
 * `upcoming_registered_events`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `current_school`
 
 **Methods:**
+* `account_creation_enabled?`
 * `apps`
+* `created_at`
 * `disable_social_share?`
 * `filterable_categories`
 * `filtering_enabled?`
@@ -917,9 +920,13 @@ For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 * `my_content_label`
 * `name`
 * `public`
+* `request_access_enabled?`
+* `request_access_label`
+* `request_access_link`
 * `search_enabled?`
 * `show_powered_by_school_keep?`
 * `sso_enabled?`
+* `updated_at`
 * `uuid`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
@@ -936,8 +943,10 @@ For more please visit: https://shopify.github.io/liquid/basics/introduction/.
 Available when using `each` method on [custom_templates](#custom_templates).
 
 **Methods:**
+* `created_at`
 * `fingerprint`
 * `name`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -969,7 +978,6 @@ Available when using `each` method on [custom_templates](#custom_templates).
 * `school_website_search_path`
 * `schoolkeep_v3_styles_url`
 * `sign_up_path`
-* `url_helpers`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -990,6 +998,7 @@ Available also when using `each` method on [courses](#courses).
 * `course_attempts_path`
 * `course_category_names`
 * `cover_path`
+* `created_at`
 * `details_path`
 * `discover_events_path`
 * `enrollment_url`
@@ -1025,6 +1034,7 @@ Available also when using `each` method on [courses](#courses).
 * `social_links`
 * `start_or_continue`
 * `superscirpt`
+* `updated_at`
 * `view_label`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
@@ -1049,20 +1059,24 @@ Available also when using `each` method on [courses](#courses).
 Available when using `each` method on [header_navigations](#header_navigations) or [footer_navigations](#footer_navigations).
 
 **Methods:**
+* `created_at`
 * `external?`
 * `name`
 * `path`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `website_footer`
 
 **Methods:**
+* `created_at`
 * `school_customer_service_email`
 * `show_customer_service_email?`
 * `show_navigation_links?`
 * `show_social_media_links?`
 * `social_media_links`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1081,6 +1095,7 @@ Available also when using `each` method on [learning_paths](#learning_paths)
 **Methods:**
 * `about_label`
 * `cover_path`
+* `created_at`
 * `current_person_learning_path_item`
 * `description`
 * `details_path`
@@ -1101,6 +1116,7 @@ Available also when using `each` method on [learning_paths](#learning_paths)
 * `outline_label`
 * `progress_bar`
 * `progress_text`
+* `updated_at`
 * `view_label`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
@@ -1110,9 +1126,11 @@ Available when using `each` method on [learning_path](#learning_path) `.instruct
 
 **Methods:**
 * `bio`
+* `created_at`
 * `image_url`
 * `name`
 * `title`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1122,12 +1140,14 @@ Available when using `each` method on [learning_path](#learning_path) `.items`.
 **Methods:**
 * `completed?`
 * `cover_path`
+* `created_at`
 * `locked?`
 * `name`
 * `optional?`
 * `progress_icon`
-* `traning_event`
+* `training_event`
 * `type_icon`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1136,9 +1156,11 @@ Available when using `each` method on [course](#course) `.published_sections`.
 
 **Methods:**
 * `activities`
+* `created_at`
 * `id`
 * `name`
 * `published_at`
+* `updated_at`
 * `will_be_published?`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
@@ -1148,12 +1170,14 @@ Available when using `each` method on [section](#section) `.activities`.
 
 **Methods:**
 * `completed?`
+* `created_at`
 * `id`
 * `list_class`
 * `locked?`
 * `milestone?`
 * `path`
 * `title`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1169,11 +1193,13 @@ Available when using `each` method on [section](#section) `.activities`.
 
 **Methods:**
 * `artwork_url`
+* `created_at`
 * `featured_courses_headline`
 * `featured_courses_subheadline`
 * `headline`
 * `published_featured_courses`
 * `subheadline`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
@@ -1188,16 +1214,19 @@ Each of them has access to methods from [training_event](#training_event).
 #### `training_event`
 
 **Methods:**
+* `created_at`
 * `id` - unique identifier of training event
 * `sessions` - list of training sessions. Each of them has access to methods from [training_session](#training_session).
 * `title`
 * `type` - one of: `In person`, `Online`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
 #### `training_session`
 
 **Methods:**
+* `created_at`
 * `description`
 * `event_type_title`
 * `id`
@@ -1220,6 +1249,7 @@ Each of them has access to methods from [training_event](#training_event).
 * `title`
 * `training_session`
 * `unregister_url`
+* `updated_at`
 
 [:arrow_up:](#table-of-contents) [:arrow_up_small:](#by-template)
 
