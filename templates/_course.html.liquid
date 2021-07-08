@@ -31,7 +31,12 @@
     <p class="uk-margin-small-top uk-margin-large-bottom">{{ course.instructor_names }}</p>
     {% if current_person.enrolled_in_course? %}
       <p class="uk-margin-small-bottom">{{ course.progress_text }}</p>
-      <a href="{{ course.cover_path }}" class="uk-button uk-button-primary school-website-course-tile-action uk-position-bottom-right" data-test="go-to-course-button">{{ course.go_to_label }}</a>
+      <span class="uk-position-bottom-right school-website-course-tile-action">
+        {% if course.has_to_restart? %}
+          {% include "course_version_outdated_popup", path: course.cover_path %}
+        {% endif %}
+        <a href="{{ course.cover_path }}" class="uk-button uk-button-primary" data-test="go-to-course-button">{{ course.go_to_label }}</a>
+      </span>
     {% else %}
       <a href="{{ course.details_path }}" class="uk-button uk-button-outline school-website-course-tile-action uk-position-bottom-right">
         {% if current_school.apps.commerce.active? %}
