@@ -1,0 +1,33 @@
+<div class="np-course-version-outdated-popup np-popup">
+  <div class="np-popup-positioner">
+    <i
+      class="np-course-version-outdated-popup-trigger fas fa-exclamation-circle"
+      data-toggle-class-on-target="np-popup-tooltip--visible"
+      data-toggle-target-parent=".np-popup-tooltip"
+      data-toggle-outside
+    ></i>
+    <div
+      class="np-popup-tooltip"
+      role="tooltip"
+      aria-hidden="true"
+    >
+      <header class="np-popup-header">
+        <i class="np-popup-header-icon fas fa-exclamation-circle"></i>
+        <h3 class="np-popup-header-title">
+          {% t .title %}
+        </h3>
+      </header>
+      <div class="np-popup-body">
+        <h4>{% t .body.header %}</h4>
+        <p>{% t .body.content %}</p>
+        <a
+          class="np-popup-body-button"
+          href="{{ path }}"
+        >
+          {% t .body.button %}
+        </a>
+      </div>
+      <div class="np-popup-tail"></div>
+    </div>
+  </div>
+</div>
