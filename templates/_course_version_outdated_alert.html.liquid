@@ -1,0 +1,7 @@
+{% if courses.include_courses_to_restart? %}
+  <div role="alert" class="np-alert np-alert-global np-alert-info">
+    <div class="np-alert-container uk-container uk-container-center">
+      {% t .content %}
+    </div>
+  </div>
+{% endif %}

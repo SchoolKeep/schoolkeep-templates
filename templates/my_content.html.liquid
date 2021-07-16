@@ -1,3 +1,5 @@
+{% include "course_version_outdated_alert", courses: my_content.courses %}
+
 <div class="uk-container uk-container-center school-website-course-index-list uk-margin-top uk-margin-bottom">
   <div class="uk-padding-horizontal">
     {% if current_school.apps.instructor_led_training.active? %}
